@@ -52,3 +52,6 @@ yarn-error.*
 private-dependencies/
 
 .env.local
+
+*storybook.log
+storybook-static

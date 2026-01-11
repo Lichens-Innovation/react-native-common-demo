@@ -72,6 +72,11 @@ const ToolsScreen: FunctionComponent = observer(() => {
         Sentry test
       </Button>
     ),
+    () => (
+      <Button mode="text" onPress={() => router.push('/storybook')} icon="book-open-page-variant">
+        Storybook
+      </Button>
+    ),
   ];
 
   return (
