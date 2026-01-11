@@ -1,3 +1,4 @@
+import i18next from 'i18next';
 import { makeAutoObservable } from 'mobx';
 import uuid from 'react-native-uuid';
 import { DEFAULT_SYSTEM_MESSAGE, IChatConversation, IChatMessage, IMessageRole, MESSAGE_ROLE } from './rag.types';
@@ -17,8 +18,6 @@ export class ChatMessage implements IChatMessage {
     makeAutoObservable(this);
   }
 }
-
-const DEFAULT_ASSISTANT_WELCOME = 'Bonjour, je suis votre assistant YvanMobile. Comment puis-je vous aider ?';
 
 export class ChatConversation implements IChatConversation {
   id: string;
@@ -40,7 +39,7 @@ export class ChatConversation implements IChatConversation {
     if (!messages.length) {
       // start new conversation with system message which is global instructions to the assistant
       this.messages.push(new ChatMessage(MESSAGE_ROLE.SYSTEM, DEFAULT_SYSTEM_MESSAGE));
-      this.messages.push(new ChatMessage(MESSAGE_ROLE.ASSISTANT, DEFAULT_ASSISTANT_WELCOME));
+      this.messages.push(new ChatMessage(MESSAGE_ROLE.ASSISTANT, i18next.t('app:chat.welcomePrompt')));
     }
 
     makeAutoObservable(this);

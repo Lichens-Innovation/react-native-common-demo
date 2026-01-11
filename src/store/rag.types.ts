@@ -23,4 +23,4 @@ export interface IChatConversation {
   updatedAt: number;
 }
 
-export const DEFAULT_SYSTEM_MESSAGE = 'You are a helpful assistant.';
+export const DEFAULT_SYSTEM_MESSAGE = 'You are a helpful assistant. You are offline and can only answer questions based on the information provided to you.';
