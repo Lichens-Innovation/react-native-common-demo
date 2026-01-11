@@ -1,0 +1,68 @@
+// ====================================================================================
+
+const postMessageRN = (type = '', log) => {
+  const message = { type: 'console', data: { type, log } };
+  postObjectRN(message);
+};
+
+const postObjectRN = (message = {}) => {
+  const stringMessage = JSON.stringify(message);
+  setTimeout(() => window.ReactNativeWebView.postMessage(stringMessage), 0);
+};
+
+window.onerror = (message, source, lineno, colno) => {
+  const errorDetails = { message, source, lineno, colno };
+  postMessageRN('error', JSON.stringify(errorDetails));
+};
+
+window.onReactNativeMessage = (message = '{}') => {
+  const { type, data } = JSON.parse(message ?? '{}');
+  postMessageRN('info', `webapp: onReactNativeMessage ${type}: ${data}`);
+};
+
+// ====================================================================================
+
+postMessageRN('info', `typeof pdfjsLib: ${typeof pdfjsLib}`);
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+pdfjsLib.disableWorker = true;
+postMessageRN('debug', `workerSrc=${pdfjsLib.GlobalWorkerOptions.workerSrc}`);
+
+const loadPDFDocument = async (arrayBuffer) => {
+  postMessageRN('info', 'loadPDFDocument called');
+  try {
+    const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
+    const pdfDocument = await loadingTask.promise;
+    postMessageRN('info', `PDF loaded - ${pdfDocument.numPages} page(s)`);
+    await extractTextFromAllPages(pdfDocument);
+  } catch (error) {
+    postMessageRN('error', `Error loading PDF: ${error.message}`);
+  }
+};
+
+const extractTextFromAllPages = async (pdfDocument) => {
+  for (let pageNumber = 1; pageNumber <= pdfDocument.numPages; pageNumber++) {
+    await extractTextFromPage(pdfDocument, pageNumber);
+  }
+  postMessageRN('info', 'Text extraction completed for all pages');
+};
+
+const extractTextFromPage = async (pdfDocument, pageNumber = 0) => {
+  const page = await pdfDocument.getPage(pageNumber);
+  const textExtractInfos = await page.getTextContent();
+  postPageTextMessage(textExtractInfos, pageNumber, pdfDocument.numPages);
+};
+
+const postPageTextMessage = (textExtractInfos = {}, pageNumber = 0, numPages = 0) => {
+  const text = textExtractInfos.items.map((item) => {
+    return item.hasEOL ? item.str + '  ' : item.str;
+  }).join('');
+  postObjectRN({ type: 'pdfTextExtracted', data: { pageNumber, text, numPages } });
+};
+
+// ====================================================================================
+// ====================================================================================
+const SPA_VERSION = '1.0';
+const SPA_VERSION_LABEL = `pdf-reader WebView Document ${SPA_VERSION}`;
+
+postMessageRN('info', SPA_VERSION_LABEL);
+postObjectRN({ type: 'documentReady' });

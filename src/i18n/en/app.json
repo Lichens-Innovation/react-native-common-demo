@@ -1,0 +1,40 @@
+{
+  "home": {
+    "menuLabel": "Home"
+  },
+  "rag": {
+    "title": "Assistant"
+  },
+  "about": {
+    "title": "About…",
+    "menuLabel": "About…",
+    "updates": "Updates",
+    "apply": "Apply",
+    "licenses": "Licenses",
+    "author": "Author",
+    "version": "Version",
+    "releaseNotes": "Release notes",
+    "updated": "Updated",
+    "deviceType": "Device type",
+    "appDependencies": "App dependencies",
+    "description": "Make your technological projects tangible. Lichens, a mining technology company."
+  },
+  "settings": {
+    "title": "Settings",
+    "menuLabel": "Settings",
+    "toggleDarkMode": "Toggle Dark Mode"
+  },
+  "tools": {
+    "title": "Tools",
+    "menuLabel": "Tools",
+    "liveEventLogs": "Live Event Logs",
+    "eventLogs": "Event Logs Files",
+    "networkLogs": "Network Logs",
+    "envVars": "ENV Vars"
+  },
+  "chat": {
+    "downloadModelTitle": "Downloading model {{name}}",
+    "downloadModelDescription": "This model will be downloaded to your device. It will be able to answer questions and perform offline searches. Note that the download process will only be done once, the next time you open the app, the model will already be operational.",
+    "questionExample": "Compute the sum of the following numbers: 16, 22, 38"
+  }
+}

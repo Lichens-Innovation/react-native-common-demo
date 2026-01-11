@@ -1,0 +1,132 @@
+# RN Common Kitchen Sink App
+
+Kitchen Sink mobile app for the `@Lichens-Innovation/react-native-commun` module
+
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Yarn](https://img.shields.io/badge/Yarn-1.22+-2C8EBB.svg?style=flat-square&logo=yarn)](https://yarnpkg.com/)
+[![React](https://img.shields.io/badge/React-19-61DAFB.svg?style=flat-square&logo=react)](https://react.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-LTS-339933.svg?style=flat-square&logo=node.js)](https://nodejs.org/)
+[![React Native](https://img.shields.io/badge/React%20Native-0.81-61DAFB.svg?style=flat-square&logo=react)](https://reactnative.dev/)
+[![Expo SDK](https://img.shields.io/badge/Expo%20SDK-54-000020.svg?style=flat-square&logo=expo)](https://expo.dev/)
+
+Table of Content
+
+- [RN Common Kitchen Sink App](#rn-common-kitchen-sink-app)
+  - [Prerequisites](#prerequisites)
+  - [Installation Instructions](#installation-instructions)
+  - [Available Scripts](#available-scripts)
+  - [Project Coding Guidelines](#project-coding-guidelines)
+  - [Upgrade Expo SDK process](#upgrade-expo-sdk-process)
+  - [Usefull development commands](#usefull-development-commands)
+  - [License](#license)
+
+
+## Prerequisites
+
+- Node.js (v16 or higher)
+- Yarn
+- React Native development environment setup (see [React Native documentation](https://reactnative.dev/docs/environment-setup))
+
+## Installation Instructions
+
+In a terminal:
+```bash
+yarn install
+yarn start
+```
+
+In another terminal:
+```bash
+yarn install
+yarn android # or yarn ios
+```
+
+## Available Scripts
+
+| Command                                | Description                                                                      |
+|----------------------------------------|----------------------------------------------------------------------------------|
+| `yarn android`                         | Build & run the `Expo` project on an `Android` device or emulator.               |
+| `yarn ios`                             | Build & run the `Expo` project on an `iOS` device or simulator.                  |
+| `yarn start`                           | Start the `Expo` development server.                                             |
+| `yarn lint`                            | Run linter to check for code style and formatting issues.                        |
+| `yarn format`                          | Run linter to automatically fix code style and formatting issues.                |
+| `yarn sitemap`                         | Generate sitemap for the application routes.                                     |
+| `yarn clean:prebuild:ios`              | Clean `Expo` prebuild files for `iOS`.                                           |
+| `yarn clean:prebuild:android`          | Clean `Expo` prebuild files for `Android`.                                       |
+| `yarn clean:pods`                      | Clean `iOS` Pods and reinstall them.                                             |
+| `yarn clean:node`                      | Remove `node_modules` and `yarn.lock` files.                                     |
+| `yarn ip:macos`                        | Show IP address on `macOS`.                                                      |
+| `yarn ip:windows`                      | Show IP address on `Windows`.                                                    |
+| `yarn ip:linux`                        | Show IP address on `Linux`.                                                      |
+| `yarn emulator:windows`                | Launch `Android` emulator on `Windows`.                                          |
+| `yarn emulator:macos`                  | Launch `Android` emulator on `macOS`.                                            |
+| `yarn emulator:linux`                  | Launch `Android` emulator on `Linux`.                                            |
+| `yarn expo:doctor`                     | Run `Expo`'s doctor command to diagnose issues in the project.                   |
+| `yarn expo:upgrade:check`              | Check for available `Expo` dependency updates.                                   |
+| `yarn expo:upgrade:latest`             | Upgrade `Expo` SDK to the latest version.                                        |
+| `yarn expo:install:fix`                | Update `Expo` dependencies to the latest versions.                               |
+| `yarn expo:build:ios`                  | Build `iOS` app and deploy it on `iOS` Simulator.                                |
+| `yarn expo:build:android`              | Build `Android` app and deploy it on `Android` Emulator.                         |
+| `yarn eas:whoami`                      | Display the currently logged in `EAS` account.                                   |
+| `yarn eas:env:var:update`              | Update environment variables in `EAS`.                                           |
+| `yarn eas:env:var:delete`              | Delete environment variables from `EAS`.                                         |
+| `yarn eas:build:ios:preview`           | Build `iOS` preview using `EAS`.                                                 |
+| `yarn eas:build:ios:preview:local`     | Build `iOS` preview locally using `EAS`.                                         |
+| `yarn eas:build:ios:development`       | Build `iOS` development using `EAS`.                                             |
+| `yarn eas:build:android:preview`       | Build `Android` preview using `EAS`.                                             |
+| `yarn eas:build:android:preview:local` | Build `Android` preview locally using `EAS`.                                     |
+| `yarn eas:build:android:development`   | Build `Android` development using `EAS`.                                         |
+| `yarn eas:run:ios`                     | Run the latest `EAS iOS` build.                                                  |
+| `yarn eas:run:android`                 | Run the latest `EAS Android` build.                                              |
+| `yarn eas:update:ios:preview`          | Publish an `OTA iOS` preview update with changes from the project.               |
+| `yarn eas:update:android:preview`      | Publish an `OTA Android` preview update with changes from the project.           |
+| `yarn generate:version`                | Generate version information (see `src/constants.ts`).                           |
+| `yarn postinstall`                     | Run `patch-package` and generate licenses file after dependencies are installed. |
+
+## Project Coding Guidelines
+
+Adhering to established coding guidelines is essential for developing efficient, maintainable, and scalable software. These guidelines promote consistency across codebases, making it easier for teams to collaborate and for new developers to understand existing code. By following standardized patterns, such as those outlined in the [Coding Guidelines](https://github.com/amwebexpert/chrome-extensions-collection/blob/master/packages/coding-guide-helper/public/markdowns/table-of-content.md), developers can reduce errors and enhance code readability.
+
+* [Coding Guidelines](https://github.com/amwebexpert/chrome-extensions-collection/blob/master/packages/coding-guide-helper/public/markdowns/table-of-content.md)
+
+## Upgrade Expo SDK process
+
+* run `npx expo install expo@latest` to upgrade to the latest Expo SDK
+* run `npx expo install --check` to list latest versions of all expo dependencies. This will automatically ask to upgrade to the expected dependencies (if any)
+  * expected result: `Dependencies are up to date`
+* check other non-Expo dependencies (you need ncu utility which can be installed globally `yarn global add npm-check-updates`)
+  * `ncu -u`
+  * then re-run again `npx expo install --check` and accept Expo specific version suggestions
+* remove the node_modules and yarn.lock all together and re-install all dependencies
+  * `yarn clean:node`
+  * `yarn`
+* run `npx expo-doctor` to see if any dependency is not expected as part of the current Expo SDK major version. This will also list the command to upgrade the unaligned dependencies
+  * expected result: `15/15 checks passed. No issues detected!`
+* clean and re-generate the prebuild folders for `iOS` and `Android` platforms
+  * `npx expo prebuild --clean`
+* Test the development build
+  * run `npx expo run:ios` and test on the `iOS Simulator`
+  * run `npx expo run:android` and test on the `Android simulator`
+
+References:
+* [How to upgrade from Expo SDK X to Y](https://www.youtube.com/watch?v=HBPyP4OxVgs)
+
+## Usefull development commands
+
+* install an apk on a connected android device:
+```
+adb devices
+adb install build-1759350748158.apk
+```
+
+* Deactivate WiFi and Cellular Mode
+
+    xcrun simctl list devices
+    xcrun simctl status_bar 6A716C79-D944-4243-B92B-1D9027E18E4E override --wifiBars 0
+    xcrun simctl status_bar 6A716C79-D944-4243-B92B-1D9027E18E4E override --cellularBars 0
+    xcrun simctl status_bar 6A716C79-D944-4243-B92B-1D9027E18E4E clear
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

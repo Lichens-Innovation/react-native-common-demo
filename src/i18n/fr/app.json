@@ -1,0 +1,40 @@
+{
+  "home": {
+    "menuLabel": "Accueil"
+  },
+  "rag": {
+    "title": "Assistant"
+  },
+  "about": {
+    "title": "À propos…",
+    "menuLabel": "À propos…",
+    "updates": "Mises à jour",
+    "apply": "Appliquer",
+    "licenses": "Licences",
+    "author": "Auteur",
+    "version": "Version",
+    "releaseNotes": "Notes de version",
+    "updated": "Mis à jour",
+    "deviceType": "Type d'appareil",
+    "appDependencies": "Dépendances de l'application",
+    "description": "Concrétisez vos projets technologiques. Lichens, une firme technologique minière."
+  },
+  "settings": {
+    "title": "Préférences",
+    "menuLabel": "Préférences",
+    "toggleDarkMode": "Mode sombre"
+  },
+  "tools": {
+    "title": "Outils",
+    "menuLabel": "Outils",
+    "liveEventLogs": "Logs en cours",
+    "eventLogs": "Fichiers de logs",
+    "networkLogs": "Logs réseau",
+    "envVars": "ENV Vars"
+  },
+  "chat": {
+    "downloadModelTitle": "Téléchargement du modèle {{name}}",
+    "downloadModelDescription": "Ce modèle sera stocké sur votre appareil. Il pourra être utilisé pour répondre à des questions et effectuer des recherches offline. Noter que le processus de téléchargement ne sera fait qu'une seule fois, les prochaines fois que vous ouvrirez l'application, le modèle sera déjà opérationnel.",
+    "questionExample": "Calculez la somme des nombres suivants: 16, 22, 38"
+  }
+}
