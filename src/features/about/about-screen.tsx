@@ -1,4 +1,4 @@
-import { useAppTheme, useUpdates } from '@Lichens-Innovation/react-native-common';
+import { useAppTheme, useUpdates } from '@lichens-innovation/react-native-common';
 import { useIsFocused } from '@react-navigation/native';
 import { useRouter } from 'expo-router';
 import { FunctionComponent, useEffect } from 'react';

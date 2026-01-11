@@ -11,7 +11,7 @@ import {
   NAVIGATION_LIGHT,
   SnackbarProvider,
   TanstackQueryProvider,
-} from '@Lichens-Innovation/react-native-common';
+} from '@lichens-innovation/react-native-common';
 import { ThemeProvider } from '@react-navigation/native';
 import * as Sentry from '@sentry/react-native';
 import 'expo-dev-client';

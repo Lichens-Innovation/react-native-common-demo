@@ -1,4 +1,4 @@
-import { useAppTheme } from '@Lichens-Innovation/react-native-common';
+import { useAppTheme } from '@lichens-innovation/react-native-common';
 import { FunctionComponent } from 'react';
 import { SvgXml } from 'react-native-svg';
 import { LOGO } from './logo.constants';

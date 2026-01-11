@@ -1,4 +1,4 @@
-import { commonStore, startNetworkStateLogging } from '@Lichens-Innovation/react-native-common';
+import { commonStore, startNetworkStateLogging } from '@lichens-innovation/react-native-common';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import { startNetworkLogging, stopNetworkLogging } from 'react-native-network-logger';

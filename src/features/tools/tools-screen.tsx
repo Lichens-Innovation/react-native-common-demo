@@ -11,7 +11,7 @@ import {
   SnackbarDurationsMs,
   useAppTheme,
   useSnackbar,
-} from '@Lichens-Innovation/react-native-common';
+} from '@lichens-innovation/react-native-common';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import Animated, { FadeInDown } from 'react-native-reanimated';

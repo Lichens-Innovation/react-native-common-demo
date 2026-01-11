@@ -1,4 +1,4 @@
-import { commonStore } from '@Lichens-Innovation/react-native-common';
+import { commonStore } from '@lichens-innovation/react-native-common';
 import { observer } from 'mobx-react-lite';
 import { FunctionComponent } from 'react';
 import { StyleSheet, View } from 'react-native';

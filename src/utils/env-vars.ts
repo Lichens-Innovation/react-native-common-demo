@@ -1,4 +1,4 @@
-import { storage } from '@Lichens-Innovation/react-native-common';
+import { storage } from '@lichens-innovation/react-native-common';
 
 /**
  * The 'EXPO_PUBLIC_*' environment variables are inlined (substituted) at build time by the bundler (Metro).

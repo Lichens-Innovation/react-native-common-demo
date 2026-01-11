@@ -95,7 +95,7 @@ const config: ExpoConfig = {
       tinted: './assets/images/logo/ios-tinted.png',
     },
     supportsTablet: true,
-    bundleIdentifier: 'com.lichens.offlinerag.app',
+    bundleIdentifier: 'com.lichens.commonkitchensink.app',
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
       NSLocationAlwaysUsageDescription:
@@ -150,7 +150,7 @@ const config: ExpoConfig = {
       monochromeImage: './assets/images/logo/adaptive-icon.png',
       backgroundColor: '#000000',
     },
-    package: 'com.lichens.offlinerag.app',
+    package: 'com.lichens.commonkitchensink.app',
     permissions: [
       'android.permission.ACCESS_FINE_LOCATION',
       'android.permission.ACCESS_NETWORK_STATE',

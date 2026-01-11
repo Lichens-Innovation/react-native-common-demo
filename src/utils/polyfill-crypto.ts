@@ -1,5 +1,5 @@
 import 'react-native-get-random-values';
-import { logger } from '@Lichens-Innovation/react-native-common';
+import { logger } from '@lichens-innovation/react-native-common';
 
 export const polyfillCrypto = () => {
   if (!crypto?.getRandomValues) {

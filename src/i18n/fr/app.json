@@ -34,7 +34,7 @@
   },
   "chat": {
     "downloadModelTitle": "Téléchargement du modèle {{name}}",
-    "downloadModelDescription": "Ce modèle sera stocké sur votre appareil. Il pourra être utilisé pour répondre à des questions et effectuer des recherches offline. Noter que le processus de téléchargement ne sera fait qu'une seule fois, les prochaines fois que vous ouvrirez l'application, le modèle sera déjà opérationnel.",
+    "downloadModelDescription": "Ce modèle sera stocké sur votre appareil. Il pourra être utilisé pour répondre à des questions en mode hors-ligne. Noter que le processus de téléchargement ne sera fait qu'une seule fois, les prochaines fois que vous ouvrirez l'application, le modèle sera déjà opérationnel.",
     "questionExample": "Calculez la somme des nombres suivants: 16, 22, 38"
   }
 }

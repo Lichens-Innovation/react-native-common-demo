@@ -4,7 +4,7 @@ import { observer } from 'mobx-react-lite';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { Switch, Text } from 'react-native-paper';
 
-import { commonStore, useAppTheme } from '@Lichens-Innovation/react-native-common';
+import { commonStore, useAppTheme } from '@lichens-innovation/react-native-common';
 import { useTranslation } from 'react-i18next';
 import { useKeyboardState } from 'react-native-keyboard-controller';
 import { AppLanguageField } from './app-language-field';

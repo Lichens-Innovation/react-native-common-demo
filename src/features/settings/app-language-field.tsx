@@ -8,7 +8,7 @@ import {
   LanguageSelector,
   storeSelectedLanguage,
   SUPPORTED_LANGUAGES
-} from '@Lichens-Innovation/react-native-common';
+} from '@lichens-innovation/react-native-common';
 
 export const AppLanguageField: FunctionComponent = observer(() => {
   const { t } = useTranslation();

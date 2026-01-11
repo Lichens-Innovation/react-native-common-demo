@@ -1,4 +1,4 @@
-import { TabBarIcon, useAppTheme } from '@Lichens-Innovation/react-native-common';
+import { TabBarIcon, useAppTheme } from '@lichens-innovation/react-native-common';
 import { Tabs } from 'expo-router';
 import { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';

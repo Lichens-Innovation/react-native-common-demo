@@ -1,4 +1,4 @@
-import { getErrorMessage, logger, useAppTheme, useSnackbar } from '@Lichens-Innovation/react-native-common';
+import { getErrorMessage, logger, useAppTheme, useSnackbar } from '@lichens-innovation/react-native-common';
 import { useNavigation } from '@react-navigation/native';
 import { useLocalSearchParams } from 'expo-router';
 import { FunctionComponent, useLayoutEffect, useState } from 'react';

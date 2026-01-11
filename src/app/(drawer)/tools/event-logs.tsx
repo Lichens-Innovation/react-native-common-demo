@@ -1,4 +1,4 @@
-import { EventLogsScreen } from '@Lichens-Innovation/react-native-common';
+import { EventLogsScreen } from '@lichens-innovation/react-native-common';
 import { FunctionComponent } from 'react';
 
 const EventLogs: FunctionComponent = () => {

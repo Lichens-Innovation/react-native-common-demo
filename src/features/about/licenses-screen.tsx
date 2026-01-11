@@ -4,7 +4,7 @@ import React, { FunctionComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { List, Text } from 'react-native-paper';
 
-import { LicenceDetail, parseLicenceData, useAppTheme } from '@Lichens-Innovation/react-native-common';
+import { LicenceDetail, parseLicenceData, useAppTheme } from '@lichens-innovation/react-native-common';
 
 import licenseEntries from '@assets/licenses.json';
 import { useTranslation } from 'react-i18next';

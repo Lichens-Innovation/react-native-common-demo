@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { ErrorBoundaryScreen, SafeContainer } from '@Lichens-Innovation/react-native-common';
+import { ErrorBoundaryScreen, SafeContainer } from '@lichens-innovation/react-native-common';
 
 const Error: FunctionComponent = () => {
   return (

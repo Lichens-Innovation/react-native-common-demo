@@ -1,4 +1,4 @@
-import { LogsViewer } from '@Lichens-Innovation/react-native-common';
+import { LogsViewer } from '@lichens-innovation/react-native-common';
 import { FunctionComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';

@@ -1,5 +1,5 @@
 import { MaterialIcons } from '@expo/vector-icons';
-import { ErrorBoundary, HeaderBackButton, HeaderButton } from '@Lichens-Innovation/react-native-common';
+import { ErrorBoundary, HeaderBackButton, HeaderButton } from '@lichens-innovation/react-native-common';
 import { router } from 'expo-router';
 import { Drawer } from 'expo-router/drawer';
 import { FunctionComponent } from 'react';

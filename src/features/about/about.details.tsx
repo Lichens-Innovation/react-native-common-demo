@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { StyleSheet } from 'react-native';
 import { DataTable } from 'react-native-paper';
 
-import { getDeviceType } from '@Lichens-Innovation/react-native-common';
+import { getDeviceType } from '@lichens-innovation/react-native-common';
 import { APP_VERSION_INFO } from '~/constants';
 
 const { AUTHOR, VERSION_DATE_ISO, VERSION, RELEASE_NOTES } = APP_VERSION_INFO;

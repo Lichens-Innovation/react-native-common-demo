@@ -1,4 +1,4 @@
-import { ActivityProgressBar, useAppTheme } from '@Lichens-Innovation/react-native-common';
+import { ActivityProgressBar, useAppTheme } from '@lichens-innovation/react-native-common';
 import { observer } from 'mobx-react-lite';
 import { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';

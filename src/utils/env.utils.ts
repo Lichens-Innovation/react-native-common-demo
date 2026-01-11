@@ -1,4 +1,4 @@
-import { getSentryDns, isDevelopment, logger } from '@Lichens-Innovation/react-native-common';
+import { getSentryDns, isDevelopment, logger } from '@lichens-innovation/react-native-common';
 import * as Updates from 'expo-updates';
 import { LogBox } from 'react-native';
 
