@@ -24,62 +24,62 @@ type Story = StoryObj<typeof meta>;
 export const Full: Story = {
   args: {
     batteryLevel: 100,
-    size: 32,
+    size: 64,
   },
 };
 
 export const High: Story = {
   args: {
     batteryLevel: 75,
-    size: 32,
+    size: 64,
   },
 };
 
 export const Medium: Story = {
   args: {
     batteryLevel: 50,
-    size: 32,
+    size: 64,
   },
 };
 
 export const Low: Story = {
   args: {
     batteryLevel: 25,
-    size: 32,
+    size: 64,
   },
 };
 
 export const Critical: Story = {
   args: {
     batteryLevel: 10,
-    size: 32,
+    size: 64,
   },
 };
 
 export const Empty: Story = {
   args: {
     batteryLevel: 0,
-    size: 32,
+    size: 64,
   },
 };
 
 export const Unknown: Story = {
   args: {
     batteryLevel: null,
-    size: 32,
+    size: 64,
   },
 };
 
 export const LargeIcon: Story = {
   args: {
     batteryLevel: 80,
-    size: 64,
+    size: 128,
   },
 };
 
 export const SmallIcon: Story = {
   args: {
     batteryLevel: 80,
-    size: 16,
+    size: 32,
   },
 };
