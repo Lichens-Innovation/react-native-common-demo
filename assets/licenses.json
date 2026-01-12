@@ -1498,9 +1498,9 @@
         "path": "node_modules/@react-native-clipboard/clipboard",
         "licenseFile": "node_modules/@react-native-clipboard/clipboard/LICENSE"
     },
-    "@react-native-community/datetimepicker@8.6.0": {
+    "@react-native-community/datetimepicker@8.4.4": {
         "licenses": "MIT",
-        "repository": "https://github.com/react-native-datetimepicker/datetimepicker",
+        "repository": "https://github.com/react-native-community/datetimepicker",
         "publisher": "Martijn Swaagman",
         "email": "mswaagman@godaddy.com",
         "path": "node_modules/@react-native-community/datetimepicker",
@@ -1521,7 +1521,7 @@
         "path": "node_modules/@react-native-community/netinfo",
         "licenseFile": "node_modules/@react-native-community/netinfo/LICENSE"
     },
-    "@react-native-community/slider@5.1.1": {
+    "@react-native-community/slider@5.0.1": {
         "licenses": "MIT",
         "repository": "https://github.com/callstack/react-native-slider",
         "publisher": "react-native-community",
