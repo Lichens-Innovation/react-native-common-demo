@@ -72,12 +72,15 @@ const ToolsScreen: FunctionComponent = observer(() => {
         Sentry test
       </Button>
     ),
-    () => (
+  ];
+
+  if (process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true') {
+    tools.push(() => (
       <Button mode="text" onPress={() => router.push('/storybook')} icon="book-open-page-variant">
         Storybook
       </Button>
-    ),
-  ];
+    ));
+  }
 
   return (
     <ScrollView style={styles.root} contentContainerStyle={styles.contentContainer}>
