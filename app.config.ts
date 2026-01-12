@@ -165,6 +165,9 @@ const config: ExpoConfig = {
   },
   extra: {
     router: { origin: false },
+    eas: {
+      projectId: '9842a0e2-4d51-4477-8f84-c0169228312b',
+    },
   },
   runtimeVersion: '1.0.0',
 };

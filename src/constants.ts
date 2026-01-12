@@ -10,8 +10,8 @@ export const APP_VERSION_INFO = Object.freeze({
   AUTHOR: 'Lichens Innovation',
   VERSION: '1.0.0',
   RELEASE_NOTES: '',
-  VERSION_DATE: '2026-01-11',
-  VERSION_DATE_ISO: '2026-01-11T19:46:49.458Z',
+  VERSION_DATE: '2026-01-12',
+  VERSION_DATE_ISO: '2026-01-12T21:56:20.741Z',
 })
 
-export const LONG_VERSION_DATE = '1.0.0 (2026-01-11)'
+export const LONG_VERSION_DATE = '1.0.0 (2026-01-12)'
