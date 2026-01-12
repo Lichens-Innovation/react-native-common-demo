@@ -44,46 +44,46 @@ yarn android # or yarn ios
 
 ## Available Scripts
 
-| Command                                   | Description                                                                      |
-|-------------------------------------------|----------------------------------------------------------------------------------|
-| `yarn start`                              | Start the `Expo` development server with cache cleared.                          |
-| `yarn start:tunnel`                       | Start the `Expo` development server with tunnel mode.                            |
-| `yarn local:dev:activate`                 | Activate local development mode for `@lichens-innovation` packages.              |
-| `yarn android`                            | Build & run the `Expo` project on an `Android` device or emulator.               |
-| `yarn android:device`                     | Build & run the `Expo` project on a connected `Android` device.                  |
-| `yarn android:device:release`             | Build & run the release variant on a connected `Android` device.                 |
-| `yarn ios`                                | Build & run the `Expo` project on an `iOS` device or simulator.                  |
-| `yarn ios:device`                         | Build & run the `Expo` project on a connected `iOS` device.                      |
-| `yarn ios:device:release`                 | Build & run the release configuration on a connected `iOS` device.               |
-| `yarn lint`                               | Run linter to check for code style and formatting issues.                        |
-| `yarn format`                             | Run linter to automatically fix code style and formatting issues.                |
-| `yarn typecheck`                          | Run TypeScript type checking without emitting files.                             |
-| `yarn sitemap`                            | Generate sitemap for the application routes.                                     |
-| `yarn clean:prebuild`                     | Clean `Expo` prebuild files for all platforms.                                   |
-| `yarn clean:prebuild:ios`                 | Clean `Expo` prebuild files for `iOS`.                                           |
-| `yarn clean:prebuild:android`             | Clean `Expo` prebuild files for `Android`.                                       |
-| `yarn clean:pods`                         | Clean `iOS` Pods and reinstall them.                                             |
-| `yarn clean:node`                         | Remove `node_modules` and `yarn.lock` files.                                     |
-| `yarn expo:doctor`                        | Run `Expo`'s doctor command to diagnose issues in the project.                   |
-| `yarn expo:upgrade:check`                 | Check for available `Expo` dependency updates.                                   |
-| `yarn expo:upgrade:latest`                | Upgrade `Expo` SDK to the latest version.                                        |
-| `yarn expo:install:fix`                   | Update `Expo` dependencies to the latest versions.                               |
-| `yarn expo:build:ios`                     | Build `iOS` app and deploy it on `iOS` Simulator.                                |
-| `yarn expo:build:android`                 | Build `Android` app and deploy it on `Android` Emulator.                         |
-| `yarn eas:whoami`                         | Display the currently logged in `EAS` account.                                   |
-| `yarn eas:build:ios:development`          | Build `iOS` development using `EAS`.                                             |
-| `yarn eas:build:ios:development:simulator`| Build `iOS` development simulator using `EAS`.                                   |
-| `yarn eas:build:android:development`      | Build `Android` development using `EAS`.                                         |
-| `yarn eas:build:android:preview`          | Build `Android` preview using `EAS`.                                             |
-| `yarn eas:run:ios`                        | Run the latest `EAS iOS` build.                                                  |
-| `yarn eas:run:android`                    | Run the latest `EAS Android` build.                                              |
-| `yarn generate:version`                   | Generate version information (see `src/constants.ts`).                           |
-| `yarn postinstall`                        | Run `patch-package` and generate licenses file after dependencies are installed. |
-| `yarn prepare`                            | Setup `Husky` git hooks.                                                         |
-| `yarn storybook`                          | Start `Storybook` development server.                                            |
-| `yarn storybook:ios`                      | Run `Storybook` on `iOS` device or simulator.                                    |
-| `yarn storybook:android`                  | Run `Storybook` on `Android` device or emulator.                                 |
-| `yarn storybook-generate`                 | Generate `Storybook` stories index.                                              |
+| Command                                    | Description                                                                      |
+|--------------------------------------------|----------------------------------------------------------------------------------|
+| `yarn start`                               | Start the `Expo` development server with cache cleared.                          |
+| `yarn start:tunnel`                        | Start the `Expo` development server with tunnel mode.                            |
+| `yarn local:dev:activate`                  | Activate local development mode for `@lichens-innovation` packages.              |
+| `yarn android`                             | Build & run the `Expo` project on an `Android` device or emulator.               |
+| `yarn android:device`                      | Build & run the `Expo` project on a connected `Android` device.                  |
+| `yarn android:device:release`              | Build & run the release variant on a connected `Android` device.                 |
+| `yarn ios`                                 | Build & run the `Expo` project on an `iOS` device or simulator.                  |
+| `yarn ios:device`                          | Build & run the `Expo` project on a connected `iOS` device.                      |
+| `yarn ios:device:release`                  | Build & run the release configuration on a connected `iOS` device.               |
+| `yarn lint`                                | Run linter to check for code style and formatting issues.                        |
+| `yarn format`                              | Run linter to automatically fix code style and formatting issues.                |
+| `yarn typecheck`                           | Run TypeScript type checking without emitting files.                             |
+| `yarn sitemap`                             | Generate sitemap for the application routes.                                     |
+| `yarn clean:prebuild`                      | Clean `Expo` prebuild files for all platforms.                                   |
+| `yarn clean:prebuild:ios`                  | Clean `Expo` prebuild files for `iOS`.                                           |
+| `yarn clean:prebuild:android`              | Clean `Expo` prebuild files for `Android`.                                       |
+| `yarn clean:pods`                          | Clean `iOS` Pods and reinstall them.                                             |
+| `yarn clean:node`                          | Remove `node_modules` and `yarn.lock` files.                                     |
+| `yarn expo:doctor`                         | Run `Expo`'s doctor command to diagnose issues in the project.                   |
+| `yarn expo:upgrade:check`                  | Check for available `Expo` dependency updates.                                   |
+| `yarn expo:upgrade:latest`                 | Upgrade `Expo` SDK to the latest version.                                        |
+| `yarn expo:install:fix`                    | Update `Expo` dependencies to the latest versions.                               |
+| `yarn expo:build:ios`                      | Build `iOS` app and deploy it on `iOS` Simulator.                                |
+| `yarn expo:build:android`                  | Build `Android` app and deploy it on `Android` Emulator.                         |
+| `yarn eas:whoami`                          | Display the currently logged in `EAS` account.                                   |
+| `yarn eas:build:ios:development`           | Build `iOS` development using `EAS`.                                             |
+| `yarn eas:build:ios:development:simulator` | Build `iOS` development simulator using `EAS`.                                   |
+| `yarn eas:build:android:development`       | Build `Android` development using `EAS`.                                         |
+| `yarn eas:build:android:preview`           | Build `Android` preview using `EAS`.                                             |
+| `yarn eas:run:ios`                         | Run the latest `EAS iOS` build.                                                  |
+| `yarn eas:run:android`                     | Run the latest `EAS Android` build.                                              |
+| `yarn generate:version`                    | Generate version information (see `src/constants.ts`).                           |
+| `yarn postinstall`                         | Run `patch-package` and generate licenses file after dependencies are installed. |
+| `yarn prepare`                             | Setup `Husky` git hooks.                                                         |
+| `yarn storybook:start`                     | Start `Storybook` development server.                                            |
+| `yarn storybook:ios`                       | Run `Storybook` on `iOS` device or simulator.                                    |
+| `yarn storybook:android`                   | Run `Storybook` on `Android` device or emulator.                                 |
+| `yarn storybook-generate`                  | Generate `Storybook` stories index.                                              |
 
 ## Project Coding Guidelines
 
