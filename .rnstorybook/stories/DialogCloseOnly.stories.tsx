@@ -5,25 +5,6 @@ import { View, StyleSheet } from 'react-native';
 import { Button } from 'react-native-paper';
 import Markdown from 'react-native-markdown-display';
 
-const notes = `
-## DialogCloseOnly Component
-
-A simple dialog component with only a close button.
-
-### Props
-- \`icon\`: Optional icon to display at the top of the dialog
-- \`title\`: Optional title ReactNode
-- \`content\`: Optional content ReactNode
-- \`onClose\`: Callback function when the dialog is closed
-- \`isVisible\`: Boolean to control dialog visibility
-
-### Features
-- Uses React Native Paper's Dialog component
-- Automatically styled with consistent width
-- Wrapped in a Portal for proper z-index handling
-- Close button is translated via i18n
-`.trim();
-
 const DialogCloseOnlyDemo = () => {
   const [isVisibleWithIcon, setIsVisibleWithIcon] = useState(false);
   const [isVisibleWithoutIcon, setIsVisibleWithoutIcon] = useState(false);
@@ -46,7 +27,7 @@ const DialogCloseOnlyDemo = () => {
         title="Information"
         content={
           <Markdown style={{ text: { color: theme.colors.primary } }}>
-            {notes}
+            {meta.parameters?.notes}
           </Markdown>
         }
       />
@@ -57,7 +38,7 @@ const DialogCloseOnlyDemo = () => {
         title="Information"
         content={
           <Markdown style={{ text: { color: theme.colors.primary } }}>
-            {notes}
+            {meta.parameters?.notes}
           </Markdown>
         }
       />
@@ -78,7 +59,23 @@ const meta = {
   title: 'Components/DialogCloseOnly',
   component: DialogCloseOnlyDemo,
   tags: ['autodocs'],
-  parameters: { notes },
+  parameters: { notes: `
+DialogCloseOnly Component
+A simple dialog component with only a close button.
+
+Props:
+- \`icon\`: Optional icon to display at the top of the dialog
+- \`title\`: Optional title ReactNode
+- \`content\`: Optional content ReactNode
+- \`onClose\`: Callback function when the dialog is closed
+- \`isVisible\`: Boolean to control dialog visibility
+
+Features:
+- Uses React Native Paper's Dialog component
+- Automatically styled with consistent width
+- Wrapped in a Portal for proper z-index handling
+- Close button is translated via i18n
+`},
 } satisfies Meta<typeof DialogCloseOnlyDemo>;
 
 export default meta;

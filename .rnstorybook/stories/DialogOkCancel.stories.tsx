@@ -4,26 +4,6 @@ import { DialogOkCancel, useAppTheme } from '@lichens-innovation/react-native-co
 import { View, StyleSheet } from 'react-native';
 import { Button, Text } from 'react-native-paper';
 
-const notes = `
-## DialogOkCancel Component
-
-A confirmation dialog component with OK and Cancel buttons.
-
-### Props
-- \`icon\`: Optional icon to display at the top of the dialog
-- \`title\`: Optional title ReactNode
-- \`description\`: Optional description ReactNode
-- \`onOk\`: Callback function when the OK button is pressed
-- \`onCancel\`: Callback function when the Cancel button is pressed
-- \`isVisible\`: Boolean to control dialog visibility
-
-### Features
-- Uses React Native Paper's Dialog component
-- Automatically styled with consistent width
-- Wrapped in a Portal for proper z-index handling
-- OK and Cancel buttons are translated via i18n
-`.trim();
-
 const DialogOkCancelDemo = () => {
   const [isVisibleWithIcon, setIsVisibleWithIcon] = useState(false);
   const [isVisibleWithoutIcon, setIsVisibleWithoutIcon] = useState(false);
@@ -95,7 +75,24 @@ const meta = {
   title: 'Components/DialogOkCancel',
   component: DialogOkCancelDemo,
   tags: ['autodocs'],
-  parameters: { notes },
+  parameters: { notes:`
+DialogOkCancel Component
+A confirmation dialog component with OK and Cancel buttons.
+
+Props:
+- \`icon\`: Optional icon to display at the top of the dialog
+- \`title\`: Optional title ReactNode
+- \`description\`: Optional description ReactNode
+- \`onOk\`: Callback function when the OK button is pressed
+- \`onCancel\`: Callback function when the Cancel button is pressed
+- \`isVisible\`: Boolean to control dialog visibility
+
+Features:
+- Uses React Native Paper's Dialog component
+- Automatically styled with consistent width
+- Wrapped in a Portal for proper z-index handling
+- OK and Cancel buttons are translated via i18n
+`},
 } satisfies Meta<typeof DialogOkCancelDemo>;
 
 export default meta;
