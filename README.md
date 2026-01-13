@@ -14,11 +14,10 @@ Table of Content
 
 - [RN Common Kitchen Sink App](#rn-common-kitchen-sink-app)
   - [Prerequisites](#prerequisites)
-  - [Installation Instructions](#installation-instructions)
+  - [Installing \& Running Storybook](#installing--running-storybook)
   - [Available Scripts](#available-scripts)
   - [Project Coding Guidelines](#project-coding-guidelines)
   - [Upgrade Expo SDK process](#upgrade-expo-sdk-process)
-  - [Usefull development commands](#usefull-development-commands)
   - [License](#license)
 
 
@@ -28,24 +27,27 @@ Table of Content
 - Yarn
 - React Native development environment setup (see [React Native documentation](https://reactnative.dev/docs/environment-setup))
 
-## Installation Instructions
+## Installing & Running Storybook
 
-In a terminal:
+In terminal 1:
 ```bash
 yarn install
-yarn start
+yarn storybook:start
 ```
 
-In another terminal:
+In terminal 2:
 ```bash
-yarn install
-yarn android # or yarn ios
+yarn storybook:ios # or yarn storybook:android
 ```
 
 ## Available Scripts
 
 | Command                                    | Description                                                                      |
 |--------------------------------------------|----------------------------------------------------------------------------------|
+| `yarn storybook:start`                     | Start `Storybook` development server.                                            |
+| `yarn storybook:ios`                       | Run `Storybook` on `iOS` device or simulator.                                    |
+| `yarn storybook:android`                   | Run `Storybook` on `Android` device or emulator.                                 |
+| `yarn storybook-generate`                  | Generate `Storybook` stories index.                                              |
 | `yarn start`                               | Start the `Expo` development server with cache cleared.                          |
 | `yarn start:tunnel`                        | Start the `Expo` development server with tunnel mode.                            |
 | `yarn local:dev:activate`                  | Activate local development mode for `@lichens-innovation` packages.              |
@@ -80,10 +82,6 @@ yarn android # or yarn ios
 | `yarn generate:version`                    | Generate version information (see `src/constants.ts`).                           |
 | `yarn postinstall`                         | Run `patch-package` and generate licenses file after dependencies are installed. |
 | `yarn prepare`                             | Setup `Husky` git hooks.                                                         |
-| `yarn storybook:start`                     | Start `Storybook` development server.                                            |
-| `yarn storybook:ios`                       | Run `Storybook` on `iOS` device or simulator.                                    |
-| `yarn storybook:android`                   | Run `Storybook` on `Android` device or emulator.                                 |
-| `yarn storybook-generate`                  | Generate `Storybook` stories index.                                              |
 
 ## Project Coding Guidelines
 
@@ -112,21 +110,6 @@ Adhering to established coding guidelines is essential for developing efficient,
 
 References:
 * [How to upgrade from Expo SDK X to Y](https://www.youtube.com/watch?v=HBPyP4OxVgs)
-
-## Usefull development commands
-
-* install an apk on a connected android device:
-```
-adb devices
-adb install build-1759350748158.apk
-```
-
-* Deactivate WiFi and Cellular Mode
-
-    xcrun simctl list devices
-    xcrun simctl status_bar 6A716C79-D944-4243-B92B-1D9027E18E4E override --wifiBars 0
-    xcrun simctl status_bar 6A716C79-D944-4243-B92B-1D9027E18E4E override --cellularBars 0
-    xcrun simctl status_bar 6A716C79-D944-4243-B92B-1D9027E18E4E clear
 
 ## License
 
