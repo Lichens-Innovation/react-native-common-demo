@@ -1,32 +1,16 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react-native';
+import { BottomSheetModal, BottomSheetScrollView } from '@gorhom/bottom-sheet';
 import {
-  useBottomSheetToggler,
+  DEFAULT_SHEET_SNAP_POINTS,
   DefaultBackdrop,
   DefaultSheetBackground,
-  DEFAULT_SHEET_SNAP_POINTS,
   useAppTheme,
+  useBottomSheetToggler,
 } from '@lichens-innovation/react-native-common';
-import { View, StyleSheet } from 'react-native';
-import { BottomSheetModal, BottomSheetScrollView } from '@gorhom/bottom-sheet';
-import { Button } from 'react-native-paper';
+import type { Meta, StoryObj } from '@storybook/react-native';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
 import Markdown from 'react-native-markdown-display';
-
-const notes = `
-## useBottomSheetToggler Hook
-
-A hook that provides utilities for controlling a BottomSheetModal.
-
-### Returns
-- \`bottomSheetModalRef\`: Ref to attach to the BottomSheetModal
-- \`showBottomSheet\`: Function to open the bottom sheet
-- \`hideBottomSheet\`: Function to close the bottom sheet
-- \`isBottomSheetOpen\`: Boolean indicating if the sheet is open
-
-### Features
-- Handles Android back button automatically
-- Provides state tracking for the sheet visibility
-`.trim();
+import { Button } from 'react-native-paper';
 
 const BottomSheetTogglerDemo = () => {
   const { bottomSheetModalRef, showBottomSheet } = useBottomSheetToggler();
@@ -51,7 +35,7 @@ const BottomSheetTogglerDemo = () => {
               text: { color: theme.colors.primary },
             }}
           >
-            {notes}
+            {meta.parameters?.notes}
           </Markdown>
         </BottomSheetScrollView>
       </BottomSheetModal>
@@ -72,7 +56,23 @@ const meta = {
   title: 'Hooks/useBottomSheetToggler',
   component: BottomSheetTogglerDemo,
   tags: ['autodocs'],
-  parameters: { notes },
+  parameters: {
+    notes: `
+useBottomSheetToggler Hook
+
+A hook that provides utilities for controlling a BottomSheetModal.
+
+Returns:
+- \`bottomSheetModalRef\`: Ref to attach to the BottomSheetModal
+- \`showBottomSheet\`: Function to open the bottom sheet
+- \`hideBottomSheet\`: Function to close the bottom sheet
+- \`isBottomSheetOpen\`: Boolean indicating if the sheet is open
+
+Features:
+- Handles Android back button automatically
+- Provides state tracking for the sheet visibility
+`,
+  },
 } satisfies Meta<typeof BottomSheetTogglerDemo>;
 
 export default meta;
