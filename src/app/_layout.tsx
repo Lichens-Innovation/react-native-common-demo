@@ -52,10 +52,7 @@ const RootLayout: FunctionComponent = observer(() => {
                         name="pdf-viewer"
                         options={{ presentation: 'modal', headerLeft: () => <HeaderBackButton /> }}
                       />
-                      <Stack.Screen
-                        name="storybook"
-                        options={{ presentation: 'modal', headerLeft: () => <HeaderBackButton /> }}
-                      />
+                      <Stack.Screen name="storybook" options={{ headerLeft: () => <HeaderBackButton /> }} />
                     </Stack>
                   </BottomSheetModalProvider>
                 </GestureHandlerRootView>

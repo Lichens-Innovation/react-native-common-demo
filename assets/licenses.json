@@ -30,28 +30,28 @@
         "path": "node_modules/eas-build-cache-provider/node_modules/@babel/code-frame",
         "licenseFile": "node_modules/eas-build-cache-provider/node_modules/@babel/code-frame/LICENSE"
     },
-    "@babel/code-frame@7.27.1": {
+    "@babel/code-frame@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/code-frame",
         "licenseFile": "node_modules/@babel/code-frame/LICENSE"
     },
-    "@babel/compat-data@7.28.5": {
+    "@babel/compat-data@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/compat-data",
         "licenseFile": "node_modules/@babel/compat-data/LICENSE"
     },
-    "@babel/core@7.28.5": {
+    "@babel/core@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/core",
         "licenseFile": "node_modules/@babel/core/LICENSE"
     },
-    "@babel/generator@7.28.5": {
+    "@babel/generator@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -65,14 +65,14 @@
         "path": "node_modules/@babel/helper-annotate-as-pure",
         "licenseFile": "node_modules/@babel/helper-annotate-as-pure/LICENSE"
     },
-    "@babel/helper-compilation-targets@7.27.2": {
+    "@babel/helper-compilation-targets@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/helper-compilation-targets",
         "licenseFile": "node_modules/@babel/helper-compilation-targets/LICENSE"
     },
-    "@babel/helper-create-class-features-plugin@7.28.5": {
+    "@babel/helper-create-class-features-plugin@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -106,14 +106,14 @@
         "path": "node_modules/@babel/helper-member-expression-to-functions",
         "licenseFile": "node_modules/@babel/helper-member-expression-to-functions/LICENSE"
     },
-    "@babel/helper-module-imports@7.27.1": {
+    "@babel/helper-module-imports@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/helper-module-imports",
         "licenseFile": "node_modules/@babel/helper-module-imports/LICENSE"
     },
-    "@babel/helper-module-transforms@7.28.3": {
+    "@babel/helper-module-transforms@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -127,7 +127,7 @@
         "path": "node_modules/@babel/helper-optimise-call-expression",
         "licenseFile": "node_modules/@babel/helper-optimise-call-expression/LICENSE"
     },
-    "@babel/helper-plugin-utils@7.27.1": {
+    "@babel/helper-plugin-utils@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -141,7 +141,7 @@
         "path": "node_modules/@babel/helper-remap-async-to-generator",
         "licenseFile": "node_modules/@babel/helper-remap-async-to-generator/LICENSE"
     },
-    "@babel/helper-replace-supers@7.27.1": {
+    "@babel/helper-replace-supers@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -176,14 +176,14 @@
         "path": "node_modules/@babel/helper-validator-option",
         "licenseFile": "node_modules/@babel/helper-validator-option/LICENSE"
     },
-    "@babel/helper-wrap-function@7.28.3": {
+    "@babel/helper-wrap-function@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/helper-wrap-function",
         "licenseFile": "node_modules/@babel/helper-wrap-function/LICENSE"
     },
-    "@babel/helpers@7.28.4": {
+    "@babel/helpers@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -197,14 +197,14 @@
         "path": "node_modules/@babel/highlight",
         "licenseFile": "node_modules/@babel/highlight/LICENSE"
     },
-    "@babel/parser@7.28.5": {
+    "@babel/parser@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/parser",
         "licenseFile": "node_modules/@babel/parser/LICENSE"
     },
-    "@babel/plugin-proposal-decorators@7.28.0": {
+    "@babel/plugin-proposal-decorators@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -250,7 +250,7 @@
         "path": "node_modules/@babel/plugin-syntax-class-static-block",
         "licenseFile": "node_modules/@babel/plugin-syntax-class-static-block/LICENSE"
     },
-    "@babel/plugin-syntax-decorators@7.27.1": {
+    "@babel/plugin-syntax-decorators@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -263,7 +263,7 @@
         "path": "node_modules/@babel/plugin-syntax-dynamic-import",
         "licenseFile": "node_modules/@babel/plugin-syntax-dynamic-import/LICENSE"
     },
-    "@babel/plugin-syntax-export-default-from@7.27.1": {
+    "@babel/plugin-syntax-export-default-from@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -276,14 +276,14 @@
         "path": "node_modules/@babel/plugin-syntax-export-namespace-from",
         "licenseFile": "node_modules/@babel/plugin-syntax-export-namespace-from/LICENSE"
     },
-    "@babel/plugin-syntax-flow@7.27.1": {
+    "@babel/plugin-syntax-flow@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/plugin-syntax-flow",
         "licenseFile": "node_modules/@babel/plugin-syntax-flow/LICENSE"
     },
-    "@babel/plugin-syntax-import-attributes@7.27.1": {
+    "@babel/plugin-syntax-import-attributes@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -302,7 +302,7 @@
         "path": "node_modules/@babel/plugin-syntax-json-strings",
         "licenseFile": "node_modules/@babel/plugin-syntax-json-strings/LICENSE"
     },
-    "@babel/plugin-syntax-jsx@7.27.1": {
+    "@babel/plugin-syntax-jsx@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -359,7 +359,7 @@
         "path": "node_modules/@babel/plugin-syntax-top-level-await",
         "licenseFile": "node_modules/@babel/plugin-syntax-top-level-await/LICENSE"
     },
-    "@babel/plugin-syntax-typescript@7.27.1": {
+    "@babel/plugin-syntax-typescript@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -373,49 +373,49 @@
         "path": "node_modules/@babel/plugin-transform-arrow-functions",
         "licenseFile": "node_modules/@babel/plugin-transform-arrow-functions/LICENSE"
     },
-    "@babel/plugin-transform-async-generator-functions@7.28.0": {
+    "@babel/plugin-transform-async-generator-functions@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/plugin-transform-async-generator-functions",
         "licenseFile": "node_modules/@babel/plugin-transform-async-generator-functions/LICENSE"
     },
-    "@babel/plugin-transform-async-to-generator@7.27.1": {
+    "@babel/plugin-transform-async-to-generator@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/plugin-transform-async-to-generator",
         "licenseFile": "node_modules/@babel/plugin-transform-async-to-generator/LICENSE"
     },
-    "@babel/plugin-transform-block-scoping@7.28.5": {
+    "@babel/plugin-transform-block-scoping@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/plugin-transform-block-scoping",
         "licenseFile": "node_modules/@babel/plugin-transform-block-scoping/LICENSE"
     },
-    "@babel/plugin-transform-class-properties@7.27.1": {
+    "@babel/plugin-transform-class-properties@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/plugin-transform-class-properties",
         "licenseFile": "node_modules/@babel/plugin-transform-class-properties/LICENSE"
     },
-    "@babel/plugin-transform-class-static-block@7.28.3": {
+    "@babel/plugin-transform-class-static-block@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/plugin-transform-class-static-block",
         "licenseFile": "node_modules/@babel/plugin-transform-class-static-block/LICENSE"
     },
-    "@babel/plugin-transform-classes@7.28.4": {
+    "@babel/plugin-transform-classes@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/plugin-transform-classes",
         "licenseFile": "node_modules/@babel/plugin-transform-classes/LICENSE"
     },
-    "@babel/plugin-transform-computed-properties@7.27.1": {
+    "@babel/plugin-transform-computed-properties@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -464,14 +464,14 @@
         "path": "node_modules/@babel/plugin-transform-literals",
         "licenseFile": "node_modules/@babel/plugin-transform-literals/LICENSE"
     },
-    "@babel/plugin-transform-logical-assignment-operators@7.28.5": {
+    "@babel/plugin-transform-logical-assignment-operators@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/plugin-transform-logical-assignment-operators",
         "licenseFile": "node_modules/@babel/plugin-transform-logical-assignment-operators/LICENSE"
     },
-    "@babel/plugin-transform-modules-commonjs@7.27.1": {
+    "@babel/plugin-transform-modules-commonjs@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -485,35 +485,35 @@
         "path": "node_modules/@babel/plugin-transform-named-capturing-groups-regex",
         "licenseFile": "node_modules/@babel/plugin-transform-named-capturing-groups-regex/LICENSE"
     },
-    "@babel/plugin-transform-nullish-coalescing-operator@7.27.1": {
+    "@babel/plugin-transform-nullish-coalescing-operator@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/plugin-transform-nullish-coalescing-operator",
         "licenseFile": "node_modules/@babel/plugin-transform-nullish-coalescing-operator/LICENSE"
     },
-    "@babel/plugin-transform-numeric-separator@7.27.1": {
+    "@babel/plugin-transform-numeric-separator@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/plugin-transform-numeric-separator",
         "licenseFile": "node_modules/@babel/plugin-transform-numeric-separator/LICENSE"
     },
-    "@babel/plugin-transform-object-rest-spread@7.28.4": {
+    "@babel/plugin-transform-object-rest-spread@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/plugin-transform-object-rest-spread",
         "licenseFile": "node_modules/@babel/plugin-transform-object-rest-spread/LICENSE"
     },
-    "@babel/plugin-transform-optional-catch-binding@7.27.1": {
+    "@babel/plugin-transform-optional-catch-binding@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/plugin-transform-optional-catch-binding",
         "licenseFile": "node_modules/@babel/plugin-transform-optional-catch-binding/LICENSE"
     },
-    "@babel/plugin-transform-optional-chaining@7.28.5": {
+    "@babel/plugin-transform-optional-chaining@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -527,14 +527,14 @@
         "path": "node_modules/@babel/plugin-transform-parameters",
         "licenseFile": "node_modules/@babel/plugin-transform-parameters/LICENSE"
     },
-    "@babel/plugin-transform-private-methods@7.27.1": {
+    "@babel/plugin-transform-private-methods@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/plugin-transform-private-methods",
         "licenseFile": "node_modules/@babel/plugin-transform-private-methods/LICENSE"
     },
-    "@babel/plugin-transform-private-property-in-object@7.27.1": {
+    "@babel/plugin-transform-private-property-in-object@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -569,7 +569,7 @@
         "path": "node_modules/@babel/plugin-transform-react-jsx-source",
         "licenseFile": "node_modules/@babel/plugin-transform-react-jsx-source/LICENSE"
     },
-    "@babel/plugin-transform-react-jsx@7.27.1": {
+    "@babel/plugin-transform-react-jsx@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -583,7 +583,7 @@
         "path": "node_modules/@babel/plugin-transform-react-pure-annotations",
         "licenseFile": "node_modules/@babel/plugin-transform-react-pure-annotations/LICENSE"
     },
-    "@babel/plugin-transform-regenerator@7.28.4": {
+    "@babel/plugin-transform-regenerator@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -604,7 +604,7 @@
         "path": "node_modules/@babel/plugin-transform-shorthand-properties",
         "licenseFile": "node_modules/@babel/plugin-transform-shorthand-properties/LICENSE"
     },
-    "@babel/plugin-transform-spread@7.27.1": {
+    "@babel/plugin-transform-spread@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -625,7 +625,7 @@
         "path": "node_modules/@babel/plugin-transform-template-literals",
         "licenseFile": "node_modules/@babel/plugin-transform-template-literals/LICENSE"
     },
-    "@babel/plugin-transform-typescript@7.28.5": {
+    "@babel/plugin-transform-typescript@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -653,28 +653,28 @@
         "path": "node_modules/@babel/preset-typescript",
         "licenseFile": "node_modules/@babel/preset-typescript/LICENSE"
     },
-    "@babel/runtime@7.28.4": {
+    "@babel/runtime@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/runtime",
         "licenseFile": "node_modules/@babel/runtime/LICENSE"
     },
-    "@babel/template@7.27.2": {
+    "@babel/template@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/template",
         "licenseFile": "node_modules/@babel/template/LICENSE"
     },
-    "@babel/traverse@7.28.5": {
+    "@babel/traverse@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
         "path": "node_modules/@babel/traverse",
         "licenseFile": "node_modules/@babel/traverse/LICENSE"
     },
-    "@babel/types@7.28.5": {
+    "@babel/types@7.28.6": {
         "licenses": "MIT",
         "repository": "https://github.com/babel/babel",
         "publisher": "The Babel Team",
@@ -1107,6 +1107,12 @@
         "path": "node_modules/@expo/xcpretty",
         "licenseFile": "node_modules/@expo/xcpretty/README.md"
     },
+    "@faker-js/faker@10.2.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/faker-js/faker",
+        "path": "node_modules/@faker-js/faker",
+        "licenseFile": "node_modules/@faker-js/faker/LICENSE"
+    },
     "@gorhom/bottom-sheet@5.2.8": {
         "licenses": "MIT",
         "repository": "https://github.com/gorhom/react-native-bottom-sheet",
@@ -1309,14 +1315,21 @@
         "path": "node_modules/@legendapp/list",
         "licenseFile": "node_modules/@legendapp/list/LICENSE"
     },
-    "@lichens-innovation/react-native-common@2.11.0": {
-        "licenses": "Custom: https://img.shields.io/badge/readme",
+    "@lichens-innovation/react-native-common@2.12.0": {
+        "licenses": "MIT*",
         "repository": "https://github.com/Lichens-Innovation/react-native-common",
         "publisher": "Lichens Innovation",
         "path": "node_modules/@lichens-innovation/react-native-common",
-        "licenseFile": "node_modules/@lichens-innovation/react-native-common/README.md"
+        "licenseFile": "node_modules/@lichens-innovation/react-native-common/LICENSE"
     },
-    "@lichens-innovation/ts-common@1.5.0": {
+    "@lichens-innovation/ts-common@1.6.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/Lichens-Innovation/ts-common",
+        "publisher": "Lichens Innovation",
+        "path": "node_modules/@lichens-innovation/react-native-common/node_modules/@lichens-innovation/ts-common",
+        "licenseFile": "node_modules/@lichens-innovation/react-native-common/node_modules/@lichens-innovation/ts-common/LICENSE"
+    },
+    "@lichens-innovation/ts-common@1.6.2": {
         "licenses": "MIT",
         "repository": "https://github.com/Lichens-Innovation/ts-common",
         "publisher": "Lichens Innovation",
@@ -1610,7 +1623,7 @@
         "path": "node_modules/@react-native/virtualized-lists",
         "licenseFile": "node_modules/@react-native/virtualized-lists/README.md"
     },
-    "@react-navigation/bottom-tabs@7.9.0": {
+    "@react-navigation/bottom-tabs@7.9.1": {
         "licenses": "MIT",
         "repository": "https://github.com/react-navigation/react-navigation",
         "path": "node_modules/@react-navigation/bottom-tabs",
@@ -1622,25 +1635,25 @@
         "path": "node_modules/@react-navigation/core",
         "licenseFile": "node_modules/@react-navigation/core/LICENSE"
     },
-    "@react-navigation/drawer@7.7.10": {
+    "@react-navigation/drawer@7.7.11": {
         "licenses": "MIT",
         "repository": "https://github.com/react-navigation/react-navigation",
         "path": "node_modules/@react-navigation/drawer",
         "licenseFile": "node_modules/@react-navigation/drawer/LICENSE"
     },
-    "@react-navigation/elements@2.9.3": {
+    "@react-navigation/elements@2.9.4": {
         "licenses": "MIT",
         "repository": "https://github.com/react-navigation/react-navigation",
         "path": "node_modules/@react-navigation/elements",
         "licenseFile": "node_modules/@react-navigation/elements/LICENSE"
     },
-    "@react-navigation/native-stack@7.9.0": {
+    "@react-navigation/native-stack@7.9.1": {
         "licenses": "MIT",
         "repository": "https://github.com/react-navigation/react-navigation",
         "path": "node_modules/@react-navigation/native-stack",
         "licenseFile": "node_modules/@react-navigation/native-stack/LICENSE"
     },
-    "@react-navigation/native@7.1.26": {
+    "@react-navigation/native@7.1.27": {
         "licenses": "MIT",
         "repository": "https://github.com/react-navigation/react-navigation",
         "path": "node_modules/@react-navigation/native",
@@ -1966,7 +1979,7 @@
         "path": "node_modules/@types/json5",
         "licenseFile": "node_modules/@types/json5/README.md"
     },
-    "@types/node@25.0.6": {
+    "@types/node@25.0.8": {
         "licenses": "MIT",
         "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
         "path": "node_modules/@types/node",
@@ -2020,61 +2033,61 @@
         "path": "node_modules/@types/yargs",
         "licenseFile": "node_modules/@types/yargs/LICENSE"
     },
-    "@typescript-eslint/eslint-plugin@8.52.0": {
+    "@typescript-eslint/eslint-plugin@8.53.0": {
         "licenses": "MIT",
         "repository": "https://github.com/typescript-eslint/typescript-eslint",
         "path": "node_modules/@typescript-eslint/eslint-plugin",
         "licenseFile": "node_modules/@typescript-eslint/eslint-plugin/LICENSE"
     },
-    "@typescript-eslint/parser@8.52.0": {
+    "@typescript-eslint/parser@8.53.0": {
         "licenses": "MIT",
         "repository": "https://github.com/typescript-eslint/typescript-eslint",
         "path": "node_modules/@typescript-eslint/parser",
         "licenseFile": "node_modules/@typescript-eslint/parser/LICENSE"
     },
-    "@typescript-eslint/project-service@8.52.0": {
+    "@typescript-eslint/project-service@8.53.0": {
         "licenses": "MIT",
         "repository": "https://github.com/typescript-eslint/typescript-eslint",
         "path": "node_modules/@typescript-eslint/project-service",
         "licenseFile": "node_modules/@typescript-eslint/project-service/LICENSE"
     },
-    "@typescript-eslint/scope-manager@8.52.0": {
+    "@typescript-eslint/scope-manager@8.53.0": {
         "licenses": "MIT",
         "repository": "https://github.com/typescript-eslint/typescript-eslint",
         "path": "node_modules/@typescript-eslint/scope-manager",
         "licenseFile": "node_modules/@typescript-eslint/scope-manager/LICENSE"
     },
-    "@typescript-eslint/tsconfig-utils@8.52.0": {
+    "@typescript-eslint/tsconfig-utils@8.53.0": {
         "licenses": "MIT",
         "repository": "https://github.com/typescript-eslint/typescript-eslint",
         "path": "node_modules/@typescript-eslint/tsconfig-utils",
         "licenseFile": "node_modules/@typescript-eslint/tsconfig-utils/LICENSE"
     },
-    "@typescript-eslint/type-utils@8.52.0": {
+    "@typescript-eslint/type-utils@8.53.0": {
         "licenses": "MIT",
         "repository": "https://github.com/typescript-eslint/typescript-eslint",
         "path": "node_modules/@typescript-eslint/type-utils",
         "licenseFile": "node_modules/@typescript-eslint/type-utils/LICENSE"
     },
-    "@typescript-eslint/types@8.52.0": {
+    "@typescript-eslint/types@8.53.0": {
         "licenses": "MIT",
         "repository": "https://github.com/typescript-eslint/typescript-eslint",
         "path": "node_modules/@typescript-eslint/types",
         "licenseFile": "node_modules/@typescript-eslint/types/LICENSE"
     },
-    "@typescript-eslint/typescript-estree@8.52.0": {
+    "@typescript-eslint/typescript-estree@8.53.0": {
         "licenses": "MIT",
         "repository": "https://github.com/typescript-eslint/typescript-eslint",
         "path": "node_modules/@typescript-eslint/typescript-estree",
         "licenseFile": "node_modules/@typescript-eslint/typescript-estree/LICENSE"
     },
-    "@typescript-eslint/utils@8.52.0": {
+    "@typescript-eslint/utils@8.53.0": {
         "licenses": "MIT",
         "repository": "https://github.com/typescript-eslint/typescript-eslint",
         "path": "node_modules/@typescript-eslint/utils",
         "licenseFile": "node_modules/@typescript-eslint/utils/LICENSE"
     },
-    "@typescript-eslint/visitor-keys@8.52.0": {
+    "@typescript-eslint/visitor-keys@8.53.0": {
         "licenses": "MIT",
         "repository": "https://github.com/typescript-eslint/typescript-eslint",
         "path": "node_modules/@typescript-eslint/visitor-keys",
@@ -3363,8 +3376,8 @@
     "date-fns@3.6.0": {
         "licenses": "MIT",
         "repository": "https://github.com/date-fns/date-fns",
-        "path": "node_modules/@lichens-innovation/ts-common/node_modules/date-fns",
-        "licenseFile": "node_modules/@lichens-innovation/ts-common/node_modules/date-fns/LICENSE.md"
+        "path": "node_modules/@lichens-innovation/react-native-common/node_modules/@lichens-innovation/ts-common/node_modules/date-fns",
+        "licenseFile": "node_modules/@lichens-innovation/react-native-common/node_modules/@lichens-innovation/ts-common/node_modules/date-fns/LICENSE.md"
     },
     "date-fns@4.1.0": {
         "licenses": "MIT",
@@ -3951,7 +3964,7 @@
         "path": "node_modules/eslint-plugin-import",
         "licenseFile": "node_modules/eslint-plugin-import/LICENSE"
     },
-    "eslint-plugin-n@17.23.1": {
+    "eslint-plugin-n@17.23.2": {
         "licenses": "MIT",
         "repository": "https://github.com/eslint-community/eslint-plugin-n",
         "publisher": "Toru Nagashima",
@@ -7366,7 +7379,7 @@
         "path": "node_modules/react-freeze",
         "licenseFile": "node_modules/react-freeze/LICENSE"
     },
-    "react-hook-form@7.71.0": {
+    "react-hook-form@7.71.1": {
         "licenses": "MIT",
         "repository": "https://github.com/react-hook-form/react-hook-form",
         "publisher": "Beier",
@@ -7374,7 +7387,7 @@
         "path": "node_modules/react-hook-form",
         "licenseFile": "node_modules/react-hook-form/LICENSE"
     },
-    "react-i18next@16.5.2": {
+    "react-i18next@16.5.3": {
         "licenses": "MIT",
         "repository": "https://github.com/i18next/react-i18next",
         "publisher": "Jan Mühlemann",

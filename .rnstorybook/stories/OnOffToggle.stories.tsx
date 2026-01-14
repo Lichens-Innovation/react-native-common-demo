@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react-native';
 import { OnOffToggle } from '@lichens-innovation/react-native-common';
+import type { Meta, StoryObj } from '@storybook/react-native';
+import React, { useState } from 'react';
 import { View } from 'react-native';
+import { Text } from 'react-native-paper';
 
 // Wrapper component to handle state for interactive stories
 const OnOffToggleWithState = ({ initialValue = false }: { initialValue?: boolean }) => {
   const [isOn, setIsOn] = useState(initialValue);
   return (
-    <View style={{ margin: 16, width: 200 }}>
+    <View style={{ width: 200 }}>
       <OnOffToggle isOn={isOn} onValueChange={setIsOn} />
+
+      <Text variant="bodyMedium" style={{ textAlign: 'center' }}>{isOn ? 'ON' : 'OFF'}</Text>
     </View>
   );
 };
