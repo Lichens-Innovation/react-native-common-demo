@@ -1,36 +1,26 @@
-import { TabBarIcon, useAppTheme } from '@lichens-innovation/react-native-common';
-import { Tabs } from 'expo-router';
+import { OrientationAwareTabsLayout, TabItem } from '@lichens-innovation/react-native-common';
 import { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ScreenIconProps } from '~/types/native-screens';
 
 const TabLayout: FunctionComponent = () => {
   const { t } = useTranslation();
-  const theme = useAppTheme();
 
-  return (
-    <Tabs
-      screenOptions={{
-        headerShown: false,
-        tabBarActiveTintColor: theme.colors.primary,
-      }}
-    >
-      <Tabs.Screen
-        name="index"
-        options={{
-          tabBarLabel: t('app:rag.title'),
-          tabBarIcon: ({ color }: ScreenIconProps) => <TabBarIcon name="robot-outline" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="about"
-        options={{
-          tabBarLabel: t('app:about.title'),
-          tabBarIcon: ({ color }: ScreenIconProps) => <TabBarIcon name="information-outline" color={color} />,
-        }}
-      />
-    </Tabs>
-  );
+  const tabs: TabItem[] = [
+    {
+      name: 'index',
+      href: '/',
+      title: t('app:rag.title'),
+      icon: 'robot-outline',
+    },
+    {
+      name: 'about',
+      href: '/(drawer)/(home)/about',
+      title: t('app:about.title'),
+      icon: 'information-outline',
+    },
+  ];
+
+  return <OrientationAwareTabsLayout tabs={tabs} />;
 };
 
 export default TabLayout;
