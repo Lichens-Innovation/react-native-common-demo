@@ -16,6 +16,9 @@ Table of Content
   - [Prerequisites](#prerequisites)
   - [Installing \& Running Storybook](#installing--running-storybook)
   - [Available Scripts](#available-scripts)
+  - [Adding a new component](#adding-a-new-component)
+    - [Inside the `react-native-common` project](#inside-the-react-native-common-project)
+    - [Inside the `react-native-common-demo` project](#inside-the-react-native-common-demo-project)
   - [Project Coding Guidelines](#project-coding-guidelines)
   - [Upgrade Expo SDK process](#upgrade-expo-sdk-process)
   - [License](#license)
@@ -82,6 +85,20 @@ yarn storybook:ios # or yarn storybook:android
 | `yarn generate:version`                    | Generate version information (see `src/constants.ts`).                           |
 | `yarn postinstall`                         | Run `patch-package` and generate licenses file after dependencies are installed. |
 | `yarn prepare`                             | Setup `Husky` git hooks.                                                         |
+
+## Adding a new component
+
+### Inside the `react-native-common` project
+
+1. create the new component and export it by updating the barrel `index.ts` file(s)
+2. run `yarn watch:for:rn-common-demo` to transpile and sync into `node_modules` folder of the demo project
+
+### Inside the `react-native-common-demo` project
+
+1. create the story for the component
+2. run `yarn storybook:start` on one terminal
+3. run `yarn storybook:ios` on another terminal
+4. create a recording and link the animated gif inside `catalog.md` of `react-native-common`
 
 ## Project Coding Guidelines
 

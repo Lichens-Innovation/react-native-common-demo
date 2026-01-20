@@ -26,7 +26,7 @@ const BottomContent = () => {
 };
 
 const meta = {
-  title: 'Components/VerticalResizableSplitView',
+  title: 'Layouts/VerticalResizableSplitView',
   component: VerticalResizableSplitView,
   tags: ['autodocs'],
 } satisfies Meta<typeof VerticalResizableSplitView>;

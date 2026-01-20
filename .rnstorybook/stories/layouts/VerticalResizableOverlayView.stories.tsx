@@ -22,7 +22,7 @@ const BottomContent = () => {
 };
 
 const meta = {
-  title: 'Components/VerticalResizableOverlayView',
+  title: 'Layouts/VerticalResizableOverlayView',
   component: ResizableOverlayView,
   tags: ['autodocs'],
 } satisfies Meta<typeof ResizableOverlayView>;

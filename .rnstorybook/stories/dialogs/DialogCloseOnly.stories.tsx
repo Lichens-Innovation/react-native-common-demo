@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
 });
 
 const meta = {
-  title: 'Components/DialogCloseOnly',
+  title: 'Dialogs/DialogCloseOnly',
   component: DialogCloseOnlyDemo,
   tags: ['autodocs'],
   parameters: { notes: `

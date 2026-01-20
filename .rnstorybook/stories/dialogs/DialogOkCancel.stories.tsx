@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
 });
 
 const meta = {
-  title: 'Components/DialogOkCancel',
+  title: 'Dialogs/DialogOkCancel',
   component: DialogOkCancelDemo,
   tags: ['autodocs'],
   parameters: { notes:`
