@@ -1824,10 +1824,10 @@
   dependencies:
     use-sync-external-store "^1.5.0"
 
-"@lichens-innovation/react-native-common@^3.3.1":
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@lichens-innovation/react-native-common/-/react-native-common-3.3.1.tgz#c072ca3ea841f682d5734ecb82924af9180a3321"
-  integrity sha512-OvQlLeKbtGU/ykckUMrYnsiwEfZ3shpDyMka1BNts7sJrljwSIaUH6ibiqCMWvNXTmfW0Pd0AshZklGflmNqoQ==
+"@lichens-innovation/react-native-common@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@lichens-innovation/react-native-common/-/react-native-common-3.4.0.tgz#ae56b447f47e9c2e615a60e2dea75327a3f2f202"
+  integrity sha512-8pHZpMui7/J+LVstqewgoTyWWlhlBAjp8i9dqg/mcAjQsJxlzI8gxpIqXxPvE4sVxcflsidQddbOOsIFUvI2yg==
   dependencies:
     "@legendapp/list" "^2.0.9"
     "@lichens-innovation/ts-common" "^1.6.3"
