@@ -15,17 +15,19 @@ export const TextWidget: FunctionComponent<WidgetProps> = ({
   onFocus,
   label,
   hideLabel,
+  required,
   rawErrors,
   options,
 }) => {
   const theme = useAppTheme();
   const styles = useStyles();
   const hasError = Array.isArray(rawErrors) && rawErrors.length > 0;
+  const displayLabel = hideLabel ? undefined : (label ? `${label}${required ? ' *' : ''}` : undefined);
 
   return (
     <TextInput
       mode="outlined"
-      label={hideLabel ? undefined : label}
+      label={displayLabel}
       value={value ?? ''}
       placeholder={placeholder}
       disabled={disabled}
@@ -51,17 +53,19 @@ export const TextareaWidget: FunctionComponent<WidgetProps> = ({
   onFocus,
   label,
   hideLabel,
+  required,
   rawErrors,
   options,
 }) => {
   const theme = useAppTheme();
   const styles = useStyles();
   const hasError = Array.isArray(rawErrors) && rawErrors.length > 0;
+  const displayLabel = hideLabel ? undefined : (label ? `${label}${required ? ' *' : ''}` : undefined);
 
   return (
     <TextInput
       mode="outlined"
-      label={hideLabel ? undefined : label}
+      label={displayLabel}
       value={value ?? ''}
       placeholder={placeholder}
       disabled={disabled}
@@ -88,7 +92,7 @@ const useStyles = () => {
 
   return StyleSheet.create({
     input: {
-      marginVertical: theme.spacing(1),
+      marginVertical: theme.spacing(0.5),
     },
     textarea: {
       minHeight: 100,

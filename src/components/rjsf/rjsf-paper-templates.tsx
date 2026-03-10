@@ -54,19 +54,11 @@ const PaperObjectFieldTemplate = (props: ObjectFieldTemplateProps) => {
 };
 
 const PaperFieldTemplate = (props: FieldTemplateProps) => {
-  const { label, children, errors, required, displayLabel } = props;
-  const showLabel = displayLabel !== false && label;
+  const { children, errors } = props;
   const styles = useStyles();
 
   return (
     <View style={styles.field}>
-      {showLabel ? (
-        <Text variant="bodyMedium" style={styles.label}>
-          {label}
-          {required ? ' *' : ''}
-        </Text>
-      ) : null}
-
       {children}
 
       {errors}
@@ -168,10 +160,7 @@ const useStyles = () => {
       opacity: 0.8,
     },
     field: {
-      marginVertical: theme.spacing(1.5),
-    },
-    label: {
-      marginBottom: theme.spacing(1),
+      marginVertical: theme.spacing(0.5),
     },
     errorList: {
       marginTop: theme.spacing(1),
