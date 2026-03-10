@@ -687,14 +687,6 @@
         "path": "node_modules/@callstack/react-theme-provider",
         "licenseFile": "node_modules/@callstack/react-theme-provider/LICENSE"
     },
-    "@cfworker/json-schema@4.1.1": {
-        "licenses": "MIT",
-        "repository": "https://github.com/cfworker/cfworker",
-        "publisher": "Jeremy Danyow",
-        "email": "jdanyow@gmail.com",
-        "path": "node_modules/@cfworker/json-schema",
-        "licenseFile": "node_modules/@cfworker/json-schema/README.md"
-    },
     "@commitlint/cli@20.3.1": {
         "licenses": "MIT",
         "repository": "https://github.com/conventional-changelog/commitlint",
@@ -836,12 +828,6 @@
         "repository": "https://github.com/expo/config-plugins",
         "path": "node_modules/@config-plugins/react-native-blob-util",
         "licenseFile": "node_modules/@config-plugins/react-native-blob-util/README.md"
-    },
-    "@config-plugins/react-native-pdf@12.0.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/expo/config-plugins",
-        "path": "node_modules/@config-plugins/react-native-pdf",
-        "licenseFile": "node_modules/@config-plugins/react-native-pdf/README.md"
     },
     "@egjs/hammerjs@2.0.17": {
         "licenses": "MIT",
@@ -1127,13 +1113,6 @@
         "path": "node_modules/@gorhom/portal",
         "licenseFile": "node_modules/@gorhom/portal/LICENSE"
     },
-    "@huggingface/jinja@0.5.3": {
-        "licenses": "MIT",
-        "repository": "https://github.com/huggingface/huggingface.js",
-        "publisher": "Hugging Face",
-        "path": "node_modules/@huggingface/jinja",
-        "licenseFile": "node_modules/@huggingface/jinja/LICENSE"
-    },
     "@humanfs/core@0.19.1": {
         "licenses": "Apache-2.0",
         "repository": "https://github.com/humanwhocodes/humanfs",
@@ -1293,20 +1272,6 @@
         "path": "node_modules/@jridgewell/trace-mapping",
         "licenseFile": "node_modules/@jridgewell/trace-mapping/LICENSE"
     },
-    "@langchain/core@0.3.80": {
-        "licenses": "MIT",
-        "repository": "https://github.com/langchain-ai/langchainjs",
-        "publisher": "LangChain",
-        "path": "node_modules/@langchain/core",
-        "licenseFile": "node_modules/@langchain/core/LICENSE"
-    },
-    "@langchain/textsplitters@0.1.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/langchain-ai/langchainjs",
-        "publisher": "LangChain",
-        "path": "node_modules/@langchain/textsplitters",
-        "licenseFile": "node_modules/@langchain/textsplitters/LICENSE"
-    },
     "@legendapp/list@2.0.19": {
         "licenses": "MIT",
         "repository": "https://github.com/LegendApp/legend-list",
@@ -1315,7 +1280,7 @@
         "path": "node_modules/@legendapp/list",
         "licenseFile": "node_modules/@legendapp/list/LICENSE"
     },
-    "@lichens-innovation/react-native-common@3.4.0": {
+    "@lichens-innovation/react-native-common@3.9.0": {
         "licenses": "MIT*",
         "repository": "https://github.com/Lichens-Innovation/react-native-common",
         "publisher": "Lichens Innovation",
@@ -1541,11 +1506,6 @@
         "path": "node_modules/@react-native-community/slider",
         "licenseFile": "node_modules/@react-native-community/slider/README.md"
     },
-    "@react-native-rag/executorch@0.2.0": {
-        "licenses": "MIT",
-        "path": "node_modules/@react-native-rag/executorch",
-        "licenseFile": "node_modules/@react-native-rag/executorch/README.md"
-    },
     "@react-native/assets-registry@0.81.5": {
         "licenses": "MIT",
         "repository": "https://github.com/facebook/react-native",
@@ -1599,11 +1559,6 @@
         "repository": "https://github.com/facebook/react-native",
         "path": "node_modules/@react-native/js-polyfills",
         "licenseFile": "node_modules/@react-native/js-polyfills/README.md"
-    },
-    "@react-native/normalize-color@2.1.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/facebook/react-native",
-        "path": "node_modules/@react-native/normalize-color"
     },
     "@react-native/normalize-colors@0.74.89": {
         "licenses": "MIT",
@@ -1997,12 +1952,6 @@
         "path": "node_modules/@types/resolve",
         "licenseFile": "node_modules/@types/resolve/LICENSE"
     },
-    "@types/retry@0.12.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
-        "path": "node_modules/@types/retry",
-        "licenseFile": "node_modules/@types/retry/LICENSE"
-    },
     "@types/stack-utils@2.0.3": {
         "licenses": "MIT",
         "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
@@ -2014,12 +1963,6 @@
         "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
         "path": "node_modules/@types/unist",
         "licenseFile": "node_modules/@types/unist/LICENSE"
-    },
-    "@types/uuid@10.0.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
-        "path": "node_modules/@types/uuid",
-        "licenseFile": "node_modules/@types/uuid/LICENSE"
     },
     "@types/yargs-parser@21.0.3": {
         "licenses": "MIT",
@@ -2837,16 +2780,16 @@
         "repository": "https://github.com/sindresorhus/camelcase",
         "publisher": "Sindre Sorhus",
         "email": "sindresorhus@gmail.com",
-        "path": "node_modules/@istanbuljs/load-nyc-config/node_modules/camelcase",
-        "licenseFile": "node_modules/@istanbuljs/load-nyc-config/node_modules/camelcase/license"
+        "path": "node_modules/camelcase",
+        "licenseFile": "node_modules/camelcase/license"
     },
     "camelcase@6.3.0": {
         "licenses": "MIT",
         "repository": "https://github.com/sindresorhus/camelcase",
         "publisher": "Sindre Sorhus",
         "email": "sindresorhus@gmail.com",
-        "path": "node_modules/camelcase",
-        "licenseFile": "node_modules/camelcase/license"
+        "path": "node_modules/jest-validate/node_modules/camelcase",
+        "licenseFile": "node_modules/jest-validate/node_modules/camelcase/license"
     },
     "camelize@1.0.1": {
         "licenses": "MIT",
@@ -3167,13 +3110,6 @@
         "path": "node_modules/connect",
         "licenseFile": "node_modules/connect/LICENSE"
     },
-    "console-table-printer@2.15.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/console-table-printer/console-table-printer",
-        "publisher": "Nahiyan Kamal",
-        "path": "node_modules/console-table-printer",
-        "licenseFile": "node_modules/console-table-printer/LICENSE"
-    },
     "conventional-changelog-angular@7.0.0": {
         "licenses": "ISC",
         "repository": "https://github.com/conventional-changelog/conventional-changelog",
@@ -3255,13 +3191,6 @@
         "email": "andre@moxy.studio",
         "path": "node_modules/cross-spawn",
         "licenseFile": "node_modules/cross-spawn/LICENSE"
-    },
-    "crypto-js@4.2.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/brix/crypto-js",
-        "publisher": "Evan Vosberg",
-        "path": "node_modules/crypto-js",
-        "licenseFile": "node_modules/crypto-js/LICENSE"
     },
     "crypto-random-string@2.0.0": {
         "licenses": "MIT",
@@ -3414,14 +3343,6 @@
         "path": "node_modules/debug",
         "licenseFile": "node_modules/debug/LICENSE"
     },
-    "decamelize@1.2.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/sindresorhus/decamelize",
-        "publisher": "Sindre Sorhus",
-        "email": "sindresorhus@gmail.com",
-        "path": "node_modules/decamelize",
-        "licenseFile": "node_modules/decamelize/license"
-    },
     "decode-uri-component@0.2.2": {
         "licenses": "MIT",
         "repository": "https://github.com/SamVerschueren/decode-uri-component",
@@ -3551,12 +3472,6 @@
         "email": "doug@somethingdoug.com",
         "path": "node_modules/depd",
         "licenseFile": "node_modules/depd/LICENSE"
-    },
-    "deprecated-react-native-prop-types@2.3.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/facebookarchive/react-native-deprecated-modules",
-        "path": "node_modules/deprecated-react-native-prop-types",
-        "licenseFile": "node_modules/deprecated-react-native-prop-types/README.md"
     },
     "destroy@1.2.0": {
         "licenses": "MIT",
@@ -4095,13 +4010,6 @@
         "publisher": "Toru Nagashima",
         "path": "node_modules/event-target-shim",
         "licenseFile": "node_modules/event-target-shim/LICENSE"
-    },
-    "eventemitter3@4.0.7": {
-        "licenses": "MIT",
-        "repository": "https://github.com/primus/eventemitter3",
-        "publisher": "Arnout Kazemier",
-        "path": "node_modules/eventemitter3",
-        "licenseFile": "node_modules/eventemitter3/LICENSE"
     },
     "events@3.3.0": {
         "licenses": "MIT",
@@ -5746,12 +5654,6 @@
         "path": "node_modules/jiti",
         "licenseFile": "node_modules/jiti/LICENSE"
     },
-    "js-tiktoken@1.0.21": {
-        "licenses": "MIT",
-        "repository": "https://github.com/dqbd/tiktoken",
-        "path": "node_modules/js-tiktoken",
-        "licenseFile": "node_modules/js-tiktoken/README.md"
-    },
     "js-tokens@4.0.0": {
         "licenses": "MIT",
         "repository": "https://github.com/lydell/js-tokens",
@@ -5882,21 +5784,6 @@
         "path": "node_modules/jsonparse",
         "licenseFile": "node_modules/jsonparse/LICENSE"
     },
-    "jsonrepair@3.13.1": {
-        "licenses": "ISC",
-        "repository": "https://github.com/josdejong/jsonrepair",
-        "publisher": "Jos de Jong",
-        "path": "node_modules/jsonrepair",
-        "licenseFile": "node_modules/jsonrepair/LICENSE.md"
-    },
-    "jsonschema@1.5.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/tdegrunt/jsonschema",
-        "publisher": "Tom de Grunt",
-        "email": "tom@degrunt.nl",
-        "path": "node_modules/jsonschema",
-        "licenseFile": "node_modules/jsonschema/LICENSE"
-    },
     "jsx-ast-utils@3.3.5": {
         "licenses": "MIT",
         "repository": "https://github.com/jsx-eslint/jsx-ast-utils",
@@ -5934,13 +5821,6 @@
         "email": "phil@kitten.sh",
         "path": "node_modules/lan-network",
         "licenseFile": "node_modules/lan-network/LICENSE.md"
-    },
-    "langsmith@0.3.87": {
-        "licenses": "MIT",
-        "repository": "https://github.com/langchain-ai/langsmith-sdk",
-        "publisher": "LangChain",
-        "path": "node_modules/langsmith",
-        "licenseFile": "node_modules/langsmith/README.md"
     },
     "leven@3.1.0": {
         "licenses": "MIT",
@@ -6563,14 +6443,6 @@
         "path": "node_modules/ms",
         "licenseFile": "node_modules/ms/license.md"
     },
-    "mustache@4.2.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/janl/mustache.js",
-        "publisher": "mustache.js Authors",
-        "email": "http://github.com/janl/mustache.js",
-        "path": "node_modules/mustache",
-        "licenseFile": "node_modules/mustache/LICENSE"
-    },
     "mz@2.7.0": {
         "licenses": "MIT",
         "repository": "https://github.com/normalize/mz",
@@ -6854,14 +6726,6 @@
         "path": "node_modules/own-keys",
         "licenseFile": "node_modules/own-keys/LICENSE"
     },
-    "p-finally@1.0.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/sindresorhus/p-finally",
-        "publisher": "Sindre Sorhus",
-        "email": "sindresorhus@gmail.com",
-        "path": "node_modules/p-finally",
-        "licenseFile": "node_modules/p-finally/license"
-    },
     "p-limit@2.3.0": {
         "licenses": "MIT",
         "repository": "https://github.com/sindresorhus/p-limit",
@@ -6917,28 +6781,6 @@
         "email": "sindresorhus@gmail.com",
         "path": "node_modules/@commitlint/top-level/node_modules/p-locate",
         "licenseFile": "node_modules/@commitlint/top-level/node_modules/p-locate/license"
-    },
-    "p-queue@6.6.2": {
-        "licenses": "MIT",
-        "repository": "https://github.com/sindresorhus/p-queue",
-        "path": "node_modules/p-queue",
-        "licenseFile": "node_modules/p-queue/license"
-    },
-    "p-retry@4.6.2": {
-        "licenses": "MIT",
-        "repository": "https://github.com/sindresorhus/p-retry",
-        "publisher": "Sindre Sorhus",
-        "email": "sindresorhus@gmail.com",
-        "path": "node_modules/p-retry",
-        "licenseFile": "node_modules/p-retry/license"
-    },
-    "p-timeout@3.2.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/sindresorhus/p-timeout",
-        "publisher": "Sindre Sorhus",
-        "email": "sindresorhus@gmail.com",
-        "path": "node_modules/p-timeout",
-        "licenseFile": "node_modules/p-timeout/license"
     },
     "p-try@2.2.0": {
         "licenses": "MIT",
@@ -7442,22 +7284,6 @@
         "path": "node_modules/react-native-element-dropdown",
         "licenseFile": "node_modules/react-native-element-dropdown/LICENSE"
     },
-    "react-native-executorch@0.6.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/software-mansion/react-native-executorch",
-        "publisher": "Norbert Klockiewicz",
-        "email": "norbert.klockiewicz@swmansion.com",
-        "path": "node_modules/react-native-executorch",
-        "licenseFile": "node_modules/react-native-executorch/README.md"
-    },
-    "react-native-file-viewer-turbo@0.6.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/Vadko/react-native-file-viewer-turbo",
-        "publisher": "Vadko",
-        "email": "vpoglid@gmail.com",
-        "path": "node_modules/react-native-file-viewer-turbo",
-        "licenseFile": "node_modules/react-native-file-viewer-turbo/LICENSE"
-    },
     "react-native-fit-image@1.5.5": {
         "licenses": "Beerware",
         "repository": "https://github.com/huiseoul/react-native-fit-image",
@@ -7545,21 +7371,6 @@
         "repository": "https://github.com/callstack/react-native-paper",
         "path": "node_modules/react-native-paper",
         "licenseFile": "node_modules/react-native-paper/LICENSE.md"
-    },
-    "react-native-pdf@7.0.3": {
-        "licenses": "MIT",
-        "repository": "https://github.com/wonday/react-native-pdf",
-        "publisher": "Wonday",
-        "path": "node_modules/react-native-pdf",
-        "licenseFile": "node_modules/react-native-pdf/LICENSE"
-    },
-    "react-native-rag@0.2.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/software-mansion-labs/react-native-rag",
-        "publisher": "jakmro",
-        "email": "jakub.mroz@swmansion.com",
-        "path": "node_modules/react-native-rag",
-        "licenseFile": "node_modules/react-native-rag/LICENSE"
     },
     "react-native-reanimated@4.1.6": {
         "licenses": "MIT",
@@ -7956,14 +7767,6 @@
         "path": "node_modules/restore-cursor",
         "licenseFile": "node_modules/restore-cursor/license"
     },
-    "retry@0.13.1": {
-        "licenses": "MIT",
-        "repository": "https://github.com/tim-kos/node-retry",
-        "publisher": "Tim Koschützki",
-        "email": "tim@debuggable.com",
-        "path": "node_modules/retry",
-        "licenseFile": "node_modules/retry/License"
-    },
     "rimraf@3.0.2": {
         "licenses": "ISC",
         "repository": "https://github.com/isaacs/rimraf",
@@ -8268,14 +8071,6 @@
         "publisher": "Qix",
         "path": "node_modules/simple-swizzle",
         "licenseFile": "node_modules/simple-swizzle/LICENSE"
-    },
-    "simple-wcswidth@1.1.2": {
-        "licenses": "MIT",
-        "repository": "https://github.com/console-table-printer/simple-wcswidth",
-        "publisher": "Nahiyan Kamal",
-        "email": "noyanayihan@gmail.com",
-        "path": "node_modules/simple-wcswidth",
-        "licenseFile": "node_modules/simple-wcswidth/LICENSE"
     },
     "sisteransi@1.0.5": {
         "licenses": "MIT",
@@ -9173,17 +8968,11 @@
         "path": "node_modules/utils-merge",
         "licenseFile": "node_modules/utils-merge/LICENSE"
     },
-    "uuid@10.0.0": {
+    "uuid@7.0.3": {
         "licenses": "MIT",
         "repository": "https://github.com/uuidjs/uuid",
         "path": "node_modules/uuid",
         "licenseFile": "node_modules/uuid/LICENSE.md"
-    },
-    "uuid@7.0.3": {
-        "licenses": "MIT",
-        "repository": "https://github.com/uuidjs/uuid",
-        "path": "node_modules/xcode/node_modules/uuid",
-        "licenseFile": "node_modules/xcode/node_modules/uuid/LICENSE.md"
     },
     "validate-npm-package-license@3.0.4": {
         "licenses": "Apache-2.0",
@@ -9540,20 +9329,5 @@
         "email": "sindresorhus@gmail.com",
         "path": "node_modules/@commitlint/top-level/node_modules/yocto-queue",
         "licenseFile": "node_modules/@commitlint/top-level/node_modules/yocto-queue/license"
-    },
-    "zod-to-json-schema@3.25.1": {
-        "licenses": "ISC",
-        "repository": "https://github.com/StefanTerdell/zod-to-json-schema",
-        "publisher": "Stefan Terdell",
-        "path": "node_modules/zod-to-json-schema",
-        "licenseFile": "node_modules/zod-to-json-schema/LICENSE"
-    },
-    "zod@3.25.76": {
-        "licenses": "MIT",
-        "repository": "https://github.com/colinhacks/zod",
-        "publisher": "Colin McDonnell",
-        "email": "zod@colinhacks.com",
-        "path": "node_modules/zod",
-        "licenseFile": "node_modules/zod/LICENSE"
     }
 }

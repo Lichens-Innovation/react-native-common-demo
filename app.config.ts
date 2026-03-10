@@ -13,7 +13,6 @@ const config: ExpoConfig = {
   },
   plugins: [
     '@config-plugins/react-native-blob-util',
-    '@config-plugins/react-native-pdf',
     '@react-native-community/datetimepicker',
     'expo-font',
     'expo-router',
@@ -76,12 +75,6 @@ const config: ExpoConfig = {
         microphonePermission:
           "$(PRODUCT_NAME) a besoin d'accéder à votre microphone pour enregistrer des vidéos et notes audios lors des inspections. \\ This app needs access to your microphone to record videos and audio notes during inspections.",
         recordAudioAndroid: true,
-      },
-    ],
-    [
-      'react-native-file-viewer-turbo',
-      {
-        mimeTypes: ['*/*'],
       },
     ],
   ],
