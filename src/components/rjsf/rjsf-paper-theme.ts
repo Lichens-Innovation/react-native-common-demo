@@ -13,7 +13,7 @@ import {
   SelectWidget,
   TextWidget,
   TextareaWidget,
-} from './rjsf-paper-widgets';
+} from './widgets';
 
 export const RJSF_PAPER_THEME: ThemeProps = {
   widgets: {
