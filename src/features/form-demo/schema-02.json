@@ -1,0 +1,256 @@
+{
+  "id": "test-schema",
+  "version": "1.0.0",
+  "i18n": {
+    "fr": {
+      "schema": {
+        "type": "object",
+        "title": "",
+        "description": "",
+        "required": ["title"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Titre",
+            "default": ""
+          },
+          "description": {
+            "type": "string",
+            "title": "Description (zone de texte)",
+            "default": ""
+          },
+          "password": {
+            "type": "string",
+            "title": "Mot de passe",
+            "format": "password",
+            "default": ""
+          },
+          "birthDate": {
+            "type": "string",
+            "title": "Date de naissance",
+            "format": "date",
+            "default": ""
+          },
+          "appointment": {
+            "type": "string",
+            "title": "Date et heure",
+            "format": "date-time",
+            "default": ""
+          },
+          "choice": {
+            "type": "string",
+            "title": "Choix unique (enum → Select ou Radio)",
+            "anyOf": [
+              { "const": "option-a", "title": "Voici l'option A" },
+              { "const": "option-b", "title": "Voici l'option B" },
+              { "const": "option-c", "title": "Voici l'option C" }
+            ],
+            "default": "option-a"
+          },
+          "score": {
+            "type": "integer",
+            "title": "Score (curseur)",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 50
+          },
+          "quantity": {
+            "type": "number",
+            "title": "Quantité (nombre)",
+            "default": 0
+          },
+          "done": {
+            "type": "boolean",
+            "title": "Terminé ?",
+            "default": false
+          },
+          "priority": {
+            "type": "string",
+            "title": "Priorité (booléen en select)",
+            "anyOf": [
+              { "const": "low", "title": "Faible" },
+              { "const": "high", "title": "Élevé" }
+            ],
+            "default": "low"
+          },
+          "tags": {
+            "type": "array",
+            "title": "Tags (liste de chaînes, max 3)",
+            "items": { "type": "string" },
+            "maxItems": 3,
+            "default": []
+          },
+          "categories": {
+            "type": "array",
+            "title": "Catégories (cases à cocher, max 2)",
+            "items": {
+              "type": "string",
+              "anyOf": [
+                { "const": "tech", "title": "Technologie" },
+                { "const": "design", "title": "Design graphique" },
+                { "const": "business", "title": "Affaires" }
+              ]
+            },
+            "uniqueItems": true,
+            "maxItems": 2,
+            "default": []
+          },
+          "address": {
+            "type": "object",
+            "title": "Adresse (objet imbriqué)",
+            "properties": {
+              "street": { "type": "string", "title": "Rue", "default": "" },
+              "city": { "type": "string", "title": "Ville", "default": "" },
+              "zip": { "type": "string", "title": "Code postal", "default": "" }
+            },
+            "default": {}
+          }
+        }
+      },
+      "uiSchema": {
+        "title": { "ui:placeholder": "Ex. Mon document" },
+        "description": {
+          "ui:widget": "textarea",
+          "ui:options": { "rows": 4 },
+          "ui:placeholder": "Décrivez brièvement…"
+        },
+        "password": { "ui:placeholder": "••••••••" },
+        "birthDate": { "ui:placeholder": "JJ/MM/AAAA" },
+        "appointment": { "ui:placeholder": "JJ/MM/AAAA HH:MM" },
+        "choice": { "ui:widget": "radio" },
+        "score": { "ui:widget": "range" },
+        "categories": { "ui:widget": "checkboxes" },
+        "address": {
+          "street": { "ui:placeholder": "Ex. 12 rue de la Paix" },
+          "city": { "ui:placeholder": "Ex. Paris" },
+          "zip": { "ui:placeholder": "75000" }
+        }
+      }
+    },
+    "en": {
+      "schema": {
+        "type": "object",
+        "title": "",
+        "description": "",
+        "required": ["title"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title",
+            "default": ""
+          },
+          "description": {
+            "type": "string",
+            "title": "Description (textarea)",
+            "default": ""
+          },
+          "password": {
+            "type": "string",
+            "title": "Password",
+            "format": "password",
+            "default": ""
+          },
+          "birthDate": {
+            "type": "string",
+            "title": "Birth Date",
+            "format": "date",
+            "default": ""
+          },
+          "appointment": {
+            "type": "string",
+            "title": "Date and Time",
+            "format": "date-time",
+            "default": ""
+          },
+          "choice": {
+            "type": "string",
+            "title": "Single choice (enum → Select or Radio)",
+            "anyOf": [
+              { "const": "option-a", "title": "Here is option A" },
+              { "const": "option-b", "title": "Here is option B" },
+              { "const": "option-c", "title": "Here is option C" }
+            ],
+            "default": "option-a"
+          },
+          "score": {
+            "type": "integer",
+            "title": "Score (slider)",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 50
+          },
+          "quantity": {
+            "type": "number",
+            "title": "Quantity (number)",
+            "default": 0
+          },
+          "done": {
+            "type": "boolean",
+            "title": "Done?",
+            "default": false
+          },
+          "priority": {
+            "type": "string",
+            "title": "Priority (boolean as select)",
+            "anyOf": [
+              { "const": "low", "title": "Low" },
+              { "const": "high", "title": "High" }
+            ],
+            "default": "low"
+          },
+          "tags": {
+            "type": "array",
+            "title": "Tags (list of strings, max 3)",
+            "items": { "type": "string" },
+            "maxItems": 3,
+            "default": []
+          },
+          "categories": {
+            "type": "array",
+            "title": "Categories (checkboxes, max 2)",
+            "items": {
+              "type": "string",
+              "anyOf": [
+                { "const": "tech", "title": "Technology" },
+                { "const": "design", "title": "Graphic Design" },
+                { "const": "business", "title": "Business" }
+              ]
+            },
+            "uniqueItems": true,
+            "maxItems": 2,
+            "default": []
+          },
+          "address": {
+            "type": "object",
+            "title": "Address (nested object)",
+            "properties": {
+              "street": { "type": "string", "title": "Street", "default": "" },
+              "city": { "type": "string", "title": "City", "default": "" },
+              "zip": { "type": "string", "title": "Zip Code", "default": "" }
+            },
+            "default": {}
+          }
+        }
+      },
+      "uiSchema": {
+        "title": { "ui:placeholder": "e.g. My document" },
+        "description": {
+          "ui:widget": "textarea",
+          "ui:options": { "rows": 4 },
+          "ui:placeholder": "Describe briefly…"
+        },
+        "password": { "ui:placeholder": "••••••••" },
+        "birthDate": { "ui:placeholder": "MM/DD/YYYY" },
+        "appointment": { "ui:placeholder": "MM/DD/YYYY HH:MM" },
+        "choice": { "ui:widget": "radio" },
+        "score": { "ui:widget": "range" },
+        "categories": { "ui:widget": "checkboxes" },
+        "address": {
+          "street": { "ui:placeholder": "e.g. 123 Main St" },
+          "city": { "ui:placeholder": "e.g. New York" },
+          "zip": { "ui:placeholder": "10001" }
+        }
+      }
+    }
+  }
+}

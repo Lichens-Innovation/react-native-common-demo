@@ -1,21 +1,38 @@
-import { useAppTheme } from '@lichens-innovation/react-native-common';
-import { FunctionComponent } from 'react';
-import { useTranslation } from 'react-i18next';
-import { StyleSheet, View } from 'react-native';
-import { Text } from 'react-native-paper';
+import { logger, useAppTheme } from '@lichens-innovation/react-native-common';
+import type { FunctionComponent } from 'react';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
-const FormComplexPlaceholder: FunctionComponent = () => {
-  const { t } = useTranslation();
+import { RjsfPaperRenderer } from '~/components/rjsf/rjsf-paper-renderer';
+import type { MetaFormSchema } from '~/rjsf-tools/rjsf-i18n-types';
+import { useLocalizedForm } from '~/rjsf-tools/use-localized-form';
+
+import schema02 from '~/features/form-demo/schema-02.json';
+
+const complexMetaSchema = schema02 as unknown as MetaFormSchema;
+
+const FormComplexScreen: FunctionComponent = () => {
+  const { schema, uiSchema } = useLocalizedForm(complexMetaSchema);
   const styles = useStyles();
 
-  return (
-    <View style={styles.container}>
-      <Text variant="titleMedium">{t('app:formDemo.tabs.complex')}</Text>
+  const handleSubmit = (data: { formData?: Record<string, unknown> }) => {
+    logger.info('Complex form submitted', { formData: data.formData });
+  };
 
-      <Text variant="bodyMedium" style={styles.message}>
-        Coming soon
-      </Text>
-    </View>
+  const handleError = (errors: unknown) => {
+    logger.warn('Complex form errors', { errors });
+  };
+
+  return (
+    <ScrollView style={styles.scroll} contentContainerStyle={styles.content}>
+      <View style={styles.form}>
+        <RjsfPaperRenderer
+          schema={schema}
+          uiSchema={uiSchema}
+          onSubmit={handleSubmit}
+          onError={handleError}
+        />
+      </View>
+    </ScrollView>
   );
 };
 
@@ -23,17 +40,17 @@ const useStyles = () => {
   const theme = useAppTheme();
 
   return StyleSheet.create({
-    container: {
+    scroll: {
       flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: theme.spacing(4),
-      gap: theme.spacing(2),
     },
-    message: {
-      opacity: 0.8,
+    content: {
+      padding: theme.spacing(2),
+      paddingBottom: theme.spacing(4),
+    },
+    form: {
+      gap: theme.spacing(2),
     },
   });
 };
 
-export default FormComplexPlaceholder;
+export default FormComplexScreen;
