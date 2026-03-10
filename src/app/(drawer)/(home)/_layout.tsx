@@ -9,7 +9,7 @@ const TabLayout: FunctionComponent = () => {
     {
       name: 'index',
       href: '/',
-      title: t('app:rag.title'),
+      title: t('app:home.menuLabel'),
       icon: 'robot-outline',
     },
     {

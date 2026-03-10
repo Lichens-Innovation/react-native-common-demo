@@ -2,9 +2,6 @@
   "home": {
     "menuLabel": "Home"
   },
-  "rag": {
-    "title": "Assistant"
-  },
   "about": {
     "title": "About…",
     "menuLabel": "About…",
@@ -31,11 +28,5 @@
     "eventLogs": "Event Logs Files",
     "networkLogs": "Network Logs",
     "envVars": "ENV Vars"
-  },
-  "chat": {
-    "downloadModelTitle": "Downloading model {{name}}",
-    "downloadModelDescription": "This model will be downloaded to your device. It will be able to answer questions and perform offline interactions. Note that the download process will only be done once, the next time you open the app, the model will already be operational.",
-    "questionExample": "Compute the sum of  numbers: 16, 22, 38",
-    "welcomePrompt": "Hello, I am your offline assistant. How can I help you?"
   }
 }

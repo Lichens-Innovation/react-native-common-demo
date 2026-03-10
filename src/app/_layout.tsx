@@ -48,10 +48,6 @@ const RootLayout: FunctionComponent = observer(() => {
                     <Stack>
                       <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
                       <Stack.Screen name="error" options={{ headerShown: false }} />
-                      <Stack.Screen
-                        name="pdf-viewer"
-                        options={{ presentation: 'modal', headerLeft: () => <HeaderBackButton /> }}
-                      />
                       <Stack.Screen name="storybook" options={{ headerLeft: () => <HeaderBackButton /> }} />
                     </Stack>
                   </BottomSheetModalProvider>
