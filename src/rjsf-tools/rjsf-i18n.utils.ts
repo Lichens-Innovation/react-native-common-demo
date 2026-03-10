@@ -3,19 +3,19 @@ import { logger } from '@lichens-innovation/react-native-common';
 import { replaceStringParameters } from '@rjsf/utils';
 import i18next from 'i18next';
 
-/** Maps RJSF TranslatableString values to our i18n keys (rjsf namespace). */
+/** Maps RJSF TranslatableString values to our i18n keys (app.rjsf). */
 export const RJSF_STRING_TO_I18N_KEY: Record<string, string> = {
-  'Add Item': 'rjsf:addItem',
-  Add: 'rjsf:add',
-  Copy: 'rjsf:copy',
-  'Move down': 'rjsf:moveDown',
-  'Move up': 'rjsf:moveUp',
-  Remove: 'rjsf:remove',
-  'clear input': 'rjsf:clear',
-  '%1 Key': 'rjsf:keyLabel',
-  Yes: 'rjsf:yes',
-  No: 'rjsf:no',
-  Errors: 'rjsf:errors',
+  'Add Item': 'app:rjsf.addItem',
+  Add: 'app:rjsf.add',
+  Copy: 'app:rjsf.copy',
+  'Move down': 'app:rjsf.moveDown',
+  'Move up': 'app:rjsf.moveUp',
+  Remove: 'app:rjsf.remove',
+  'clear input': 'app:rjsf.clear',
+  '%1 Key': 'app:rjsf.keyLabel',
+  Yes: 'app:rjsf.yes',
+  No: 'app:rjsf.no',
+  Errors: 'app:rjsf.errors',
 };
 
 interface TranslateStringArgs {
