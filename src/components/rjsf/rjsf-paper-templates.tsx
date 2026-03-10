@@ -5,6 +5,7 @@ import type {
   ArrayFieldTemplateProps,
   FieldErrorProps,
   FieldHelpProps,
+  ErrorListProps,
 } from '@rjsf/utils';
 import { getDefaultRegistry } from '@rjsf/core';
 import type { ComponentType } from 'react';
@@ -20,9 +21,11 @@ import {
   RemoveButton,
   SubmitButton,
 } from './rjsf-paper-buttons';
-import { RjsfPaperErrorList } from './rjsf-paper-error-list';
 
 const defaultTemplates = getDefaultRegistry().templates;
+
+/** No-op error list: we omit the top "Erreurs" block; field-level errors still show per field. */
+const NoopErrorList = () => null;
 
 const PaperObjectFieldTemplate = (props: ObjectFieldTemplateProps) => {
   const { title, description, properties } = props;
@@ -51,7 +54,7 @@ const PaperObjectFieldTemplate = (props: ObjectFieldTemplateProps) => {
 };
 
 const PaperFieldTemplate = (props: FieldTemplateProps) => {
-  const { label, children, errors, rawErrors, required, displayLabel } = props;
+  const { label, children, errors, required, displayLabel } = props;
   const showLabel = displayLabel !== false && label;
   const styles = useStyles();
 
@@ -67,12 +70,6 @@ const PaperFieldTemplate = (props: FieldTemplateProps) => {
       {children}
 
       {errors}
-
-      {Array.isArray(rawErrors) && rawErrors.length > 0 ? (
-        <Text variant="bodySmall" style={styles.error}>
-          {rawErrors.join(', ')}
-        </Text>
-      ) : null}
     </View>
   );
 };
@@ -143,7 +140,7 @@ export const PAPER_TEMPLATES = {
   FieldErrorTemplate: PaperFieldErrorTemplate as ComponentType<FieldErrorProps>,
   FieldHelpTemplate: PaperFieldHelpTemplate as ComponentType<FieldHelpProps>,
   ArrayFieldTemplate: PaperArrayFieldTemplate as ComponentType<ArrayFieldTemplateProps>,
-  ErrorListTemplate: RjsfPaperErrorList,
+  ErrorListTemplate: NoopErrorList as ComponentType<ErrorListProps>,
   ButtonTemplates: {
     ...defaultTemplates.ButtonTemplates,
     AddButton,
@@ -175,10 +172,6 @@ const useStyles = () => {
     },
     label: {
       marginBottom: theme.spacing(1),
-    },
-    error: {
-      color: theme.colors.error,
-      marginTop: theme.spacing(1),
     },
     errorList: {
       marginTop: theme.spacing(1),

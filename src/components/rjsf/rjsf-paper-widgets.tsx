@@ -16,6 +16,7 @@ export const TextWidget: FunctionComponent<WidgetProps> = ({
   label,
   hideLabel,
   rawErrors,
+  options,
 }) => {
   const theme = useAppTheme();
   const styles = useStyles();
@@ -29,7 +30,7 @@ export const TextWidget: FunctionComponent<WidgetProps> = ({
       placeholder={placeholder}
       disabled={disabled}
       editable={!readonly}
-      onChangeText={(text) => onChange(text)}
+      onChangeText={(text) => onChange(text === '' ? options?.emptyValue : text)}
       onBlur={() => onBlur(id, value)}
       onFocus={() => onFocus(id, value)}
       error={hasError}
@@ -51,6 +52,7 @@ export const TextareaWidget: FunctionComponent<WidgetProps> = ({
   label,
   hideLabel,
   rawErrors,
+  options,
 }) => {
   const theme = useAppTheme();
   const styles = useStyles();
@@ -66,7 +68,7 @@ export const TextareaWidget: FunctionComponent<WidgetProps> = ({
       editable={!readonly}
       multiline
       numberOfLines={4}
-      onChangeText={(text) => onChange(text)}
+      onChangeText={(text) => onChange(text === '' ? options?.emptyValue : text)}
       onBlur={() => onBlur(id, value)}
       onFocus={() => onFocus(id, value)}
       error={hasError}
