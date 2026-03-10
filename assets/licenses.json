@@ -2199,6 +2199,13 @@
         "path": "node_modules/@rjsf/validator-ajv8/node_modules/ajv-formats",
         "licenseFile": "node_modules/@rjsf/validator-ajv8/node_modules/ajv-formats/LICENSE"
     },
+    "ajv-i18n@4.2.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/epoberezkin/ajv-i18n",
+        "publisher": "Evgeny Poberezkin",
+        "path": "node_modules/ajv-i18n",
+        "licenseFile": "node_modules/ajv-i18n/LICENSE"
+    },
     "ajv-keywords@3.5.2": {
         "licenses": "MIT",
         "repository": "https://github.com/epoberezkin/ajv-keywords",
