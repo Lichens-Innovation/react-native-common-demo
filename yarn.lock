@@ -1784,13 +1784,13 @@
   dependencies:
     use-sync-external-store "^1.5.0"
 
-"@lichens-innovation/react-native-common@^3.6.0":
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/@lichens-innovation/react-native-common/-/react-native-common-3.9.0.tgz#129ee107aba057cd6b1cc22e56333f129998ecdf"
-  integrity sha512-uM+l6aVWcX3lp4BvQCBvT4cQ2q7QsU+sZEigNKwdIwcx/ntrrAMjYa3I8C9Z8uMyLXHHwyi2X3jSn5zDZXZ8BA==
+"@lichens-innovation/react-native-common@^3.10.0":
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/@lichens-innovation/react-native-common/-/react-native-common-3.10.0.tgz#fc38dc4fcd75844814828007a85242f95112e0b7"
+  integrity sha512-f7pGyye/gX6h3W5Q6hDv2ygT0bMZ2v3R1ZJtPSvWFb/fc6HISsMB7G4td69whvlVZClOiDit8RMu5jaAmMIIgw==
   dependencies:
     "@legendapp/list" "^2.0.9"
-    "@lichens-innovation/ts-common" "^1.6.3"
+    "@lichens-innovation/ts-common" "^1.14.0"
     "@noble/hashes" "^2.0.1"
     "@uidotdev/usehooks" "^2.4.1"
     buffer "^6.0.3"
@@ -1806,17 +1806,17 @@
     react-hook-form "^7.63.0"
     react-syntax-highlighter "^15.6.6"
 
+"@lichens-innovation/ts-common@^1.14.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@lichens-innovation/ts-common/-/ts-common-1.14.0.tgz#8f5b7e975d6f4a5b20aaa70d2da888351742bfaa"
+  integrity sha512-CpjKah3H/sKUzZSd724qUtRqnvJgUaCa5Qpp4B0g2xTEFyAN1O0V9QUXSDqIW+vMCviV/NLSIox0ygPyswJxAg==
+  dependencies:
+    date-fns "^4.1.0"
+
 "@lichens-innovation/ts-common@^1.6.2":
   version "1.6.2"
   resolved "https://registry.yarnpkg.com/@lichens-innovation/ts-common/-/ts-common-1.6.2.tgz#a27bb311bd0a2833d7c235d421ccc2a510d4c1e5"
   integrity sha512-2FohjCOpQBvuoteCRsXD1txl10nxvlzX87bcc/M9THPYpj6WBu01V10xREnitN/zoxZDdostOGzBceO3i4GPYQ==
-  dependencies:
-    date-fns "^3.0.0"
-
-"@lichens-innovation/ts-common@^1.6.3":
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/@lichens-innovation/ts-common/-/ts-common-1.6.3.tgz#047b889647bf3a37fd37d96297914526cd4961a9"
-  integrity sha512-A00Qw76R5C+gIQhUFmILnuuZirpnl8wGCpY+gXVjKBANoNJfVpdmVaOCh11X+K0UIrfo8bxIWWleZgHkLM3bHQ==
   dependencies:
     date-fns "^3.0.0"
 

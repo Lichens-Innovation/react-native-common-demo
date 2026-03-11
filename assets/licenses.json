@@ -1280,12 +1280,19 @@
         "path": "node_modules/@legendapp/list",
         "licenseFile": "node_modules/@legendapp/list/LICENSE"
     },
-    "@lichens-innovation/react-native-common@3.9.0": {
+    "@lichens-innovation/react-native-common@3.10.0": {
         "licenses": "MIT*",
         "repository": "https://github.com/Lichens-Innovation/react-native-common",
         "publisher": "Lichens Innovation",
         "path": "node_modules/@lichens-innovation/react-native-common",
         "licenseFile": "node_modules/@lichens-innovation/react-native-common/LICENSE"
+    },
+    "@lichens-innovation/ts-common@1.14.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/Lichens-Innovation/ts-common",
+        "publisher": "Lichens Innovation",
+        "path": "node_modules/@lichens-innovation/react-native-common/node_modules/@lichens-innovation/ts-common",
+        "licenseFile": "node_modules/@lichens-innovation/react-native-common/node_modules/@lichens-innovation/ts-common/LICENSE"
     },
     "@lichens-innovation/ts-common@1.6.2": {
         "licenses": "MIT",
@@ -1293,13 +1300,6 @@
         "publisher": "Lichens Innovation",
         "path": "node_modules/@lichens-innovation/ts-common",
         "licenseFile": "node_modules/@lichens-innovation/ts-common/LICENSE"
-    },
-    "@lichens-innovation/ts-common@1.6.3": {
-        "licenses": "MIT",
-        "repository": "https://github.com/Lichens-Innovation/ts-common",
-        "publisher": "Lichens Innovation",
-        "path": "node_modules/@lichens-innovation/react-native-common/node_modules/@lichens-innovation/ts-common",
-        "licenseFile": "node_modules/@lichens-innovation/react-native-common/node_modules/@lichens-innovation/ts-common/LICENSE"
     },
     "@noble/hashes@2.0.1": {
         "licenses": "MIT",
@@ -3356,8 +3356,8 @@
     "date-fns@3.6.0": {
         "licenses": "MIT",
         "repository": "https://github.com/date-fns/date-fns",
-        "path": "node_modules/@lichens-innovation/react-native-common/node_modules/@lichens-innovation/ts-common/node_modules/date-fns",
-        "licenseFile": "node_modules/@lichens-innovation/react-native-common/node_modules/@lichens-innovation/ts-common/node_modules/date-fns/LICENSE.md"
+        "path": "node_modules/@lichens-innovation/ts-common/node_modules/date-fns",
+        "licenseFile": "node_modules/@lichens-innovation/ts-common/node_modules/date-fns/LICENSE.md"
     },
     "date-fns@4.1.0": {
         "licenses": "MIT",
