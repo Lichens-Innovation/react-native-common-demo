@@ -1,7 +1,11 @@
 import { dateToISOLikeButLocal } from '@lichens-innovation/react-native-common';
+import { isBlank } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 
-type EnumOption = { value: string; label: string };
+interface EnumOption {
+  value: string;
+  label: string;
+}
 
 export const mapEnumOptions = (options: WidgetProps['options']): { label: string; value: string }[] => {
   const enumOptions = options?.enumOptions as EnumOption[] | undefined;
@@ -10,7 +14,7 @@ export const mapEnumOptions = (options: WidgetProps['options']): { label: string
 };
 
 export const parseDateOrNull = (s: string | undefined): Date | null => {
-  if (s == null || s === '') return null;
+  if (isBlank(s)) return null;
   const d = new Date(s);
   return Number.isNaN(d.getTime()) ? null : d;
 };

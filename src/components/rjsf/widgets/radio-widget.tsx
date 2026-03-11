@@ -1,4 +1,5 @@
 import { useAppTheme } from '@lichens-innovation/react-native-common';
+import { isNullish } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
@@ -30,7 +31,7 @@ export const RadioWidget: FunctionComponent<WidgetProps> = ({
           onChange(v);
           onBlur(id, v);
         }}
-        value={value != null ? String(value) : ''}
+        value={!isNullish(value) ? String(value) : ''}
       >
         {enumOptions.map((opt) => (
           <RadioButton.Item

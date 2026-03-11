@@ -1,4 +1,5 @@
 import { useAppTheme } from '@lichens-innovation/react-native-common';
+import { isNullish } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { StyleSheet } from 'react-native';
@@ -25,7 +26,7 @@ export const NumberWidget: FunctionComponent<WidgetProps> = ({
   const hasError = Array.isArray(rawErrors) && rawErrors.length > 0;
   const displayLabel = hideLabel ? undefined : (label ? `${label}${required ? ' *' : ''}` : undefined);
 
-  const strValue = value !== undefined && value !== null && value !== '' ? String(value) : '';
+  const strValue = !isNullish(value) ? String(value) : '';
   const handleChangeText = (text: string) => {
     if (text === '') {
       onChange(options?.emptyValue);

@@ -1,4 +1,5 @@
 import { useAppTheme } from '@lichens-innovation/react-native-common';
+import { isNullish } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
@@ -30,7 +31,7 @@ export const CheckboxesWidget: FunctionComponent<WidgetProps> = ({
     const next = currentSet.includes(optValue)
       ? currentSet.filter((v) => v !== optValue)
       : [...currentSet, optValue];
-    if (maxItems != null && next.length > maxItems) return;
+    if (!isNullish(maxItems) && next.length > maxItems) return;
     const unique = Array.from(new Set(next));
     onChange(unique);
     onBlur(id, unique);

@@ -27,8 +27,7 @@ const defaultTemplates = getDefaultRegistry().templates;
 /** No-op error list: we omit the top "Erreurs" block; field-level errors still show per field. */
 const NoopErrorList = () => null;
 
-const PaperObjectFieldTemplate = (props: ObjectFieldTemplateProps) => {
-  const { title, description, properties } = props;
+const PaperObjectFieldTemplate = ({ title, description, properties }: ObjectFieldTemplateProps) => {
   const styles = useStyles();
 
   return (
@@ -53,8 +52,7 @@ const PaperObjectFieldTemplate = (props: ObjectFieldTemplateProps) => {
   );
 };
 
-const PaperFieldTemplate = (props: FieldTemplateProps) => {
-  const { children, errors } = props;
+const PaperFieldTemplate = ({ children, errors }: FieldTemplateProps) => {
   const styles = useStyles();
 
   return (
@@ -66,16 +64,15 @@ const PaperFieldTemplate = (props: FieldTemplateProps) => {
   );
 };
 
-const PaperFieldErrorTemplate = (props: FieldErrorProps) => {
-  const { errors } = props;
+const PaperFieldErrorTemplate = ({ errors }: FieldErrorProps) => {
   const styles = useStyles();
 
   if (!errors || errors.length === 0) return null;
 
   return (
     <View style={styles.errorList}>
-      {(errors as string[]).map((msg, i) => (
-        <Text key={i} variant="bodySmall" style={styles.fieldError}>
+      {(errors as string[]).map((msg, index) => (
+        <Text key={`error-${index}-${msg}`} variant="bodySmall" style={styles.fieldError}>
           {msg}
         </Text>
       ))}
@@ -83,8 +80,7 @@ const PaperFieldErrorTemplate = (props: FieldErrorProps) => {
   );
 };
 
-const PaperFieldHelpTemplate = (props: FieldHelpProps) => {
-  const { help } = props;
+const PaperFieldHelpTemplate = ({ help }: FieldHelpProps) => {
   const styles = useStyles();
 
   if (!help) return null;
@@ -96,8 +92,14 @@ const PaperFieldHelpTemplate = (props: FieldHelpProps) => {
   );
 };
 
-const PaperArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
-  const { title, items, canAdd, onAddClick } = props;
+const PaperArrayFieldTemplate = ({
+  title,
+  items,
+  canAdd,
+  onAddClick,
+  registry,
+  uiSchema,
+}: ArrayFieldTemplateProps) => {
   const styles = useStyles();
 
   return (
@@ -117,8 +119,8 @@ const PaperArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
       {canAdd ? (
         <AddButton
           onClick={onAddClick}
-          registry={props.registry}
-          uiSchema={props.uiSchema as Record<string, unknown>}
+          registry={registry}
+          uiSchema={uiSchema as Record<string, unknown>}
         />
       ) : null}
     </View>

@@ -1,4 +1,5 @@
 import { useAppTheme, useIsDarkMode } from '@lichens-innovation/react-native-common';
+import { isNullish } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { useState } from 'react';
@@ -32,7 +33,7 @@ export const DateWidget: FunctionComponent<WidgetProps> = ({
 
   const handlePick = (_: unknown, selectedDate?: Date) => {
     if (Platform.OS === 'android') setShowPicker(false);
-    if (selectedDate != null) {
+    if (!isNullish(selectedDate)) {
       const iso = dateOnlyToISO(selectedDate);
       onChange(iso);
       onBlur(id, iso);
@@ -44,7 +45,7 @@ export const DateWidget: FunctionComponent<WidgetProps> = ({
       <TextInput
         mode="outlined"
         label={displayLabel}
-        value={value != null ? String(value) : ''}
+        value={!isNullish(value) ? String(value) : ''}
         placeholder={placeholder}
         disabled={disabled}
         editable={false}

@@ -1,4 +1,5 @@
 import { DropDownSelector, useAppTheme } from '@lichens-innovation/react-native-common';
+import { isNullish } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
@@ -32,7 +33,7 @@ export const SelectWidget: FunctionComponent<WidgetProps> = ({
     <View style={styles.widgetBlock}>
       <DropDownSelector
         label={displayLabel}
-        value={value != null ? String(value) : undefined}
+        value={!isNullish(value) ? String(value) : undefined}
         onChange={handleChange}
         options={selectOptions}
         placeholder={placeholder}

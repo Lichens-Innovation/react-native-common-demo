@@ -9,7 +9,7 @@ import type { RjsfRegistryWithTranslate } from '~/rjsf-tools/rjsf-i18n-types';
 
 import { FormSubmitContext } from './form-submit-context';
 
-type IconButtonProps = {
+interface IconButtonProps {
   id?: string;
   onClick?: () => void;
   disabled?: boolean;
@@ -17,11 +17,14 @@ type IconButtonProps = {
   registry: RjsfRegistryWithTranslate;
   uiSchema?: Record<string, unknown>;
   title?: string;
-  [key: string]: unknown;
-};
+}
 
-export const AddButton: FunctionComponent<IconButtonProps> = (props) => {
-  const { registry, onClick, disabled, title } = props;
+export const AddButton: FunctionComponent<IconButtonProps> = ({
+  registry,
+  onClick,
+  disabled,
+  title,
+}) => {
   const label = registry.translateString(TranslatableString.AddItemButton);
   return (
     <IconButton
@@ -33,31 +36,48 @@ export const AddButton: FunctionComponent<IconButtonProps> = (props) => {
   );
 };
 
-export const CopyButton: FunctionComponent<IconButtonProps> = (props) => {
-  const { registry, onClick, disabled, title } = props;
+export const CopyButton: FunctionComponent<IconButtonProps> = ({
+  registry,
+  onClick,
+  disabled,
+  title,
+}) => {
   const label = registry.translateString(TranslatableString.CopyButton);
   return (
     <IconButton icon="content-copy" onPress={onClick} disabled={disabled} accessibilityLabel={title ?? label} />
   );
 };
 
-export const MoveDownButton: FunctionComponent<IconButtonProps> = (props) => {
-  const { registry, onClick, disabled, title } = props;
+export const MoveDownButton: FunctionComponent<IconButtonProps> = ({
+  registry,
+  onClick,
+  disabled,
+  title,
+}) => {
   const label = registry.translateString(TranslatableString.MoveDownButton);
   return (
     <IconButton icon="arrow-down" onPress={onClick} disabled={disabled} accessibilityLabel={title ?? label} />
   );
 };
 
-export const MoveUpButton: FunctionComponent<IconButtonProps> = (props) => {
-  const { registry, onClick, disabled, title } = props;
+export const MoveUpButton: FunctionComponent<IconButtonProps> = ({
+  registry,
+  onClick,
+  disabled,
+  title,
+}) => {
   const label = registry.translateString(TranslatableString.MoveUpButton);
   return <IconButton icon="arrow-up" onPress={onClick} disabled={disabled} accessibilityLabel={title ?? label} />;
 };
 
-export const RemoveButton: FunctionComponent<IconButtonProps> = (props) => {
-  const options = getUiOptions(props.uiSchema);
-  const { registry, onClick, disabled, title } = props;
+export const RemoveButton: FunctionComponent<IconButtonProps> = ({
+  uiSchema,
+  registry,
+  onClick,
+  disabled,
+  title,
+}) => {
+  const options = getUiOptions(uiSchema);
   const label = registry.translateString(TranslatableString.RemoveButton);
   return (
     <IconButton
@@ -70,18 +90,24 @@ export const RemoveButton: FunctionComponent<IconButtonProps> = (props) => {
   );
 };
 
-export const ClearButton: FunctionComponent<IconButtonProps> = (props) => {
-  const { registry, onClick, disabled, title } = props;
+export const ClearButton: FunctionComponent<IconButtonProps> = ({
+  registry,
+  onClick,
+  disabled,
+  title,
+}) => {
   const label = registry.translateString(TranslatableString.ClearButton);
   return (
     <IconButton icon="close" onPress={onClick} disabled={disabled} accessibilityLabel={title ?? label} />
   );
 };
 
-export const SubmitButton: FunctionComponent<{
+interface SubmitButtonProps {
   uiSchema?: Record<string, unknown>;
   registry?: RjsfRegistryWithTranslate;
-}> = ({ uiSchema }) => {
+}
+
+export const SubmitButton: FunctionComponent<SubmitButtonProps> = ({ uiSchema }) => {
   const submit = useContext(FormSubmitContext);
   const { submitText, norender, props: buttonProps } = getSubmitButtonOptions(uiSchema);
   const styles = useStyles();

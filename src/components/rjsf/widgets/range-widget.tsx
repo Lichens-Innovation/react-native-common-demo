@@ -24,15 +24,18 @@ export const RangeWidget: FunctionComponent<WidgetProps> = ({
   const min = typeof schema?.minimum === 'number' ? schema.minimum : 0;
   const max = typeof schema?.maximum === 'number' ? schema.maximum : 100;
   const numValue = typeof value === 'number' && !Number.isNaN(value) ? value : min;
+  const displayValue = Math.round(numValue);
 
   const handleSlidingComplete = (v: number) => {
-    onChange(v);
-    onBlur(id, v);
+    const intValue = Math.round(v);
+    onChange(intValue);
+    onBlur(id, intValue);
   };
 
   return (
     <View style={styles.widgetBlock}>
       {displayLabel ? <Text variant="bodyLarge" style={styles.rangeLabel}>{displayLabel}</Text> : null}
+
       <View style={styles.rangeRow}>
         <Slider
           style={styles.slider}
@@ -44,7 +47,7 @@ export const RangeWidget: FunctionComponent<WidgetProps> = ({
           maximumTrackTintColor={theme.colors.outline}
           disabled={disabled || readonly}
         />
-        <Text variant="bodyMedium" style={styles.rangeValue}>{numValue}</Text>
+        <Text variant="bodyMedium" style={styles.rangeValue}>{displayValue}</Text>
       </View>
     </View>
   );
