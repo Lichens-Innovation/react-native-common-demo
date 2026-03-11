@@ -1,8 +1,8 @@
 import { useAppTheme, useIsDarkMode } from '@lichens-innovation/react-native-common';
 import { isNullish } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
+import { useToggle } from '@uidotdev/usehooks';
 import type { FunctionComponent } from 'react';
-import { useState } from 'react';
 import { Platform, Pressable, StyleSheet, View } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { TextInput } from 'react-native-paper';
@@ -31,7 +31,7 @@ export const DateWidget: FunctionComponent<WidgetProps> = ({
   const theme = useAppTheme();
   const isDarkMode = useIsDarkMode();
   const styles = useStyles();
-  const [showPicker, setShowPicker] = useState(false);
+  const [showPicker, togglePickerVisibility] = useToggle(false);
   const hasError = Array.isArray(rawErrors) && rawErrors.length > 0;
   const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
   const date = parseDateOnlyToLocalDate(value as string) ?? new Date();
@@ -61,7 +61,7 @@ export const DateWidget: FunctionComponent<WidgetProps> = ({
   }
 
   const handlePick = (_: unknown, selectedDate?: Date) => {
-    if (Platform.OS === 'android') setShowPicker(false);
+    if (Platform.OS === 'android') togglePickerVisibility(false);
     if (!isNullish(selectedDate)) {
       const dateOnly = dateToDateOnlyString(selectedDate);
       onChange(dateOnly);
@@ -71,7 +71,7 @@ export const DateWidget: FunctionComponent<WidgetProps> = ({
 
   return (
     <View style={styles.widgetBlock}>
-      <Pressable onPress={() => setShowPicker((prev) => !prev)}>
+      <Pressable onPress={() => togglePickerVisibility()}>
         <TextInput
           mode="outlined"
           label={displayLabel}
@@ -82,18 +82,19 @@ export const DateWidget: FunctionComponent<WidgetProps> = ({
           error={hasError}
           style={styles.input}
           outlineColor={theme.colors.outline}
-          right={<TextInput.Icon icon="calendar" />}
+          right={<TextInput.Icon icon="calendar" onPress={() => togglePickerVisibility()} />}
           onFocus={() => onFocus(id, value)}
           pointerEvents="none"
         />
       </Pressable>
+
       {showPicker && (
         <DateTimePicker
           value={date}
           mode="date"
           display={pickerDisplay}
           onChange={handlePick}
-          onTouchCancel={() => setShowPicker(false)}
+          onTouchCancel={() => togglePickerVisibility(false)}
           themeVariant={themeVariant}
           {...(Platform.OS === 'ios' && { textColor: theme.colors.onSurface })}
         />
