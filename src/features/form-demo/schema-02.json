@@ -12,7 +12,8 @@
           "title": {
             "type": "string",
             "title": "Titre",
-            "default": ""
+            "default": "",
+            "minLength": 1
           },
           "description": {
             "type": "string",
@@ -138,7 +139,8 @@
           "title": {
             "type": "string",
             "title": "Title",
-            "default": ""
+            "default": "",
+            "minLength": 1
           },
           "description": {
             "type": "string",

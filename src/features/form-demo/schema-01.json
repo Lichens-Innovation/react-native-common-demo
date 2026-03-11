@@ -11,17 +11,20 @@
             "type": "string",
             "title": "Prénom",
             "description": "Votre prénom légal",
-            "default": "Chuck"
+            "default": "Chuck",
+            "minLength": 1
           },
           "lastName": {
             "type": "string",
             "title": "Nom",
             "description": "Votre nom de famille",
-            "default": "Norris"
+            "default": "Norris",
+            "minLength": 1
           },
           "notes": {
             "type": "string",
-            "title": "Notes"
+            "title": "Notes",
+            "minLength": 1
           },
           "notesRecording": {
             "type": "string",
@@ -61,17 +64,20 @@
             "type": "string",
             "title": "First Name",
             "description": "Your legal first name",
-            "default": "Chuck"
+            "default": "Chuck",
+            "minLength": 1
           },
           "lastName": {
             "type": "string",
             "title": "Last Name",
             "description": "Your family name",
-            "default": "Norris"
+            "default": "Norris",
+            "minLength": 1
           },
           "notes": {
             "type": "string",
-            "title": "Notes"
+            "title": "Notes",
+            "minLength": 1
           },
           "notesRecording": {
             "type": "string",
