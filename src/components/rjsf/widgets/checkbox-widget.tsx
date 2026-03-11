@@ -3,6 +3,7 @@ import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { Switch, Text } from 'react-native-paper';
+import { getRjsfDisplayLabel } from './rjsf-widgets.utils';
 
 export const CheckboxWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -16,13 +17,22 @@ export const CheckboxWidget: FunctionComponent<WidgetProps> = ({
   required,
 }) => {
   const styles = useStyles();
-  const displayLabel = hideLabel ? undefined : (label ? `${label}${required ? ' *' : ''}` : undefined);
+  const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
   const checked = value === true;
 
   const handleValueChange = (newValue: boolean) => {
     onChange(newValue);
     onBlur(id, newValue);
   };
+
+  const labelNode = displayLabel != null ? (
+    <Pressable
+      onPress={() => !disabled && !readonly && handleValueChange(!checked)}
+      style={styles.checkboxLabel}
+    >
+      <Text variant="bodyLarge">{displayLabel}</Text>
+    </Pressable>
+  ) : null;
 
   return (
     <View style={styles.checkboxRow}>
@@ -31,14 +41,8 @@ export const CheckboxWidget: FunctionComponent<WidgetProps> = ({
         onValueChange={handleValueChange}
         disabled={disabled}
       />
-      {displayLabel ? (
-        <Pressable
-          onPress={() => !disabled && !readonly && handleValueChange(!checked)}
-          style={styles.checkboxLabel}
-        >
-          <Text variant="bodyLarge">{displayLabel}</Text>
-        </Pressable>
-      ) : null}
+
+      {labelNode}
     </View>
   );
 };

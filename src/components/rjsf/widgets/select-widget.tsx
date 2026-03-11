@@ -4,7 +4,7 @@ import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { mapEnumOptions } from './rjsf-widgets.utils';
+import { getRjsfDisplayLabel, mapEnumOptions } from './rjsf-widgets.utils';
 
 export const SelectWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -21,8 +21,10 @@ export const SelectWidget: FunctionComponent<WidgetProps> = ({
 }) => {
   const styles = useStyles();
   const hasError = Array.isArray(rawErrors) && rawErrors.length > 0;
-  const displayLabel = hideLabel ? undefined : (label ? `${label}${required ? ' *' : ''}` : undefined);
+  const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
   const selectOptions = mapEnumOptions(options);
+  const hasValue = !isNullish(value);
+  const strValue = hasValue ? String(value) : undefined;
 
   const handleChange = (code: string) => {
     onChange(code);
@@ -33,7 +35,7 @@ export const SelectWidget: FunctionComponent<WidgetProps> = ({
     <View style={styles.widgetBlock}>
       <DropDownSelector
         label={displayLabel}
-        value={!isNullish(value) ? String(value) : undefined}
+        value={strValue}
         onChange={handleChange}
         options={selectOptions}
         placeholder={placeholder}

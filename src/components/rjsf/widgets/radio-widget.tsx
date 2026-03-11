@@ -5,7 +5,7 @@ import type { FunctionComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { RadioButton, Text } from 'react-native-paper';
 
-import { mapEnumOptions } from './rjsf-widgets.utils';
+import { getRjsfDisplayLabel, mapEnumOptions } from './rjsf-widgets.utils';
 
 export const RadioWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -20,18 +20,23 @@ export const RadioWidget: FunctionComponent<WidgetProps> = ({
   options,
 }) => {
   const styles = useStyles();
-  const displayLabel = hideLabel ? undefined : (label ? `${label}${required ? ' *' : ''}` : undefined);
+  const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
   const enumOptions = mapEnumOptions(options);
+  const hasValue = !isNullish(value);
+  const strValue = hasValue ? String(value) : '';
+  const labelNode = displayLabel != null ? (
+    <Text variant="bodyLarge" style={styles.radioTitle}>{displayLabel}</Text>
+  ) : null;
 
   return (
     <View style={styles.widgetBlock}>
-      {displayLabel ? <Text variant="bodyLarge" style={styles.radioTitle}>{displayLabel}</Text> : null}
+      {labelNode}
       <RadioButton.Group
         onValueChange={(v) => {
           onChange(v);
           onBlur(id, v);
         }}
-        value={!isNullish(value) ? String(value) : ''}
+        value={strValue}
       >
         {enumOptions.map((opt) => (
           <RadioButton.Item

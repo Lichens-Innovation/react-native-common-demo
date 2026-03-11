@@ -5,6 +5,8 @@ import type { FunctionComponent } from 'react';
 import { StyleSheet } from 'react-native';
 import { TextInput } from 'react-native-paper';
 
+import { getRjsfDisplayLabel } from './rjsf-widgets.utils';
+
 export const NumberWidget: FunctionComponent<WidgetProps> = ({
   id,
   value,
@@ -24,15 +26,17 @@ export const NumberWidget: FunctionComponent<WidgetProps> = ({
   const theme = useAppTheme();
   const styles = useStyles();
   const hasError = Array.isArray(rawErrors) && rawErrors.length > 0;
-  const displayLabel = hideLabel ? undefined : (label ? `${label}${required ? ' *' : ''}` : undefined);
+  const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
 
-  const strValue = !isNullish(value) ? String(value) : '';
+  const hasValue = !isNullish(value);
+  const strValue = hasValue ? String(value) : '';
   const handleChangeText = (text: string) => {
     if (text === '') {
       onChange(options?.emptyValue);
       return;
     }
-    const num = schema?.type === 'integer' ? parseInt(text, 10) : parseFloat(text);
+    const isInteger = schema?.type === 'integer';
+    const num = isInteger ? parseInt(text, 10) : parseFloat(text);
     if (!Number.isNaN(num)) onChange(num);
   };
 

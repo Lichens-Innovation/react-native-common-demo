@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 import { TextInput } from 'react-native-paper';
 
-import { dateTimeToISO, parseDateOrNull } from './rjsf-widgets.utils';
+import { dateTimeToISO, getRjsfDisplayLabel, parseDateOrNull } from './rjsf-widgets.utils';
 
 export const DateTimeWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -28,8 +28,12 @@ export const DateTimeWidget: FunctionComponent<WidgetProps> = ({
   const styles = useStyles();
   const [showPicker, setShowPicker] = useState(false);
   const hasError = Array.isArray(rawErrors) && rawErrors.length > 0;
-  const displayLabel = hideLabel ? undefined : (label ? `${label}${required ? ' *' : ''}` : undefined);
+  const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
   const date = parseDateOrNull(value as string) ?? new Date();
+  const hasValue = !isNullish(value);
+  const strValue = hasValue ? String(value) : '';
+  const pickerDisplay = Platform.OS === 'ios' ? 'spinner' : 'default';
+  const themeVariant = isDarkMode ? 'dark' : 'light';
 
   const handlePick = (_: unknown, selectedDate?: Date) => {
     if (Platform.OS === 'android') setShowPicker(false);
@@ -45,7 +49,7 @@ export const DateTimeWidget: FunctionComponent<WidgetProps> = ({
       <TextInput
         mode="outlined"
         label={displayLabel}
-        value={!isNullish(value) ? String(value) : ''}
+        value={strValue}
         placeholder={placeholder}
         disabled={disabled}
         editable={false}
@@ -60,10 +64,10 @@ export const DateTimeWidget: FunctionComponent<WidgetProps> = ({
         <DateTimePicker
           value={date}
           mode="datetime"
-          display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+          display={pickerDisplay}
           onChange={handlePick}
           onTouchCancel={() => setShowPicker(false)}
-          themeVariant={isDarkMode ? 'dark' : 'light'}
+          themeVariant={themeVariant}
           {...(Platform.OS === 'ios' && { textColor: theme.colors.onSurface })}
         />
       )}

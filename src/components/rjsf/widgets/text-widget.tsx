@@ -4,6 +4,8 @@ import type { FunctionComponent } from 'react';
 import { StyleSheet } from 'react-native';
 import { TextInput } from 'react-native-paper';
 
+import { getRjsfDisplayLabel } from './rjsf-widgets.utils';
+
 export const TextWidget: FunctionComponent<WidgetProps> = ({
   id,
   value,
@@ -22,7 +24,13 @@ export const TextWidget: FunctionComponent<WidgetProps> = ({
   const theme = useAppTheme();
   const styles = useStyles();
   const hasError = Array.isArray(rawErrors) && rawErrors.length > 0;
-  const displayLabel = hideLabel ? undefined : (label ? `${label}${required ? ' *' : ''}` : undefined);
+  const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
+
+  const handleChangeText = (text: string) => {
+    const isEmpty = text === '';
+    const valueToSet = isEmpty ? options?.emptyValue : text;
+    onChange(valueToSet);
+  };
 
   return (
     <TextInput
@@ -32,7 +40,7 @@ export const TextWidget: FunctionComponent<WidgetProps> = ({
       placeholder={placeholder}
       disabled={disabled}
       editable={!readonly}
-      onChangeText={(text) => onChange(text === '' ? options?.emptyValue : text)}
+      onChangeText={handleChangeText}
       onBlur={() => onBlur(id, value)}
       onFocus={() => onFocus(id, value)}
       error={hasError}

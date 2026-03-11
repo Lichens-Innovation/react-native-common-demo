@@ -5,7 +5,7 @@ import type { FunctionComponent } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { Checkbox, Text } from 'react-native-paper';
 
-import { mapEnumOptions } from './rjsf-widgets.utils';
+import { getRjsfDisplayLabel, mapEnumOptions } from './rjsf-widgets.utils';
 
 export const CheckboxesWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -21,14 +21,17 @@ export const CheckboxesWidget: FunctionComponent<WidgetProps> = ({
   schema,
 }) => {
   const styles = useStyles();
-  const displayLabel = hideLabel ? undefined : (label ? `${label}${required ? ' *' : ''}` : undefined);
+  const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
   const enumOptions = mapEnumOptions(options);
-  const currentSet = Array.isArray(value) ? value : [];
-  const maxItems = typeof schema?.maxItems === 'number' ? schema.maxItems : undefined;
+  const isArrayValue = Array.isArray(value);
+  const currentSet = isArrayValue ? value : [];
+  const hasMaxItems = typeof schema?.maxItems === 'number';
+  const maxItems = hasMaxItems ? schema.maxItems : undefined;
 
   const toggle = (optValue: string) => {
     if (disabled || readonly) return;
-    const next = currentSet.includes(optValue)
+    const isChecked = currentSet.includes(optValue);
+    const next = isChecked
       ? currentSet.filter((v) => v !== optValue)
       : [...currentSet, optValue];
     if (!isNullish(maxItems) && next.length > maxItems) return;
@@ -37,13 +40,21 @@ export const CheckboxesWidget: FunctionComponent<WidgetProps> = ({
     onBlur(id, unique);
   };
 
+  const labelNode = displayLabel != null ? (
+    <Text variant="bodyLarge" style={styles.checkboxesTitle}>{displayLabel}</Text>
+  ) : null;
+
   return (
     <View style={styles.widgetBlock}>
-      {displayLabel ? <Text variant="bodyLarge" style={styles.checkboxesTitle}>{displayLabel}</Text> : null}
-      {enumOptions.map((opt) => (
+      {labelNode}
+
+      {enumOptions.map((opt) => {
+        const isOptionChecked = currentSet.includes(opt.value);
+        const checkboxStatus = isOptionChecked ? 'checked' : 'unchecked';
+        return (
         <View key={opt.value} style={styles.checkboxRow}>
           <Checkbox
-            status={currentSet.includes(opt.value) ? 'checked' : 'unchecked'}
+            status={checkboxStatus}
             onPress={() => toggle(opt.value)}
             disabled={disabled || readonly}
           />
@@ -54,7 +65,8 @@ export const CheckboxesWidget: FunctionComponent<WidgetProps> = ({
             <Text variant="bodyLarge">{opt.label}</Text>
           </Pressable>
         </View>
-      ))}
+        );
+      })}
     </View>
   );
 };

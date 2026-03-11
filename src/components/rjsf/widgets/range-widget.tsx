@@ -5,6 +5,8 @@ import { StyleSheet, View } from 'react-native';
 import Slider from '@react-native-community/slider';
 import { Text } from 'react-native-paper';
 
+import { getRjsfDisplayLabel } from './rjsf-widgets.utils';
+
 export const RangeWidget: FunctionComponent<WidgetProps> = ({
   id,
   value,
@@ -20,10 +22,13 @@ export const RangeWidget: FunctionComponent<WidgetProps> = ({
 }) => {
   const theme = useAppTheme();
   const styles = useStyles();
-  const displayLabel = hideLabel ? undefined : (label ? `${label}${required ? ' *' : ''}` : undefined);
-  const min = typeof schema?.minimum === 'number' ? schema.minimum : 0;
-  const max = typeof schema?.maximum === 'number' ? schema.maximum : 100;
-  const numValue = typeof value === 'number' && !Number.isNaN(value) ? value : min;
+  const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
+  const hasSchemaMin = typeof schema?.minimum === 'number';
+  const min = hasSchemaMin ? schema.minimum : 0;
+  const hasSchemaMax = typeof schema?.maximum === 'number';
+  const max = hasSchemaMax ? schema.maximum : 100;
+  const hasValidValue = typeof value === 'number' && !Number.isNaN(value);
+  const numValue = (hasValidValue ? value : min) as number;
   const displayValue = Math.round(numValue);
 
   const handleSlidingComplete = (v: number) => {
@@ -32,9 +37,13 @@ export const RangeWidget: FunctionComponent<WidgetProps> = ({
     onBlur(id, intValue);
   };
 
+  const labelNode = displayLabel != null ? (
+    <Text variant="bodyLarge" style={styles.rangeLabel}>{displayLabel}</Text>
+  ) : null;
+
   return (
     <View style={styles.widgetBlock}>
-      {displayLabel ? <Text variant="bodyLarge" style={styles.rangeLabel}>{displayLabel}</Text> : null}
+      {labelNode}
 
       <View style={styles.rangeRow}>
         <Slider
