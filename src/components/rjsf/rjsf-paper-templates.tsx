@@ -3,11 +3,13 @@ import type {
   ObjectFieldTemplateProps,
   FieldTemplateProps,
   ArrayFieldTemplateProps,
+  ArrayFieldItemTemplateProps,
   FieldErrorProps,
   FieldHelpProps,
   ErrorListProps,
 } from '@rjsf/utils';
 import { getDefaultRegistry } from '@rjsf/core';
+import { getTemplate, getUiOptions } from '@rjsf/utils';
 import type { ComponentType } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
@@ -92,6 +94,30 @@ const PaperFieldHelpTemplate = ({ help }: FieldHelpProps) => {
   );
 };
 
+/** Renders a single array item using View (React Native). Default RJSF template uses div and breaks on RN. */
+const PaperArrayFieldItemTemplate = ({
+  children,
+  buttonsProps,
+  hasToolbar,
+  registry,
+  uiSchema,
+}: ArrayFieldItemTemplateProps) => {
+  const styles = useStyles();
+  const uiOptions = getUiOptions(uiSchema);
+  const ArrayFieldItemButtonsTemplate = getTemplate('ArrayFieldItemButtonsTemplate', registry, uiOptions);
+
+  return (
+    <View style={styles.arrayItemRow}>
+      <View style={styles.arrayItemContent}>{children}</View>
+      {hasToolbar ? (
+        <View style={styles.arrayItemToolbar}>
+          <ArrayFieldItemButtonsTemplate {...buttonsProps} />
+        </View>
+      ) : null}
+    </View>
+  );
+};
+
 const PaperArrayFieldTemplate = ({ title, items, canAdd, onAddClick, registry, uiSchema }: ArrayFieldTemplateProps) => {
   const styles = useStyles();
 
@@ -123,6 +149,7 @@ export const PAPER_TEMPLATES = {
   FieldErrorTemplate: PaperFieldErrorTemplate as ComponentType<FieldErrorProps>,
   FieldHelpTemplate: PaperFieldHelpTemplate as ComponentType<FieldHelpProps>,
   ArrayFieldTemplate: PaperArrayFieldTemplate as ComponentType<ArrayFieldTemplateProps>,
+  ArrayFieldItemTemplate: PaperArrayFieldItemTemplate as ComponentType<ArrayFieldItemTemplateProps>,
   ErrorListTemplate: NoopErrorList as ComponentType<ErrorListProps>,
   ButtonTemplates: {
     ...defaultTemplates.ButtonTemplates,
@@ -166,6 +193,19 @@ const useStyles = () => {
     },
     arrayItem: {
       marginVertical: theme.spacing(1),
+    },
+    arrayItemRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginVertical: theme.spacing(1),
+    },
+    arrayItemContent: {
+      flex: 1,
+    },
+    arrayItemToolbar: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginLeft: theme.spacing(1),
     },
   });
 };
