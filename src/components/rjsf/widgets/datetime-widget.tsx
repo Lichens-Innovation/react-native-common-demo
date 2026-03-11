@@ -1,9 +1,9 @@
-import { useAppTheme } from '@lichens-innovation/react-native-common';
+import { useAppTheme, useIsDarkMode } from '@lichens-innovation/react-native-common';
+import DateTimePicker from '@react-native-community/datetimepicker';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
-import DateTimePicker from '@react-native-community/datetimepicker';
 import { TextInput } from 'react-native-paper';
 
 import { dateTimeToISO, parseDateOrNull } from './rjsf-widgets.utils';
@@ -23,6 +23,7 @@ export const DateTimeWidget: FunctionComponent<WidgetProps> = ({
   rawErrors,
 }) => {
   const theme = useAppTheme();
+  const isDarkMode = useIsDarkMode();
   const styles = useStyles();
   const [showPicker, setShowPicker] = useState(false);
   const hasError = Array.isArray(rawErrors) && rawErrors.length > 0;
@@ -50,9 +51,10 @@ export const DateTimeWidget: FunctionComponent<WidgetProps> = ({
         error={hasError}
         style={styles.input}
         outlineColor={theme.colors.outline}
-        right={<TextInput.Icon icon="clock-outline" onPress={() => !disabled && !readonly && setShowPicker(true)} />}
+        right={<TextInput.Icon icon="clock-outline" onPress={() => !disabled && !readonly && setShowPicker(v => !v)} />}
         onFocus={() => onFocus(id, value)}
       />
+
       {showPicker && (
         <DateTimePicker
           value={date}
@@ -60,6 +62,8 @@ export const DateTimeWidget: FunctionComponent<WidgetProps> = ({
           display={Platform.OS === 'ios' ? 'spinner' : 'default'}
           onChange={handlePick}
           onTouchCancel={() => setShowPicker(false)}
+          themeVariant={isDarkMode ? 'dark' : 'light'}
+          {...(Platform.OS === 'ios' && { textColor: theme.colors.onSurface })}
         />
       )}
     </View>

@@ -1,4 +1,4 @@
-import { useAppTheme } from '@lichens-innovation/react-native-common';
+import { useAppTheme, useIsDarkMode } from '@lichens-innovation/react-native-common';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { useState } from 'react';
@@ -23,6 +23,7 @@ export const DateWidget: FunctionComponent<WidgetProps> = ({
   rawErrors,
 }) => {
   const theme = useAppTheme();
+  const isDarkMode = useIsDarkMode();
   const styles = useStyles();
   const [showPicker, setShowPicker] = useState(false);
   const hasError = Array.isArray(rawErrors) && rawErrors.length > 0;
@@ -50,9 +51,10 @@ export const DateWidget: FunctionComponent<WidgetProps> = ({
         error={hasError}
         style={styles.input}
         outlineColor={theme.colors.outline}
-        right={<TextInput.Icon icon="calendar" onPress={() => !disabled && !readonly && setShowPicker(true)} />}
+        right={<TextInput.Icon icon="calendar" onPress={() => !disabled && !readonly && setShowPicker((prev) => !prev)} />}
         onFocus={() => onFocus(id, value)}
       />
+
       {showPicker && (
         <DateTimePicker
           value={date}
@@ -60,6 +62,8 @@ export const DateWidget: FunctionComponent<WidgetProps> = ({
           display={Platform.OS === 'ios' ? 'spinner' : 'default'}
           onChange={handlePick}
           onTouchCancel={() => setShowPicker(false)}
+          themeVariant={isDarkMode ? 'dark' : 'light'}
+          {...(Platform.OS === 'ios' && { textColor: theme.colors.onSurface })}
         />
       )}
     </View>
