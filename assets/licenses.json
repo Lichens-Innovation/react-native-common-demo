@@ -3948,6 +3948,13 @@
         "licenses": "MIT",
         "repository": "https://github.com/prettier/eslint-plugin-prettier",
         "publisher": "Teddy Katz",
+        "path": "node_modules/eslint-config-universe/node_modules/eslint-plugin-prettier",
+        "licenseFile": "node_modules/eslint-config-universe/node_modules/eslint-plugin-prettier/LICENSE.md"
+    },
+    "eslint-plugin-prettier@5.5.5": {
+        "licenses": "MIT",
+        "repository": "https://github.com/prettier/eslint-plugin-prettier",
+        "publisher": "Teddy Katz",
         "path": "node_modules/eslint-plugin-prettier",
         "licenseFile": "node_modules/eslint-plugin-prettier/LICENSE.md"
     },
@@ -8570,6 +8577,14 @@
         "licenseFile": "node_modules/supports-preserve-symlinks-flag/LICENSE"
     },
     "synckit@0.11.11": {
+        "licenses": "MIT",
+        "repository": "https://github.com/un-ts/synckit",
+        "publisher": "JounQin",
+        "email": "admin@1stg.me",
+        "path": "node_modules/eslint-config-universe/node_modules/synckit",
+        "licenseFile": "node_modules/eslint-config-universe/node_modules/synckit/LICENSE"
+    },
+    "synckit@0.11.12": {
         "licenses": "MIT",
         "repository": "https://github.com/un-ts/synckit",
         "publisher": "JounQin",

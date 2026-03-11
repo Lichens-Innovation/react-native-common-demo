@@ -19,6 +19,8 @@
     "ios:device": "expo run:ios --device",
     "ios:device:release": "expo run:ios --device --configuration Release",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\" && prettier -c \"**/*.{js,jsx,ts,tsx,json}\"",
+    "lint:fix": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",
+    "format:fix": "prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
     "format": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix && prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
     "sitemap": "npx expo-router-sitemap",
     "clean:prebuild": "expo prebuild --clean",
@@ -164,16 +166,14 @@
     "dotenv": "^17.2.3",
     "eslint": "^9.39.1",
     "eslint-config-universe": "^15.0.3",
+    "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-react": "^7.37.3",
     "husky": "^9.1.7",
     "license-checker-rseidelsohn": "^4.4.2",
     "patch-package": "^8.0.1",
     "prettier": "^3.7.4",
     "rimraf": "^6.1.2",
     "typescript": "~5.9.3"
-  },
-  "eslintConfig": {
-    "extends": "universe/native",
-    "root": true
   },
   "expo": {
     "doctor": {

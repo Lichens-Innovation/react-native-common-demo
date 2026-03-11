@@ -3,4 +3,6 @@
 # Exit immediately if any command fails
 set -e
 
+echo "Running typecheck..."
 yarn typecheck
+echo "  -->  ✅ Typecheck completed"
