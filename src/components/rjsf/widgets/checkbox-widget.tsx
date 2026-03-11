@@ -25,11 +25,13 @@ export const CheckboxWidget: FunctionComponent<WidgetProps> = ({
     onBlur(id, newValue);
   };
 
+  const handleLabelPress = () => {
+    if (disabled || readonly) return;
+    handleValueChange(!checked);
+  };
+
   const labelNode = displayLabel != null ? (
-    <Pressable
-      onPress={() => !disabled && !readonly && handleValueChange(!checked)}
-      style={styles.checkboxLabel}
-    >
+    <Pressable onPress={handleLabelPress} style={styles.checkboxLabel}>
       <Text variant="bodyLarge">{displayLabel}</Text>
     </Pressable>
   ) : null;

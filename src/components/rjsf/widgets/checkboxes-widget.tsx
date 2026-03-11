@@ -30,11 +30,13 @@ export const CheckboxesWidget: FunctionComponent<WidgetProps> = ({
 
   const toggle = (optValue: string) => {
     if (disabled || readonly) return;
+
     const isChecked = currentSet.includes(optValue);
     const next = isChecked
       ? currentSet.filter((v) => v !== optValue)
       : [...currentSet, optValue];
     if (!isNullish(maxItems) && next.length > maxItems) return;
+
     const unique = Array.from(new Set(next));
     onChange(unique);
     onBlur(id, unique);
@@ -52,19 +54,19 @@ export const CheckboxesWidget: FunctionComponent<WidgetProps> = ({
         const isOptionChecked = currentSet.includes(opt.value);
         const checkboxStatus = isOptionChecked ? 'checked' : 'unchecked';
         return (
-        <View key={opt.value} style={styles.checkboxRow}>
-          <Checkbox
-            status={checkboxStatus}
-            onPress={() => toggle(opt.value)}
-            disabled={disabled || readonly}
-          />
-          <Pressable
-            onPress={() => !disabled && !readonly && toggle(opt.value)}
-            style={styles.checkboxLabel}
-          >
-            <Text variant="bodyLarge">{opt.label}</Text>
-          </Pressable>
-        </View>
+          <View key={opt.value} style={styles.checkboxRow}>
+            <Checkbox
+              status={checkboxStatus}
+              onPress={() => toggle(opt.value)}
+              disabled={disabled || readonly}
+            />
+            <Pressable
+              onPress={() => toggle(opt.value)}
+              style={styles.checkboxLabel}
+            >
+              <Text variant="bodyLarge">{opt.label}</Text>
+            </Pressable>
+          </View>
         );
       })}
     </View>

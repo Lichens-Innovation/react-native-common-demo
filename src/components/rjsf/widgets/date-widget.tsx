@@ -44,6 +44,11 @@ export const DateWidget: FunctionComponent<WidgetProps> = ({
     }
   };
 
+  const handleIconPress = () => {
+    if (disabled || readonly) return;
+    setShowPicker((prev) => !prev);
+  };
+
   return (
     <View style={styles.widgetBlock}>
       <TextInput
@@ -56,7 +61,7 @@ export const DateWidget: FunctionComponent<WidgetProps> = ({
         error={hasError}
         style={styles.input}
         outlineColor={theme.colors.outline}
-        right={<TextInput.Icon icon="calendar" onPress={() => !disabled && !readonly && setShowPicker((prev) => !prev)} />}
+        right={<TextInput.Icon icon="calendar" onPress={handleIconPress} />}
         onFocus={() => onFocus(id, value)}
       />
 

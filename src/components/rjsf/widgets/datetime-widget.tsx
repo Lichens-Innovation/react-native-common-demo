@@ -44,6 +44,11 @@ export const DateTimeWidget: FunctionComponent<WidgetProps> = ({
     }
   };
 
+  const handleIconPress = () => {
+    if (disabled || readonly) return;
+    setShowPicker((v) => !v);
+  };
+
   return (
     <View style={styles.widgetBlock}>
       <TextInput
@@ -56,7 +61,7 @@ export const DateTimeWidget: FunctionComponent<WidgetProps> = ({
         error={hasError}
         style={styles.input}
         outlineColor={theme.colors.outline}
-        right={<TextInput.Icon icon="clock-outline" onPress={() => !disabled && !readonly && setShowPicker(v => !v)} />}
+        right={<TextInput.Icon icon="clock-outline" onPress={handleIconPress} />}
         onFocus={() => onFocus(id, value)}
       />
 
