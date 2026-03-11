@@ -1,4 +1,5 @@
-import { useAppTheme } from '@lichens-innovation/react-native-common';
+import { logger, useAppTheme } from '@lichens-innovation/react-native-common';
+import { isBlank } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { StyleSheet } from 'react-native';
@@ -28,15 +29,24 @@ export const NumberWidget: FunctionComponent<WidgetProps> = ({
   const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
   const strValue = toStringOrEmpty(value);
 
+  const isInteger = schema?.type === 'integer';
+
   const handleChangeText = (text: string) => {
-    if (text === '') {
+    if (isBlank(text)) {
       onChange(options?.emptyValue);
       return;
     }
-    const isInteger = schema?.type === 'integer';
-    const num = isInteger ? parseInt(text, 10) : parseFloat(text);
-    if (!Number.isNaN(num)) onChange(num);
+
+    const floatValue = parseFloat(text);
+    if (Number.isNaN(floatValue)) {
+      logger.error('[NumberWidget]: Invalid float value', { text });
+      return;
+    }
+    onChange(isInteger ? Math.round(floatValue) : floatValue);
   };
+
+  const keyboardType = isInteger ? 'number-pad' : 'decimal-pad';
+  const inputMode = isInteger ? 'numeric' : 'decimal';
 
   return (
     <TextInput
@@ -46,7 +56,8 @@ export const NumberWidget: FunctionComponent<WidgetProps> = ({
       placeholder={placeholder}
       disabled={disabled}
       editable={!readonly}
-      keyboardType="decimal-pad"
+      keyboardType={keyboardType}
+      inputMode={inputMode}
       onChangeText={handleChangeText}
       onBlur={() => onBlur(id, value)}
       onFocus={() => onFocus(id, value)}

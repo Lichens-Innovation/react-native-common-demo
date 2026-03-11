@@ -119,6 +119,7 @@
         "appointment": { "ui:placeholder": "JJ/MM/AAAA HH:MM" },
         "choice": { "ui:widget": "radio" },
         "score": { "ui:widget": "range" },
+        "quantity": { "ui:widget": "number" },
         "categories": { "ui:widget": "checkboxes" },
         "address": {
           "street": { "ui:placeholder": "Ex. 12 rue de la Paix" },
@@ -244,6 +245,7 @@
         "appointment": { "ui:placeholder": "MM/DD/YYYY HH:MM" },
         "choice": { "ui:widget": "radio" },
         "score": { "ui:widget": "range" },
+        "quantity": { "ui:widget": "number" },
         "categories": { "ui:widget": "checkboxes" },
         "address": {
           "street": { "ui:placeholder": "e.g. 123 Main St" },
