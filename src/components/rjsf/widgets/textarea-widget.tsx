@@ -30,6 +30,7 @@ export const TextareaWidget: FunctionComponent<WidgetProps> = ({
   const styles = useStyles();
   const hasError = hasRjsfErrors(rawErrors);
   const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
+  const numberOfLines = options?.numberOfLines ?? 4;
 
   const handleChangeText = (text: string) => {
     onChange(getRjsfTextChangeValue({ text, emptyValue: options?.emptyValue }));
@@ -44,7 +45,7 @@ export const TextareaWidget: FunctionComponent<WidgetProps> = ({
       disabled={disabled}
       editable={!readonly}
       multiline
-      numberOfLines={4}
+      numberOfLines={numberOfLines}
       onChangeText={handleChangeText}
       onBlur={() => onBlur(id, value)}
       onFocus={() => onFocus(id, value)}
