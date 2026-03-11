@@ -1,11 +1,10 @@
 import { useAppTheme } from '@lichens-innovation/react-native-common';
-import { isNullish } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { StyleSheet } from 'react-native';
 import { TextInput } from 'react-native-paper';
 
-import { getRjsfDisplayLabel, hasRjsfErrors } from '~/rjsf-tools/rjsf-widgets.utils';
+import { getRjsfDisplayLabel, hasRjsfErrors, toStringOrEmpty } from '~/rjsf-tools/rjsf-widgets.utils';
 
 export const NumberWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -27,9 +26,8 @@ export const NumberWidget: FunctionComponent<WidgetProps> = ({
   const styles = useStyles();
   const hasError = hasRjsfErrors(rawErrors);
   const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
+  const strValue = toStringOrEmpty(value);
 
-  const hasValue = !isNullish(value);
-  const strValue = hasValue ? String(value) : '';
   const handleChangeText = (text: string) => {
     if (text === '') {
       onChange(options?.emptyValue);

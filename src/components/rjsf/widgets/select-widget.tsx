@@ -1,10 +1,14 @@
 import { DropDownSelector, useAppTheme } from '@lichens-innovation/react-native-common';
-import { isNullish } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { getRjsfDisplayLabel, hasRjsfErrors, mapEnumOptions } from '~/rjsf-tools/rjsf-widgets.utils';
+import {
+  getRjsfDisplayLabel,
+  hasRjsfErrors,
+  mapEnumOptions,
+  toStringOrUndefined,
+} from '~/rjsf-tools/rjsf-widgets.utils';
 
 export const SelectWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -23,8 +27,7 @@ export const SelectWidget: FunctionComponent<WidgetProps> = ({
   const hasError = hasRjsfErrors(rawErrors);
   const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
   const selectOptions = mapEnumOptions(options);
-  const hasValue = !isNullish(value);
-  const strValue = hasValue ? String(value) : undefined;
+  const strValue = toStringOrUndefined(value);
 
   const handleChange = (code: string) => {
     onChange(code);

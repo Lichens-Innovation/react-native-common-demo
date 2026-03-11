@@ -1,12 +1,12 @@
 import { useAppTheme } from '@lichens-innovation/react-native-common';
-import { isBlank, isNullish } from '@lichens-innovation/ts-common';
+import { isBlank } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
 import type { StyleProp, TextStyle } from 'react-native';
 import { RadioButton, Text } from 'react-native-paper';
 
-import { getRjsfDisplayLabel, mapEnumOptions } from '~/rjsf-tools/rjsf-widgets.utils';
+import { getRjsfDisplayLabel, mapEnumOptions, toStringOrEmpty } from '~/rjsf-tools/rjsf-widgets.utils';
 
 interface RadioWidgetLabelProps {
   displayLabel?: string;
@@ -37,8 +37,7 @@ export const RadioWidget: FunctionComponent<WidgetProps> = ({
   const styles = useStyles();
   const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
   const enumOptions = mapEnumOptions(options);
-  const hasValue = !isNullish(value);
-  const strValue = hasValue ? String(value) : '';
+  const strValue = toStringOrEmpty(value);
 
   return (
     <View style={styles.widgetBlock}>

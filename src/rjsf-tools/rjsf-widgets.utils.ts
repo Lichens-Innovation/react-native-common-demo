@@ -1,4 +1,4 @@
-import { isBlank } from '@lichens-innovation/ts-common';
+import { isBlank, isNullish } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 
 /**
@@ -49,6 +49,34 @@ export const mapEnumOptions = (options: WidgetProps['options']): EnumOptionDispl
   const enumOptions = options?.enumOptions as EnumOption[] | undefined;
   if (!Array.isArray(enumOptions)) return [];
   return enumOptions.map(toEnumOptionDisplay);
+};
+
+/**
+ * Converts a value to display string, or empty string when null/undefined.
+ */
+export const toStringOrEmpty = (value: unknown): string => (isNullish(value) ? '' : String(value));
+
+/**
+ * Converts a value to display string, or undefined when null/undefined (e.g. for select placeholder).
+ */
+export const toStringOrUndefined = (value: unknown): string | undefined =>
+  isNullish(value) ? undefined : String(value);
+
+export interface GetRjsfTextChangeValueArgs {
+  text: string;
+  emptyValue?: unknown;
+}
+
+/**
+ * Returns the value to pass to onChange for a text input.
+ *
+ * @param args.text - The current text input value.
+ * @param args.emptyValue - The value to use when text is empty (e.g. options.emptyValue from WidgetProps).
+ * @returns emptyValue when text is empty, otherwise text.
+ */
+export const getRjsfTextChangeValue = ({ text, emptyValue }: GetRjsfTextChangeValueArgs): unknown => {
+  if (text === '') return emptyValue;
+  return text;
 };
 
 export const parseDateOrNull = (value?: string): Date | null => {

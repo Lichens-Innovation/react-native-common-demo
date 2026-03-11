@@ -3,7 +3,12 @@ import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { StyleSheet } from 'react-native';
 
-import { getRjsfDisplayLabel, hasRjsfErrors } from '~/rjsf-tools/rjsf-widgets.utils';
+import {
+  getRjsfDisplayLabel,
+  getRjsfTextChangeValue,
+  hasRjsfErrors,
+  toStringOrEmpty,
+} from '~/rjsf-tools/rjsf-widgets.utils';
 
 export const PasswordWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -26,16 +31,14 @@ export const PasswordWidget: FunctionComponent<WidgetProps> = ({
   const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
 
   const handleChangeText = (text: string) => {
-    const isEmpty = text === '';
-    const valueToSet = isEmpty ? options?.emptyValue : text;
-    onChange(valueToSet);
+    onChange(getRjsfTextChangeValue({ text, emptyValue: options?.emptyValue }));
   };
 
   return (
     <PasswordInput
       mode="outlined"
       label={displayLabel}
-      value={value ?? ''}
+      value={toStringOrEmpty(value)}
       placeholder={placeholder}
       disabled={disabled}
       editable={!readonly}
