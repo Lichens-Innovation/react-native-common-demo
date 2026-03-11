@@ -63,6 +63,13 @@ interface SubmitButtonProps {
   registry?: RjsfRegistryWithTranslate;
 }
 
+/**
+ * RJSF form submit button.
+ * Uses FormSubmitContext to get the submit handler (RJSF does not pass onSubmit to the theme button).
+ * The fake event provides preventDefault() and persist() as no-ops to satisfy the web form submit
+ * event contract, so an onSubmit that calls event.preventDefault() or event.persist() does not
+ * crash on React Native, where onPress does not provide a form event.
+ */
 export const SubmitButton: FunctionComponent<SubmitButtonProps> = ({ uiSchema }) => {
   const submit = useContext(FormSubmitContext);
   const { submitText, norender, props: buttonProps } = getSubmitButtonOptions(uiSchema);
