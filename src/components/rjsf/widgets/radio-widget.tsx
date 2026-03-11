@@ -1,11 +1,26 @@
 import { useAppTheme } from '@lichens-innovation/react-native-common';
-import { isNullish } from '@lichens-innovation/ts-common';
+import { isBlank, isNullish } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
+import type { StyleProp, TextStyle } from 'react-native';
 import { RadioButton, Text } from 'react-native-paper';
 
 import { getRjsfDisplayLabel, mapEnumOptions } from './rjsf-widgets.utils';
+
+interface RadioWidgetLabelProps {
+  displayLabel?: string;
+  style: StyleProp<TextStyle>;
+}
+
+const RadioWidgetLabel = ({ displayLabel, style }: RadioWidgetLabelProps) => {
+  if (isBlank(displayLabel)) return null;
+  return (
+    <Text variant="bodyLarge" style={style}>
+      {displayLabel}
+    </Text>
+  );
+};
 
 export const RadioWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -24,16 +39,10 @@ export const RadioWidget: FunctionComponent<WidgetProps> = ({
   const enumOptions = mapEnumOptions(options);
   const hasValue = !isNullish(value);
   const strValue = hasValue ? String(value) : '';
-  const labelNode =
-    displayLabel != null ? (
-      <Text variant="bodyLarge" style={styles.radioTitle}>
-        {displayLabel}
-      </Text>
-    ) : null;
 
   return (
     <View style={styles.widgetBlock}>
-      {labelNode}
+      <RadioWidgetLabel displayLabel={displayLabel} style={styles.radioTitle} />
       <RadioButton.Group
         onValueChange={(v) => {
           onChange(v);

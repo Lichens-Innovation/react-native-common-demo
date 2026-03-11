@@ -39,6 +39,7 @@ export default [
       '@typescript-eslint/no-require-imports': 'off',
       'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off',
+      eqeqeq: ['error', 'always'],
     },
     settings: {
       react: {
