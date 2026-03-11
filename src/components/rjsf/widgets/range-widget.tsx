@@ -7,7 +7,7 @@ import { StyleSheet, View } from 'react-native';
 import type { StyleProp, TextStyle } from 'react-native';
 import { Text } from 'react-native-paper';
 
-import { getRjsfDisplayLabel } from './rjsf-widgets.utils';
+import { getRjsfDisplayLabel } from '~/rjsf-tools/rjsf-widgets.utils';
 
 interface RangeWidgetLabelProps {
   displayLabel?: string;

@@ -6,7 +6,7 @@ import { StyleSheet, View } from 'react-native';
 import type { StyleProp, TextStyle } from 'react-native';
 import { RadioButton, Text } from 'react-native-paper';
 
-import { getRjsfDisplayLabel, mapEnumOptions } from './rjsf-widgets.utils';
+import { getRjsfDisplayLabel, mapEnumOptions } from '~/rjsf-tools/rjsf-widgets.utils';
 
 interface RadioWidgetLabelProps {
   displayLabel?: string;

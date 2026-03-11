@@ -11,8 +11,9 @@ import {
   dateToDateOnlyString,
   formatDateOnlyForDisplay,
   getRjsfDisplayLabel,
+  hasRjsfErrors,
   parseDateOnlyToLocalDate,
-} from './rjsf-widgets.utils';
+} from '~/rjsf-tools/rjsf-widgets.utils';
 
 export const DateWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -32,7 +33,7 @@ export const DateWidget: FunctionComponent<WidgetProps> = ({
   const isDarkMode = useIsDarkMode();
   const styles = useStyles();
   const [showPicker, togglePickerVisibility] = useToggle(false);
-  const hasError = Array.isArray(rawErrors) && rawErrors.length > 0;
+  const hasError = hasRjsfErrors(rawErrors);
   const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
   const date = parseDateOnlyToLocalDate(value as string) ?? new Date();
   const strValue = formatDateOnlyForDisplay(value as string);

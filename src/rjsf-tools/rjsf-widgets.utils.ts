@@ -1,6 +1,14 @@
 import { isBlank } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 
+/**
+ * Returns true when the widget has at least one validation error from RJSF.
+ *
+ * @param rawErrors - The rawErrors from WidgetProps (often `unknown`).
+ * @returns true if rawErrors is a non-empty array.
+ */
+export const hasRjsfErrors = (rawErrors: unknown): boolean => Array.isArray(rawErrors) && rawErrors.length > 0;
+
 export interface GetRjsfDisplayLabelArgs {
   label?: string;
   required?: boolean;

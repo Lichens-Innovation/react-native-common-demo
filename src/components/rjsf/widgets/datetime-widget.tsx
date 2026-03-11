@@ -1,13 +1,18 @@
 import { useAppTheme, useIsDarkMode } from '@lichens-innovation/react-native-common';
 import { isNullish } from '@lichens-innovation/ts-common';
+import DateTimePicker from '@react-native-community/datetimepicker';
 import type { WidgetProps } from '@rjsf/utils';
 import { useToggle } from '@uidotdev/usehooks';
 import type { FunctionComponent } from 'react';
 import { Platform, Pressable, StyleSheet, View } from 'react-native';
-import DateTimePicker from '@react-native-community/datetimepicker';
 import { TextInput } from 'react-native-paper';
 
-import { formatDateTimeForDisplay, getRjsfDisplayLabel, parseDateOrNull } from './rjsf-widgets.utils';
+import {
+  formatDateTimeForDisplay,
+  getRjsfDisplayLabel,
+  hasRjsfErrors,
+  parseDateOrNull,
+} from '~/rjsf-tools/rjsf-widgets.utils';
 
 export const DateTimeWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -27,7 +32,7 @@ export const DateTimeWidget: FunctionComponent<WidgetProps> = ({
   const isDarkMode = useIsDarkMode();
   const styles = useStyles();
   const [showPicker, togglePickerVisibility] = useToggle(false);
-  const hasError = Array.isArray(rawErrors) && rawErrors.length > 0;
+  const hasError = hasRjsfErrors(rawErrors);
   const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
   const date = parseDateOrNull(value as string) ?? new Date();
   const strValue = formatDateTimeForDisplay(value as string);

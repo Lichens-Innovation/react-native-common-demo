@@ -2,10 +2,10 @@ import { useAppTheme } from '@lichens-innovation/react-native-common';
 import { isBlank } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
+import type { StyleProp, ViewStyle } from 'react-native';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { Switch, Text } from 'react-native-paper';
-import type { StyleProp, ViewStyle } from 'react-native';
-import { getRjsfDisplayLabel } from './rjsf-widgets.utils';
+import { getRjsfDisplayLabel } from '~/rjsf-tools/rjsf-widgets.utils';
 
 interface CheckboxWidgetLabelProps {
   displayLabel?: string;

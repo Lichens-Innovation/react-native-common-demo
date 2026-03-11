@@ -5,7 +5,7 @@ import type { FunctionComponent } from 'react';
 import { StyleSheet } from 'react-native';
 import { TextInput } from 'react-native-paper';
 
-import { getRjsfDisplayLabel } from './rjsf-widgets.utils';
+import { getRjsfDisplayLabel, hasRjsfErrors } from '~/rjsf-tools/rjsf-widgets.utils';
 
 export const NumberWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -25,7 +25,7 @@ export const NumberWidget: FunctionComponent<WidgetProps> = ({
 }) => {
   const theme = useAppTheme();
   const styles = useStyles();
-  const hasError = Array.isArray(rawErrors) && rawErrors.length > 0;
+  const hasError = hasRjsfErrors(rawErrors);
   const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
 
   const hasValue = !isNullish(value);
