@@ -19,64 +19,27 @@ interface IconButtonProps {
   title?: string;
 }
 
-export const AddButton: FunctionComponent<IconButtonProps> = ({
-  registry,
-  onClick,
-  disabled,
-  title,
-}) => {
+export const AddButton: FunctionComponent<IconButtonProps> = ({ registry, onClick, disabled, title }) => {
   const label = registry.translateString(TranslatableString.AddItemButton);
-  return (
-    <IconButton
-      icon="plus"
-      onPress={onClick}
-      disabled={disabled}
-      accessibilityLabel={title ?? label}
-    />
-  );
+  return <IconButton icon="plus" onPress={onClick} disabled={disabled} accessibilityLabel={title ?? label} />;
 };
 
-export const CopyButton: FunctionComponent<IconButtonProps> = ({
-  registry,
-  onClick,
-  disabled,
-  title,
-}) => {
+export const CopyButton: FunctionComponent<IconButtonProps> = ({ registry, onClick, disabled, title }) => {
   const label = registry.translateString(TranslatableString.CopyButton);
-  return (
-    <IconButton icon="content-copy" onPress={onClick} disabled={disabled} accessibilityLabel={title ?? label} />
-  );
+  return <IconButton icon="content-copy" onPress={onClick} disabled={disabled} accessibilityLabel={title ?? label} />;
 };
 
-export const MoveDownButton: FunctionComponent<IconButtonProps> = ({
-  registry,
-  onClick,
-  disabled,
-  title,
-}) => {
+export const MoveDownButton: FunctionComponent<IconButtonProps> = ({ registry, onClick, disabled, title }) => {
   const label = registry.translateString(TranslatableString.MoveDownButton);
-  return (
-    <IconButton icon="arrow-down" onPress={onClick} disabled={disabled} accessibilityLabel={title ?? label} />
-  );
+  return <IconButton icon="arrow-down" onPress={onClick} disabled={disabled} accessibilityLabel={title ?? label} />;
 };
 
-export const MoveUpButton: FunctionComponent<IconButtonProps> = ({
-  registry,
-  onClick,
-  disabled,
-  title,
-}) => {
+export const MoveUpButton: FunctionComponent<IconButtonProps> = ({ registry, onClick, disabled, title }) => {
   const label = registry.translateString(TranslatableString.MoveUpButton);
   return <IconButton icon="arrow-up" onPress={onClick} disabled={disabled} accessibilityLabel={title ?? label} />;
 };
 
-export const RemoveButton: FunctionComponent<IconButtonProps> = ({
-  uiSchema,
-  registry,
-  onClick,
-  disabled,
-  title,
-}) => {
+export const RemoveButton: FunctionComponent<IconButtonProps> = ({ uiSchema, registry, onClick, disabled, title }) => {
   const options = getUiOptions(uiSchema);
   const label = registry.translateString(TranslatableString.RemoveButton);
   return (
@@ -90,16 +53,9 @@ export const RemoveButton: FunctionComponent<IconButtonProps> = ({
   );
 };
 
-export const ClearButton: FunctionComponent<IconButtonProps> = ({
-  registry,
-  onClick,
-  disabled,
-  title,
-}) => {
+export const ClearButton: FunctionComponent<IconButtonProps> = ({ registry, onClick, disabled, title }) => {
   const label = registry.translateString(TranslatableString.ClearButton);
-  return (
-    <IconButton icon="close" onPress={onClick} disabled={disabled} accessibilityLabel={title ?? label} />
-  );
+  return <IconButton icon="close" onPress={onClick} disabled={disabled} accessibilityLabel={title ?? label} />;
 };
 
 interface SubmitButtonProps {
@@ -121,11 +77,7 @@ export const SubmitButton: FunctionComponent<SubmitButtonProps> = ({ uiSchema })
 
   return (
     <View style={styles.submitRow}>
-      <Button
-        mode="contained"
-        onPress={() => submit?.(fakeEvent)}
-        {...buttonProps}
-      >
+      <Button mode="contained" onPress={() => submit?.(fakeEvent)} {...buttonProps}>
         {submitText}
       </Button>
     </View>

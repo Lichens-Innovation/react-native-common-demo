@@ -46,9 +46,7 @@ export const RjsfPaperRenderer: FunctionComponent<RjsfPaperRendererProps> = ({
       onChange={handleChange}
       templates={PAPER_TEMPLATES as unknown as FormTemplates}
       validator={customValidator}
-      translateString={(stringToTranslate, params) =>
-        translateRjsfString({ stringToTranslate, params })
-      }
+      translateString={(stringToTranslate, params) => translateRjsfString({ stringToTranslate, params })}
       uiSchema={{
         ...uiSchema,
         'ui:submitButtonOptions': { submitText: t('app:rjsf.submit') },

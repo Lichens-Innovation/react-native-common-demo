@@ -92,14 +92,7 @@ const PaperFieldHelpTemplate = ({ help }: FieldHelpProps) => {
   );
 };
 
-const PaperArrayFieldTemplate = ({
-  title,
-  items,
-  canAdd,
-  onAddClick,
-  registry,
-  uiSchema,
-}: ArrayFieldTemplateProps) => {
+const PaperArrayFieldTemplate = ({ title, items, canAdd, onAddClick, registry, uiSchema }: ArrayFieldTemplateProps) => {
   const styles = useStyles();
 
   return (
@@ -117,11 +110,7 @@ const PaperArrayFieldTemplate = ({
       ))}
 
       {canAdd ? (
-        <AddButton
-          onClick={onAddClick}
-          registry={registry}
-          uiSchema={uiSchema as Record<string, unknown>}
-        />
+        <AddButton onClick={onAddClick} registry={registry} uiSchema={uiSchema as Record<string, unknown>} />
       ) : null}
     </View>
   );

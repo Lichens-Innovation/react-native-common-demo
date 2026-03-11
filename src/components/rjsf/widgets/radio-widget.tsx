@@ -24,9 +24,12 @@ export const RadioWidget: FunctionComponent<WidgetProps> = ({
   const enumOptions = mapEnumOptions(options);
   const hasValue = !isNullish(value);
   const strValue = hasValue ? String(value) : '';
-  const labelNode = displayLabel != null ? (
-    <Text variant="bodyLarge" style={styles.radioTitle}>{displayLabel}</Text>
-  ) : null;
+  const labelNode =
+    displayLabel != null ? (
+      <Text variant="bodyLarge" style={styles.radioTitle}>
+        {displayLabel}
+      </Text>
+    ) : null;
 
   return (
     <View style={styles.widgetBlock}>

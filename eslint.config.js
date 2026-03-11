@@ -9,7 +9,7 @@ export default [
     ignores: ['node_modules/**', 'dist/**', '.expo/**', 'build/**', 'coverage/**', '**/*.d.ts'],
   },
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
+    files: ['src/**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
       parser: tsParser,
       parserOptions: {

@@ -1,8 +1,8 @@
 import { useAppTheme } from '@lichens-innovation/react-native-common';
+import Slider from '@react-native-community/slider';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Slider from '@react-native-community/slider';
 import { Text } from 'react-native-paper';
 
 import { getRjsfDisplayLabel } from './rjsf-widgets.utils';
@@ -17,7 +17,7 @@ export const RangeWidget: FunctionComponent<WidgetProps> = ({
   label,
   hideLabel,
   required,
-  rawErrors,
+  rawErrors: _rawErrors,
   schema,
 }) => {
   const theme = useAppTheme();
@@ -37,9 +37,12 @@ export const RangeWidget: FunctionComponent<WidgetProps> = ({
     onBlur(id, intValue);
   };
 
-  const labelNode = displayLabel != null ? (
-    <Text variant="bodyLarge" style={styles.rangeLabel}>{displayLabel}</Text>
-  ) : null;
+  const labelNode =
+    displayLabel != null ? (
+      <Text variant="bodyLarge" style={styles.rangeLabel}>
+        {displayLabel}
+      </Text>
+    ) : null;
 
   return (
     <View style={styles.widgetBlock}>
@@ -56,7 +59,9 @@ export const RangeWidget: FunctionComponent<WidgetProps> = ({
           maximumTrackTintColor={theme.colors.outline}
           disabled={disabled || readonly}
         />
-        <Text variant="bodyMedium" style={styles.rangeValue}>{displayValue}</Text>
+        <Text variant="bodyMedium" style={styles.rangeValue}>
+          {displayValue}
+        </Text>
       </View>
     </View>
   );

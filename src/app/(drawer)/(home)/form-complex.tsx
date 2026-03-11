@@ -25,12 +25,7 @@ const FormComplexScreen: FunctionComponent = () => {
   return (
     <ScrollView style={styles.scroll} contentContainerStyle={styles.content}>
       <View style={styles.form}>
-        <RjsfPaperRenderer
-          schema={schema}
-          uiSchema={uiSchema}
-          onSubmit={handleSubmit}
-          onError={handleError}
-        />
+        <RjsfPaperRenderer schema={schema} uiSchema={uiSchema} onSubmit={handleSubmit} onError={handleError} />
       </View>
     </ScrollView>
   );

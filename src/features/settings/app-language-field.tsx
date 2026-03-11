@@ -4,11 +4,7 @@ import { observer } from 'mobx-react-lite';
 
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
-import {
-  LanguageSelector,
-  storeSelectedLanguage,
-  SUPPORTED_LANGUAGES
-} from '@lichens-innovation/react-native-common';
+import { LanguageSelector, storeSelectedLanguage, SUPPORTED_LANGUAGES } from '@lichens-innovation/react-native-common';
 
 export const AppLanguageField: FunctionComponent = observer(() => {
   const { t } = useTranslation();

@@ -30,19 +30,16 @@ export const CheckboxWidget: FunctionComponent<WidgetProps> = ({
     handleValueChange(!checked);
   };
 
-  const labelNode = displayLabel != null ? (
-    <Pressable onPress={handleLabelPress} style={styles.checkboxLabel}>
-      <Text variant="bodyLarge">{displayLabel}</Text>
-    </Pressable>
-  ) : null;
+  const labelNode =
+    displayLabel != null ? (
+      <Pressable onPress={handleLabelPress} style={styles.checkboxLabel}>
+        <Text variant="bodyLarge">{displayLabel}</Text>
+      </Pressable>
+    ) : null;
 
   return (
     <View style={styles.checkboxRow}>
-      <Switch
-        value={checked}
-        onValueChange={handleValueChange}
-        disabled={disabled}
-      />
+      <Switch value={checked} onValueChange={handleValueChange} disabled={disabled} />
 
       {labelNode}
     </View>
