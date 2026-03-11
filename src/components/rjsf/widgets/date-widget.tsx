@@ -3,11 +3,16 @@ import { isNullish } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { useState } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { Platform, Pressable, StyleSheet, View } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { TextInput } from 'react-native-paper';
 
-import { dateOnlyToISO, getRjsfDisplayLabel, parseDateOrNull } from './rjsf-widgets.utils';
+import {
+  dateToDateOnlyString,
+  formatDateOnlyForDisplay,
+  getRjsfDisplayLabel,
+  parseDateOnlyToLocalDate,
+} from './rjsf-widgets.utils';
 
 export const DateWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -29,42 +34,59 @@ export const DateWidget: FunctionComponent<WidgetProps> = ({
   const [showPicker, setShowPicker] = useState(false);
   const hasError = Array.isArray(rawErrors) && rawErrors.length > 0;
   const displayLabel = getRjsfDisplayLabel({ label, required, hideLabel });
-  const date = parseDateOrNull(value as string) ?? new Date();
-  const hasValue = !isNullish(value);
-  const strValue = hasValue ? String(value) : '';
+  const date = parseDateOnlyToLocalDate(value as string) ?? new Date();
+  const strValue = formatDateOnlyForDisplay(value as string);
   const pickerDisplay = Platform.OS === 'ios' ? 'spinner' : 'default';
   const themeVariant = isDarkMode ? 'dark' : 'light';
+  const isDisplayOnly = disabled || readonly;
+
+  if (isDisplayOnly) {
+    return (
+      <View style={styles.widgetBlock}>
+        <TextInput
+          mode="outlined"
+          label={displayLabel}
+          value={strValue}
+          placeholder={placeholder}
+          disabled={disabled}
+          editable={false}
+          error={hasError}
+          style={styles.input}
+          outlineColor={theme.colors.outline}
+          onFocus={() => onFocus(id, value)}
+          pointerEvents="auto"
+        />
+      </View>
+    );
+  }
 
   const handlePick = (_: unknown, selectedDate?: Date) => {
     if (Platform.OS === 'android') setShowPicker(false);
     if (!isNullish(selectedDate)) {
-      const iso = dateOnlyToISO(selectedDate);
-      onChange(iso);
-      onBlur(id, iso);
+      const dateOnly = dateToDateOnlyString(selectedDate);
+      onChange(dateOnly);
+      onBlur(id, dateOnly);
     }
-  };
-
-  const handleIconPress = () => {
-    if (disabled || readonly) return;
-    setShowPicker((prev) => !prev);
   };
 
   return (
     <View style={styles.widgetBlock}>
-      <TextInput
-        mode="outlined"
-        label={displayLabel}
-        value={strValue}
-        placeholder={placeholder}
-        disabled={disabled}
-        editable={false}
-        error={hasError}
-        style={styles.input}
-        outlineColor={theme.colors.outline}
-        right={<TextInput.Icon icon="calendar" onPress={handleIconPress} />}
-        onFocus={() => onFocus(id, value)}
-      />
-
+      <Pressable onPress={() => setShowPicker((prev) => !prev)}>
+        <TextInput
+          mode="outlined"
+          label={displayLabel}
+          value={strValue}
+          placeholder={placeholder}
+          disabled={disabled}
+          editable={false}
+          error={hasError}
+          style={styles.input}
+          outlineColor={theme.colors.outline}
+          right={<TextInput.Icon icon="calendar" />}
+          onFocus={() => onFocus(id, value)}
+          pointerEvents="none"
+        />
+      </Pressable>
       {showPicker && (
         <DateTimePicker
           value={date}
