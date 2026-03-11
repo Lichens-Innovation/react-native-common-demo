@@ -1,27 +1,12 @@
 import { useAppTheme } from '@lichens-innovation/react-native-common';
-import { isBlank } from '@lichens-innovation/ts-common';
 import Slider from '@react-native-community/slider';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
-import type { StyleProp, TextStyle } from 'react-native';
 import { Text } from 'react-native-paper';
 
+import { RjsfDisplayLabel } from './display-label';
 import { getRjsfDisplayLabel } from '~/rjsf-tools/rjsf-widgets.utils';
-
-interface RangeWidgetLabelProps {
-  displayLabel?: string;
-  style: StyleProp<TextStyle>;
-}
-
-const RangeWidgetLabel = ({ displayLabel, style }: RangeWidgetLabelProps) => {
-  if (isBlank(displayLabel)) return null;
-  return (
-    <Text variant="bodyLarge" style={style}>
-      {displayLabel}
-    </Text>
-  );
-};
 
 export const RangeWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -55,7 +40,7 @@ export const RangeWidget: FunctionComponent<WidgetProps> = ({
 
   return (
     <View style={styles.widgetBlock}>
-      <RangeWidgetLabel displayLabel={displayLabel} style={styles.rangeLabel} />
+      <RjsfDisplayLabel label={displayLabel} style={styles.rangeLabel} />
 
       <View style={styles.rangeRow}>
         <Slider

@@ -1,26 +1,12 @@
 import { useAppTheme } from '@lichens-innovation/react-native-common';
-import { isBlank, isNullish } from '@lichens-innovation/ts-common';
+import { isNullish } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
-import type { StyleProp, TextStyle } from 'react-native';
 import { Checkbox, Text } from 'react-native-paper';
 
+import { RjsfDisplayLabel } from './display-label';
 import { getRjsfDisplayLabel, mapEnumOptions } from '~/rjsf-tools/rjsf-widgets.utils';
-
-interface CheckboxesWidgetLabelProps {
-  displayLabel?: string;
-  style: StyleProp<TextStyle>;
-}
-
-const CheckboxesWidgetLabel = ({ displayLabel, style }: CheckboxesWidgetLabelProps) => {
-  if (isBlank(displayLabel)) return null;
-  return (
-    <Text variant="bodyLarge" style={style}>
-      {displayLabel}
-    </Text>
-  );
-};
 
 export const CheckboxesWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -57,7 +43,7 @@ export const CheckboxesWidget: FunctionComponent<WidgetProps> = ({
 
   return (
     <View style={styles.widgetBlock}>
-      <CheckboxesWidgetLabel displayLabel={displayLabel} style={styles.checkboxesTitle} />
+      <RjsfDisplayLabel label={displayLabel} style={styles.checkboxesTitle} />
 
       {enumOptions.map((opt) => {
         const isOptionChecked = currentSet.includes(opt.value);

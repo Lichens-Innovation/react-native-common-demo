@@ -1,26 +1,11 @@
 import { useAppTheme } from '@lichens-innovation/react-native-common';
-import { isBlank } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
-import type { StyleProp, TextStyle } from 'react-native';
-import { RadioButton, Text } from 'react-native-paper';
+import { RadioButton } from 'react-native-paper';
 
+import { RjsfDisplayLabel } from './display-label';
 import { getRjsfDisplayLabel, mapEnumOptions, toStringOrEmpty } from '~/rjsf-tools/rjsf-widgets.utils';
-
-interface RadioWidgetLabelProps {
-  displayLabel?: string;
-  style: StyleProp<TextStyle>;
-}
-
-const RadioWidgetLabel = ({ displayLabel, style }: RadioWidgetLabelProps) => {
-  if (isBlank(displayLabel)) return null;
-  return (
-    <Text variant="bodyLarge" style={style}>
-      {displayLabel}
-    </Text>
-  );
-};
 
 export const RadioWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -41,7 +26,7 @@ export const RadioWidget: FunctionComponent<WidgetProps> = ({
 
   return (
     <View style={styles.widgetBlock}>
-      <RadioWidgetLabel displayLabel={displayLabel} style={styles.radioTitle} />
+      <RjsfDisplayLabel label={displayLabel} style={styles.radioTitle} />
       <RadioButton.Group
         onValueChange={(v) => {
           onChange(v);

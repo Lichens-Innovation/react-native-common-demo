@@ -1,5 +1,6 @@
 export * from './checkbox-widget';
 export * from './checkboxes-widget';
+export * from './display-label';
 export * from './date-widget';
 export * from './datetime-widget';
 export * from './hidden-widget';

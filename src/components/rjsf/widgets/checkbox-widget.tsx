@@ -2,25 +2,11 @@ import { useAppTheme } from '@lichens-innovation/react-native-common';
 import { isBlank } from '@lichens-innovation/ts-common';
 import type { WidgetProps } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
-import type { StyleProp, ViewStyle } from 'react-native';
 import { Pressable, StyleSheet, View } from 'react-native';
-import { Switch, Text } from 'react-native-paper';
+import { Switch } from 'react-native-paper';
+
+import { RjsfDisplayLabel } from './display-label';
 import { getRjsfDisplayLabel } from '~/rjsf-tools/rjsf-widgets.utils';
-
-interface CheckboxWidgetLabelProps {
-  displayLabel?: string;
-  onPress: () => void;
-  style: StyleProp<ViewStyle>;
-}
-
-const CheckboxWidgetLabel = ({ displayLabel, onPress, style }: CheckboxWidgetLabelProps) => {
-  if (isBlank(displayLabel)) return null;
-  return (
-    <Pressable onPress={onPress} style={style}>
-      <Text variant="bodyLarge">{displayLabel}</Text>
-    </Pressable>
-  );
-};
 
 export const CheckboxWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -51,7 +37,11 @@ export const CheckboxWidget: FunctionComponent<WidgetProps> = ({
     <View style={styles.checkboxRow}>
       <Switch value={checked} onValueChange={handleValueChange} disabled={disabled} />
 
-      <CheckboxWidgetLabel displayLabel={displayLabel} onPress={handleLabelPress} style={styles.checkboxLabel} />
+      {!isBlank(displayLabel) ? (
+        <Pressable onPress={handleLabelPress} style={styles.checkboxLabel}>
+          <RjsfDisplayLabel label={displayLabel} />
+        </Pressable>
+      ) : null}
     </View>
   );
 };
