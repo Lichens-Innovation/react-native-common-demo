@@ -1,5 +1,4 @@
 import { isBlank } from '@lichens-innovation/ts-common';
-import { logger } from '@lichens-innovation/react-native-common';
 import { replaceStringParameters } from '@rjsf/utils';
 import i18next from 'i18next';
 
@@ -26,7 +25,8 @@ interface TranslateStringArgs {
 export const translateRjsfString = ({ stringToTranslate, params }: TranslateStringArgs): string => {
   const i18nKey = RJSF_STRING_TO_I18N_KEY[stringToTranslate];
   if (isBlank(i18nKey)) {
-    logger.warn(`[translateString] RJSF i18n: clé non mappée: "${stringToTranslate}"`);
+    // eslint-disable-next-line no-console
+    console.warn(`[translateRjsfString] RJSF i18n: missing key: "${stringToTranslate}"`);
   }
 
   const translated = i18nKey ? i18next.t(i18nKey) : stringToTranslate;

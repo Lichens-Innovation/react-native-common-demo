@@ -1,5 +1,4 @@
 import { isBlank } from '@lichens-innovation/ts-common';
-import { logger } from '@lichens-innovation/react-native-common';
 import { useTranslation } from 'react-i18next';
 import type { LocalizedFormSchema, MetaFormSchema } from './rjsf-i18n-types';
 
@@ -23,7 +22,8 @@ export const useLocalizedForm = (metaFormSchema: MetaFormSchema): LocalizedFormS
   }
 
   const fallbackLanguage = getFallbackLanguage(metaFormSchema);
-  logger.warn(
+  // eslint-disable-next-line no-console
+  console.warn(
     `Language ${language} not found in metaFormSchema ${metaFormSchema.id}. Falling back to ${fallbackLanguage}.`
   );
 
