@@ -12,7 +12,7 @@ import {
   getRjsfDisplayLabel,
   hasRjsfErrors,
   parseDateOrNull,
-} from '~/rjsf-tools/rjsf-widgets.utils';
+} from '@lichens-innovation/ts-common/rjsf';
 
 export const DateTimeWidget: FunctionComponent<WidgetProps> = ({
   id,

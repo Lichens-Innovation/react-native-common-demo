@@ -5,7 +5,7 @@ import type { FunctionComponent } from 'react';
 import { StyleSheet } from 'react-native';
 import { TextInput } from 'react-native-paper';
 
-import { getRjsfDisplayLabel, hasRjsfErrors, toStringOrEmpty } from '~/rjsf-tools/rjsf-widgets.utils';
+import { getRjsfDisplayLabel, hasRjsfErrors, toStringOrEmpty } from '@lichens-innovation/ts-common/rjsf';
 
 export const NumberWidget: FunctionComponent<WidgetProps> = ({
   id,

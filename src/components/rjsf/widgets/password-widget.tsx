@@ -8,7 +8,7 @@ import {
   getRjsfTextChangeValue,
   hasRjsfErrors,
   toStringOrEmpty,
-} from '~/rjsf-tools/rjsf-widgets.utils';
+} from '@lichens-innovation/ts-common/rjsf';
 
 export const PasswordWidget: FunctionComponent<WidgetProps> = ({
   id,

@@ -6,7 +6,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { Switch } from 'react-native-paper';
 
 import { RjsfDisplayLabel } from './display-label';
-import { getRjsfDisplayLabel } from '~/rjsf-tools/rjsf-widgets.utils';
+import { getRjsfDisplayLabel } from '@lichens-innovation/ts-common/rjsf';
 
 export const CheckboxWidget: FunctionComponent<WidgetProps> = ({
   id,

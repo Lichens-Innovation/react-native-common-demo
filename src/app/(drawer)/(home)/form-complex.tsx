@@ -2,9 +2,9 @@ import { logger, useAppTheme } from '@lichens-innovation/react-native-common';
 import type { FunctionComponent } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 
+import type { MetaFormSchema } from '@lichens-innovation/ts-common/rjsf';
+import { useLocalizedForm } from '@lichens-innovation/ts-common/rjsf';
 import { RjsfPaperRenderer } from '~/components/rjsf/rjsf-paper-renderer';
-import type { MetaFormSchema } from '~/rjsf-tools/rjsf-i18n-types';
-import { useLocalizedForm } from '~/rjsf-tools/use-localized-form';
 
 import schema02 from '~/features/form-demo/schema-02.json';
 

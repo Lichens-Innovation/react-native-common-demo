@@ -13,7 +13,7 @@ import {
   getRjsfDisplayLabel,
   hasRjsfErrors,
   parseDateOnlyToLocalDate,
-} from '~/rjsf-tools/rjsf-widgets.utils';
+} from '@lichens-innovation/ts-common/rjsf';
 
 export const DateWidget: FunctionComponent<WidgetProps> = ({
   id,

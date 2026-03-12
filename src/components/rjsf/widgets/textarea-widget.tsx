@@ -9,7 +9,7 @@ import {
   getRjsfTextChangeValue,
   hasRjsfErrors,
   toStringOrEmpty,
-} from '~/rjsf-tools/rjsf-widgets.utils';
+} from '@lichens-innovation/ts-common/rjsf';
 
 export const TextareaWidget: FunctionComponent<WidgetProps> = ({
   id,

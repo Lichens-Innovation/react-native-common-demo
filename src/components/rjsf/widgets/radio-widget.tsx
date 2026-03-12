@@ -5,7 +5,8 @@ import { StyleSheet, View } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 
 import { RjsfDisplayLabel } from './display-label';
-import { getRjsfDisplayLabel, mapEnumOptions, toStringOrEmpty } from '~/rjsf-tools/rjsf-widgets.utils';
+import type { EnumOptionDisplay } from '@lichens-innovation/ts-common/rjsf';
+import { getRjsfDisplayLabel, mapEnumOptions, toStringOrEmpty } from '@lichens-innovation/ts-common/rjsf';
 
 export const RadioWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -34,7 +35,7 @@ export const RadioWidget: FunctionComponent<WidgetProps> = ({
         }}
         value={strValue}
       >
-        {enumOptions.map((opt) => (
+        {enumOptions.map((opt: EnumOptionDisplay) => (
           <RadioButton.Item
             key={opt.value}
             label={opt.label}

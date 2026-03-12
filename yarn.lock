@@ -1813,12 +1813,12 @@
   dependencies:
     date-fns "^4.1.0"
 
-"@lichens-innovation/ts-common@^1.6.2":
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/@lichens-innovation/ts-common/-/ts-common-1.6.2.tgz#a27bb311bd0a2833d7c235d421ccc2a510d4c1e5"
-  integrity sha512-2FohjCOpQBvuoteCRsXD1txl10nxvlzX87bcc/M9THPYpj6WBu01V10xREnitN/zoxZDdostOGzBceO3i4GPYQ==
+"@lichens-innovation/ts-common@^1.15.0":
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/@lichens-innovation/ts-common/-/ts-common-1.15.0.tgz#dda5cbb4120f4dd62a9a6f4de62e6a47d904917e"
+  integrity sha512-NNCe1tTM29fMW0tc4eL3CrDKbAYLxjxUiWrkdOIZAJkGwnTGiTJlsW5LwsbGhcXZHGx1uE2ouscqjmHYMGXIJg==
   dependencies:
-    date-fns "^3.0.0"
+    date-fns "^4.1.0"
 
 "@noble/hashes@^2.0.1":
   version "2.0.1"
@@ -4095,11 +4095,6 @@ date-fns-tz@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/date-fns-tz/-/date-fns-tz-3.2.0.tgz#647dc56d38ac33a3e37b65e9d5c4cda5af5e58e6"
   integrity sha512-sg8HqoTEulcbbbVXeg84u5UnlsQa8GS5QXMqjjYIhS4abEVVKIUwe0/l/UhrZdKaL/W5eWZNlbTeEIiOXTcsBQ==
-
-date-fns@^3.0.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-3.6.0.tgz#f20ca4fe94f8b754951b24240676e8618c0206bf"
-  integrity sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==
 
 date-fns@^4.1.0:
   version "4.1.0"

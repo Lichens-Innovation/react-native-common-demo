@@ -8,7 +8,7 @@ import {
   hasRjsfErrors,
   mapEnumOptions,
   toStringOrUndefined,
-} from '~/rjsf-tools/rjsf-widgets.utils';
+} from '@lichens-innovation/ts-common/rjsf';
 
 export const SelectWidget: FunctionComponent<WidgetProps> = ({
   id,

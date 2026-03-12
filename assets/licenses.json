@@ -1294,7 +1294,7 @@
         "path": "node_modules/@lichens-innovation/react-native-common/node_modules/@lichens-innovation/ts-common",
         "licenseFile": "node_modules/@lichens-innovation/react-native-common/node_modules/@lichens-innovation/ts-common/LICENSE"
     },
-    "@lichens-innovation/ts-common@1.6.2": {
+    "@lichens-innovation/ts-common@1.15.0": {
         "licenses": "MIT",
         "repository": "https://github.com/Lichens-Innovation/ts-common",
         "publisher": "Lichens Innovation",
@@ -3352,12 +3352,6 @@
         "email": "marnusw@gmail.com",
         "path": "node_modules/date-fns-tz",
         "licenseFile": "node_modules/date-fns-tz/LICENSE.md"
-    },
-    "date-fns@3.6.0": {
-        "licenses": "MIT",
-        "repository": "https://github.com/date-fns/date-fns",
-        "path": "node_modules/@lichens-innovation/ts-common/node_modules/date-fns",
-        "licenseFile": "node_modules/@lichens-innovation/ts-common/node_modules/date-fns/LICENSE.md"
     },
     "date-fns@4.1.0": {
         "licenses": "MIT",

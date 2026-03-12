@@ -6,7 +6,8 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { Checkbox, Text } from 'react-native-paper';
 
 import { RjsfDisplayLabel } from './display-label';
-import { getRjsfDisplayLabel, mapEnumOptions } from '~/rjsf-tools/rjsf-widgets.utils';
+import type { EnumOptionDisplay } from '@lichens-innovation/ts-common/rjsf';
+import { getRjsfDisplayLabel, mapEnumOptions } from '@lichens-innovation/ts-common/rjsf';
 
 export const CheckboxesWidget: FunctionComponent<WidgetProps> = ({
   id,
@@ -45,7 +46,7 @@ export const CheckboxesWidget: FunctionComponent<WidgetProps> = ({
     <View style={styles.widgetBlock}>
       <RjsfDisplayLabel label={displayLabel} style={styles.checkboxesTitle} />
 
-      {enumOptions.map((opt) => {
+      {enumOptions.map((opt: EnumOptionDisplay) => {
         const isOptionChecked = currentSet.includes(opt.value);
         const checkboxStatus = isOptionChecked ? 'checked' : 'unchecked';
         return (

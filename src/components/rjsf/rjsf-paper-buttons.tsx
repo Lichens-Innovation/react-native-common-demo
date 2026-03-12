@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Button, IconButton } from 'react-native-paper';
 
-import type { RjsfRegistryWithTranslate } from '~/rjsf-tools/rjsf-i18n-types';
+import type { RjsfRegistryWithTranslate } from '@lichens-innovation/ts-common/rjsf';
 
 import { FormSubmitContext } from './form-submit-context';
 

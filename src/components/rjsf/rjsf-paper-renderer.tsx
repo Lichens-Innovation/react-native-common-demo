@@ -5,8 +5,7 @@ import type { FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { translateRjsfString } from '~/rjsf-tools/rjsf-i18n.utils';
-import { useRjsfValidator } from '~/rjsf-tools/use-rjsf-validator';
+import { translateRjsfString, useRjsfValidator } from '@lichens-innovation/ts-common/rjsf';
 
 import { PAPER_TEMPLATES } from './rjsf-paper-templates';
 import { RJSF_PAPER_THEME } from './rjsf-paper-theme';
@@ -49,7 +48,7 @@ export const RjsfPaperRenderer: FunctionComponent<RjsfPaperRendererProps> = ({
       translateString={(stringToTranslate, params) => translateRjsfString({ stringToTranslate, params })}
       uiSchema={{
         ...uiSchema,
-        'ui:submitButtonOptions': { submitText: t('app:rjsf.submit') },
+        'ui:submitButtonOptions': { submitText: t('rjsf:submit') },
       }}
     />
   );

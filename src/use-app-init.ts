@@ -1,4 +1,5 @@
 import { commonStore, startNetworkStateLogging } from '@lichens-innovation/react-native-common';
+import { initRjsf } from '@lichens-innovation/ts-common/rjsf';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import { startNetworkLogging, stopNetworkLogging } from 'react-native-network-logger';
@@ -9,6 +10,7 @@ import { polyfillCrypto } from './utils/polyfill-crypto';
 
 polyfillCrypto();
 initI18N();
+initRjsf();
 logEnvironmentInfo();
 
 export const useAppInit = () => {

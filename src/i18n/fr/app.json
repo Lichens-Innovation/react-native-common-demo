@@ -34,19 +34,5 @@
     "eventLogs": "Fichiers de logs",
     "networkLogs": "Logs réseau",
     "envVars": "ENV Vars"
-  },
-  "rjsf": {
-    "addItem": "Ajouter un élément",
-    "add": "Ajouter",
-    "copy": "Copier",
-    "moveDown": "Descendre",
-    "moveUp": "Monter",
-    "remove": "Supprimer",
-    "clear": "Effacer",
-    "keyLabel": "Clé",
-    "yes": "Oui",
-    "no": "Non",
-    "errors": "Erreurs",
-    "submit": "Envoyer"
   }
 }
