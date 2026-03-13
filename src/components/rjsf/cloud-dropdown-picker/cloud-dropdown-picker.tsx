@@ -1,12 +1,19 @@
-import { getRjsfDisplayLabel, hasRjsfErrors, toStringOrUndefined } from '@lichens-innovation/ts-common/rjsf';
+import { format, isValid, parseISO } from 'date-fns';
+import { isNotBlank } from '@lichens-innovation/ts-common';
+import { getRjsfDisplayLabel, hasRjsfErrors } from '@lichens-innovation/ts-common/rjsf';
 import { DropDownSelector, useAppTheme } from '@lichens-innovation/react-native-common';
 import type { FieldProps, RJSFSchema } from '@rjsf/utils';
 import type { FunctionComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
-
-import { useCloudDropdownOptions } from './use-cloud-dropdown-options';
 import { useTranslation } from 'react-i18next';
+
+import {
+  buildCloudDropdownFormData,
+  getCloudDropdownUpdatedAt,
+  getCloudDropdownValue,
+} from './cloud-dropdown-picker.utils';
+import { useCloudDropdownOptions } from './use-cloud-dropdown-options';
 
 export const CloudDropdownPicker: FunctionComponent<FieldProps<Record<string, unknown>, RJSFSchema>> = ({
   formData,
@@ -27,12 +34,18 @@ export const CloudDropdownPicker: FunctionComponent<FieldProps<Record<string, un
   const hasError = hasRjsfErrors(rawErrors);
   const label = schema.title ?? '';
   const hideLabel = uiSchema?.['ui:options']?.label === false;
-  const displayLabel = isOptionsLoading
+  const baseDisplayLabel = isOptionsLoading
     ? t('common:asyncStatus.loading')
     : getRjsfDisplayLabel({ label, required, hideLabel });
+  const updatedAtRaw = getCloudDropdownUpdatedAt(formData);
+  const formattedUpdatedAt = isNotBlank(updatedAtRaw)
+    ? format(new Date(updatedAtRaw), 'yyyy-MM-dd HH:mm:ss')
+    : undefined;
+  const displayLabel =
+    formattedUpdatedAt !== undefined ? `${baseDisplayLabel} (${formattedUpdatedAt})` : baseDisplayLabel;
 
   const placeholder = uiSchema?.['ui:placeholder'];
-  const strValue = toStringOrUndefined(formData);
+  const strValue = getCloudDropdownValue(formData);
   const baseId = fieldPathId?.$id ?? id ?? 'cloudDropdownPicker';
   const path = fieldPathId?.path ?? [];
 
@@ -41,8 +54,8 @@ export const CloudDropdownPicker: FunctionComponent<FieldProps<Record<string, un
   const errorMessage = isOptionsError && optionsError ? optionsError.message : undefined;
 
   const handleChange = (code: string | undefined) => {
-    const nextValue = code as unknown as Record<string, unknown> | undefined;
-    onChange(nextValue, path, undefined, baseId);
+    const nextFormData = buildCloudDropdownFormData(code);
+    onChange(nextFormData, path, undefined, baseId);
     onBlur(baseId, code ?? '');
   };
 
