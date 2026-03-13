@@ -9,9 +9,10 @@ import {
   LIGHT_THEME,
   NAVIGATION_DARK,
   NAVIGATION_LIGHT,
+  queryClient,
   SnackbarProvider,
-  TanstackQueryProvider,
 } from '@lichens-innovation/react-native-common';
+import { QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider } from '@react-navigation/native';
 import * as Sentry from '@sentry/react-native';
 import 'expo-dev-client';
@@ -37,7 +38,7 @@ const RootLayout: FunctionComponent = observer(() => {
 
   return (
     <SafeAreaProvider>
-      <TanstackQueryProvider>
+      <QueryClientProvider client={queryClient}>
         <KeyboardProvider>
           <PaperProvider theme={paperTheme}>
             <StatusBar style={statusBarStyle} backgroundColor={statusBarBackgroundColor} />
@@ -56,7 +57,7 @@ const RootLayout: FunctionComponent = observer(() => {
             </ThemeProvider>
           </PaperProvider>
         </KeyboardProvider>
-      </TanstackQueryProvider>
+      </QueryClientProvider>
     </SafeAreaProvider>
   );
 });
