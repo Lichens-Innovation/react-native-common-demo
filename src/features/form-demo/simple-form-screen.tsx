@@ -13,7 +13,7 @@ const simpleMetaSchema = schema01 as unknown as MetaFormSchema;
 export const SimpleFormScreen: FunctionComponent = () => {
   const { schema, uiSchema } = useLocalizedForm(simpleMetaSchema);
   const styles = useStyles();
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   const handleSubmit = (data: { formData?: Record<string, unknown> }) => {
     logger.info('Simple form submitted', { formData: data.formData });
