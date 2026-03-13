@@ -1,12 +1,12 @@
-import { format, isValid, parseISO } from 'date-fns';
+import { DropDownSelector, useAppTheme } from '@lichens-innovation/react-native-common';
 import { isNotBlank } from '@lichens-innovation/ts-common';
 import { getRjsfDisplayLabel, hasRjsfErrors } from '@lichens-innovation/ts-common/rjsf';
-import { DropDownSelector, useAppTheme } from '@lichens-innovation/react-native-common';
 import type { FieldProps, RJSFSchema } from '@rjsf/utils';
+import { format } from 'date-fns';
 import type { FunctionComponent } from 'react';
+import { useTranslation } from 'react-i18next';
 import { StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
-import { useTranslation } from 'react-i18next';
 
 import {
   buildCloudDropdownFormData,
