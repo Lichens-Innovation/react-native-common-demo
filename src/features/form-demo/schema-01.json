@@ -35,6 +35,7 @@
         }
       },
       "uiSchema": {
+        "ui:submitButtonOptions": { "submitText": "Enregistrer" },
         "firstName": {
           "ui:placeholder": "ex. Jean"
         },
@@ -88,6 +89,7 @@
         }
       },
       "uiSchema": {
+        "ui:submitButtonOptions": { "submitText": "Save" },
         "firstName": {
           "ui:placeholder": "e.g. John"
         },
