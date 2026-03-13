@@ -5,108 +5,38 @@
     "fr": {
       "schema": {
         "type": "object",
-        "required": ["firstName", "lastName", "notes"],
+        "required": ["notes"],
         "properties": {
-          "firstName": {
-            "type": "string",
-            "title": "Prénom",
-            "description": "Votre prénom légal",
-            "default": "Chuck",
-            "minLength": 1
-          },
-          "lastName": {
-            "type": "string",
-            "title": "Nom",
-            "description": "Votre nom de famille",
-            "default": "Norris",
-            "minLength": 1
-          },
           "notes": {
             "type": "string",
             "title": "Notes",
             "minLength": 1
-          },
-          "notesRecording": {
-            "type": "string",
-            "title": "Enregistrement des notes",
-            "format": "uri",
-            "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
           }
         }
       },
       "uiSchema": {
         "ui:submitButtonOptions": { "submitText": "Enregistrer" },
-        "firstName": {
-          "ui:placeholder": "ex. Jean"
-        },
-        "lastName": {
-          "ui:placeholder": "ex. Dupont"
-        },
         "notes": {
           "ui:placeholder": "Saisissez vos notes…"
-        },
-        "birthDate": {
-          "ui:options": {
-            "format": "YYYY-MM-DD"
-          }
-        },
-        "notesRecording": {
-          "ui:widget": "hidden",
-          "ui:placeholder": "https://…"
         }
       }
     },
     "en": {
       "schema": {
         "type": "object",
-        "required": ["firstName", "lastName", "notes"],
+        "required": ["notes"],
         "properties": {
-          "firstName": {
-            "type": "string",
-            "title": "First Name",
-            "description": "Your legal first name",
-            "default": "Chuck",
-            "minLength": 1
-          },
-          "lastName": {
-            "type": "string",
-            "title": "Last Name",
-            "description": "Your family name",
-            "default": "Norris",
-            "minLength": 1
-          },
           "notes": {
             "type": "string",
             "title": "Notes",
             "minLength": 1
-          },
-          "notesRecording": {
-            "type": "string",
-            "title": "Notes Recording",
-            "format": "uri",
-            "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
           }
         }
       },
       "uiSchema": {
         "ui:submitButtonOptions": { "submitText": "Save" },
-        "firstName": {
-          "ui:placeholder": "e.g. John"
-        },
-        "lastName": {
-          "ui:placeholder": "e.g. Doe"
-        },
         "notes": {
           "ui:placeholder": "Enter your notes…"
-        },
-        "birthDate": {
-          "ui:options": {
-            "format": "YYYY-MM-DD"
-          }
-        },
-        "notesRecording": {
-          "ui:widget": "hidden",
-          "ui:placeholder": "https://…"
         }
       }
     }
