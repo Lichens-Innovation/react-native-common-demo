@@ -38,11 +38,8 @@ export const CloudDropdownPicker: FunctionComponent<FieldProps<Record<string, un
     ? t('common:asyncStatus.loading')
     : getRjsfDisplayLabel({ label, required, hideLabel });
   const updatedAtRaw = getCloudDropdownUpdatedAt(formData);
-  const formattedUpdatedAt = isNotBlank(updatedAtRaw)
-    ? format(new Date(updatedAtRaw), 'yyyy-MM-dd HH:mm:ss')
-    : undefined;
-  const displayLabel =
-    formattedUpdatedAt !== undefined ? `${baseDisplayLabel} (${formattedUpdatedAt})` : baseDisplayLabel;
+  const timestamp = isNotBlank(updatedAtRaw) ? format(new Date(updatedAtRaw), 'yyyy-MM-dd HH:mm:ss') : '';
+  const displayLabel = isNotBlank(timestamp) ? `${baseDisplayLabel} (${timestamp})` : baseDisplayLabel;
 
   const placeholder = uiSchema?.['ui:placeholder'];
   const strValue = getCloudDropdownValue(formData);
@@ -70,6 +67,7 @@ export const CloudDropdownPicker: FunctionComponent<FieldProps<Record<string, un
         disabled={(disabled ?? false) || (readonly ?? false) || isOptionsLoading}
         isError={showError}
       />
+
       {errorMessage ? (
         <Text variant="bodySmall" style={styles.helpError}>
           {errorMessage}
