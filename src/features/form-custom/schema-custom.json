@@ -12,7 +12,12 @@
             "title": "Option cloud",
             "properties": {
               "value": { "type": "string", "title": "Valeur", "default": "https://swapi.dev/api/people/1/" },
-              "updatedAt": { "type": "string", "format": "date-time", "title": "Date de mise à jour", "default": "2026-03-13T19:36:34.382Z" }
+              "updatedAt": {
+                "type": "string",
+                "format": "date-time",
+                "title": "Date de mise à jour",
+                "default": "2026-03-13T19:36:34.382Z"
+              }
             }
           },
           "notes": {
@@ -43,7 +48,12 @@
             "title": "Cloud option",
             "properties": {
               "value": { "type": "string", "title": "Value", "default": "https://swapi.dev/api/people/1/" },
-              "updatedAt": { "type": "string", "format": "date-time", "title": "Last updated", "default": "2026-03-13T19:36:34.382Z" }
+              "updatedAt": {
+                "type": "string",
+                "format": "date-time",
+                "title": "Last updated",
+                "default": "2026-03-13T19:36:34.382Z"
+              }
             }
           },
           "notes": {
