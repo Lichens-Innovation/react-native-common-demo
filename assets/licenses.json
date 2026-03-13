@@ -1277,7 +1277,7 @@
         "path": "node_modules/@legendapp/list",
         "licenseFile": "node_modules/@legendapp/list/LICENSE"
     },
-    "@lichens-innovation/react-native-common@3.11.6": {
+    "@lichens-innovation/react-native-common@3.11.7": {
         "licenses": "MIT*",
         "repository": "https://github.com/Lichens-Innovation/react-native-common",
         "publisher": "Lichens Innovation",
