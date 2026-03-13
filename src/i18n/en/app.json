@@ -24,7 +24,8 @@
   "formDemo": {
     "tabs": {
       "simple": "Simple",
-      "complex": "Complex"
+      "complex": "Complex",
+      "custom": "Custom"
     }
   },
   "tools": {
