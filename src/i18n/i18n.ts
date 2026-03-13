@@ -6,6 +6,18 @@ import { initReactI18next } from 'react-i18next';
 import en from '~/i18n/en/app.json';
 import fr from '~/i18n/fr/app.json';
 
+/**
+ * Initializes i18next with common bundles (common, rjsf) and app bundles (en/fr).
+ * After init, use `t('namespace:key')` or `t('namespace:key.nested')`.
+ *
+ * @example Key levels available with `t()`
+ * // Simple key in a namespace (common, rjsf, etc.)
+ * t('common:add')
+ * t('rjsf:errors')
+ *
+ * // Nested key (object in the JSON)
+ * t('app:about.title')
+ */
 export const initI18N = () => {
   const i18n = initCommonI18N({ initReactI18next, instance: i18next });
   addResourceBundleForRjsf(i18n);

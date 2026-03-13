@@ -1775,13 +1775,13 @@
   dependencies:
     use-sync-external-store "^1.5.0"
 
-"@lichens-innovation/react-native-common@^3.11.4":
-  version "3.11.4"
-  resolved "https://registry.yarnpkg.com/@lichens-innovation/react-native-common/-/react-native-common-3.11.4.tgz#44b31e38a81fe8e0219fa3013d5c94f946f56f0c"
-  integrity sha512-XWjjqX1V8q2rDAlwx5N67vW1EtfbxZM1tFrnD2Vg5TiqHfXd3rzsJnDH84KlAnqNRtf5Z6rCU+JHwmjEvIKuWQ==
+"@lichens-innovation/react-native-common@^3.11.6":
+  version "3.11.6"
+  resolved "https://registry.yarnpkg.com/@lichens-innovation/react-native-common/-/react-native-common-3.11.6.tgz#189c281b663e36b213d9ffc70ce5638e99069f92"
+  integrity sha512-SAOaO6+0iLqjInACCgbynJJ/e3xYM3p93+dmzr0sxYnOuBjDWZuZHPbb+Cvp0+ftFufykEWdlH06pCty5fy2ag==
   dependencies:
     "@legendapp/list" "^2.0.9"
-    "@lichens-innovation/ts-common" "^1.15.2"
+    "@lichens-innovation/ts-common" "^1.15.4"
     "@noble/hashes" "^2.0.1"
     "@uidotdev/usehooks" "^2.4.1"
     buffer "^6.0.3"
@@ -1797,10 +1797,10 @@
     react-hook-form "^7.63.0"
     react-syntax-highlighter "^15.6.6"
 
-"@lichens-innovation/ts-common@^1.15.2":
-  version "1.15.2"
-  resolved "https://registry.yarnpkg.com/@lichens-innovation/ts-common/-/ts-common-1.15.2.tgz#892f90e509870a70d139c3dcc69d4509c17b6310"
-  integrity sha512-HT4hVyl7VqW38GjbjpXdaPD0HxFtCJQos6sQ4CZOlGaTZJebku7U+AF0vhKdVXWgbrUf6oevPxVN6tZDdQPgCw==
+"@lichens-innovation/ts-common@^1.15.4":
+  version "1.15.4"
+  resolved "https://registry.yarnpkg.com/@lichens-innovation/ts-common/-/ts-common-1.15.4.tgz#9e96c90e5f1ae629f18cf56f013e1cdfacaf90e0"
+  integrity sha512-mOxN3CCdbMP9sSSCRqSkrnRTGyrurS/WBPCW6kvCE+tHOs58/ptwutKn4QtbVA9arEptyQuSZro/7vDDzU82SQ==
   dependencies:
     date-fns "^4.1.0"
 

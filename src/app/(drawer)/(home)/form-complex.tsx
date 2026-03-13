@@ -7,10 +7,12 @@ import { useLocalizedForm } from '@lichens-innovation/ts-common/rjsf';
 import { RjsfPaperRenderer } from '@lichens-innovation/react-native-common/rjsf';
 
 import schema02 from '~/features/form-demo/schema-02.json';
+import { useTranslation } from 'react-i18next';
 
 const complexMetaSchema = schema02 as unknown as MetaFormSchema;
 
 const FormComplexScreen: FunctionComponent = () => {
+  const { i18n } = useTranslation();
   const { schema, uiSchema } = useLocalizedForm(complexMetaSchema);
   const styles = useStyles();
 
@@ -25,7 +27,13 @@ const FormComplexScreen: FunctionComponent = () => {
   return (
     <ScrollView style={styles.scroll} contentContainerStyle={styles.content}>
       <View style={styles.form}>
-        <RjsfPaperRenderer schema={schema} uiSchema={uiSchema} onSubmit={handleSubmit} onError={handleError} />
+        <RjsfPaperRenderer
+          i18n={i18n}
+          schema={schema}
+          uiSchema={uiSchema}
+          onSubmit={handleSubmit}
+          onError={handleError}
+        />
       </View>
     </ScrollView>
   );
