@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { SimpleFormScreen } from '~/features/form-demo/simple-form-screen';
+import { SimpleFormScreen } from '~/features/form-simple/simple-form-screen';
 
 const Home: FunctionComponent = () => {
   return <SimpleFormScreen />;
