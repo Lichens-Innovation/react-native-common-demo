@@ -77,6 +77,15 @@ const config: ExpoConfig = {
         recordAudioAndroid: true,
       },
     ],
+    [
+      'expo-audio',
+      {
+        microphonePermission:
+          "$(PRODUCT_NAME) a besoin d'accéder à votre microphone pour enregistrer des vidéos et notes audios lors des inspections. \\ This app needs access to your microphone to record videos and audio notes during inspections.",
+        enableBackgroundPlayback: true,
+        enableBackgroundRecording: true,
+      },
+    ],
   ],
   orientation: 'default',
   icon: './assets/images/icon.png',
