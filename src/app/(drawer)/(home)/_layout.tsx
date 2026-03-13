@@ -19,6 +19,12 @@ const TabLayout: FunctionComponent = () => {
       icon: 'hammer-wrench',
     },
     {
+      name: 'form-custom',
+      href: '/(drawer)/(home)/form-custom',
+      title: t('app:formDemo.tabs.custom'),
+      icon: 'pencil-box-outline',
+    },
+    {
       name: 'about',
       href: '/(drawer)/(home)/about',
       title: t('app:about.title'),

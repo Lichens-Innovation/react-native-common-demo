@@ -1,27 +1,26 @@
 import { logger, useAppTheme } from '@lichens-innovation/react-native-common';
-import type { FunctionComponent } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
-
 import { RjsfPaperRenderer } from '@lichens-innovation/react-native-common/rjsf';
 import type { MetaFormSchema } from '@lichens-innovation/ts-common/rjsf';
 import { useLocalizedForm } from '@lichens-innovation/ts-common/rjsf';
+import type { FunctionComponent } from 'react';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 import { useTranslation } from 'react-i18next';
-import schema02 from './schema-02.json';
+import schemaCustom from './schema-custom.json';
 
-const complexMetaSchema = schema02 as unknown as MetaFormSchema;
+const customMetaSchema = schemaCustom as unknown as MetaFormSchema;
 
-export const FormComplexScreen: FunctionComponent = () => {
-  const { i18n } = useTranslation();
-  const { schema, uiSchema } = useLocalizedForm(complexMetaSchema);
+export const CustomFormScreen: FunctionComponent = () => {
+  const { schema, uiSchema } = useLocalizedForm(customMetaSchema);
   const styles = useStyles();
+  const { i18n } = useTranslation();
 
   const handleSubmit = (data: { formData?: Record<string, unknown> }) => {
-    logger.info('Complex form submitted', { formData: data.formData });
+    logger.info('Custom form submitted', { formData: data.formData });
   };
 
   const handleError = (errors: unknown) => {
-    logger.warn('Complex form errors', { errors });
+    logger.warn('Custom form errors', { errors });
   };
 
   return (
