@@ -5,6 +5,7 @@ import { useLocalizedForm } from '@lichens-innovation/ts-common/rjsf';
 import type { FunctionComponent } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 
+import { CloudDropdownPicker } from '~/components/rjsf/cloud-dropdown-picker/cloud-dropdown-picker';
 import { useTranslation } from 'react-i18next';
 import schemaCustom from './schema-custom.json';
 
@@ -30,6 +31,7 @@ export const CustomFormScreen: FunctionComponent = () => {
           i18n={i18n}
           schema={schema}
           uiSchema={uiSchema}
+          fields={{ CloudDropdownPicker }}
           onSubmit={handleSubmit}
           onError={handleError}
         />
