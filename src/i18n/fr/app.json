@@ -21,6 +21,12 @@
     "menuLabel": "Préférences",
     "toggleDarkMode": "Mode sombre"
   },
+  "formDemo": {
+    "tabs": {
+      "simple": "Simple",
+      "complex": "Complexe"
+    }
+  },
   "tools": {
     "title": "Outils",
     "menuLabel": "Outils",

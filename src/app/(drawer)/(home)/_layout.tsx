@@ -9,8 +9,14 @@ const TabLayout: FunctionComponent = () => {
     {
       name: 'index',
       href: '/',
-      title: t('app:home.menuLabel'),
-      icon: 'robot-outline',
+      title: t('app:formDemo.tabs.simple'),
+      icon: 'file-document-outline',
+    },
+    {
+      name: 'form-complex',
+      href: '/(drawer)/(home)/form-complex',
+      title: t('app:formDemo.tabs.complex'),
+      icon: 'hammer-wrench',
     },
     {
       name: 'about',
