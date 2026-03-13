@@ -109,6 +109,7 @@
         }
       },
       "uiSchema": {
+        "ui:submitButtonOptions": { "submitText": "Enregistrer" },
         "title": { "ui:placeholder": "Ex. Mon document" },
         "description": {
           "ui:widget": "textarea",
@@ -236,6 +237,7 @@
         }
       },
       "uiSchema": {
+        "ui:submitButtonOptions": { "submitText": "Save" },
         "title": { "ui:placeholder": "e.g. My document" },
         "description": {
           "ui:widget": "textarea",
