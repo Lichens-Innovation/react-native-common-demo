@@ -1801,7 +1801,7 @@
         "path": "node_modules/@storybook/icons",
         "licenseFile": "node_modules/@storybook/icons/LICENSE.md"
     },
-    "@storybook/react-dom-shim@10.2.17": {
+    "@storybook/react-dom-shim@10.2.19": {
         "licenses": "MIT",
         "repository": "https://github.com/storybookjs/storybook",
         "path": "node_modules/@storybook/react-dom-shim",
@@ -1831,7 +1831,7 @@
         "path": "node_modules/@storybook/react-native",
         "licenseFile": "node_modules/@storybook/react-native/LICENSE"
     },
-    "@storybook/react@10.2.17": {
+    "@storybook/react@10.2.19": {
         "licenses": "MIT",
         "repository": "https://github.com/storybookjs/storybook",
         "path": "node_modules/@storybook/react",
@@ -4405,14 +4405,14 @@
         "path": "node_modules/fast-uri",
         "licenseFile": "node_modules/fast-uri/LICENSE"
     },
-    "fast-xml-builder@1.1.2": {
+    "fast-xml-builder@1.1.3": {
         "licenses": "MIT",
         "repository": "https://github.com/NaturalIntelligence/fast-xml-builder",
         "publisher": "Amit Gupta",
         "path": "node_modules/fast-xml-builder",
         "licenseFile": "node_modules/fast-xml-builder/LICENSE"
     },
-    "fast-xml-parser@5.5.3": {
+    "fast-xml-parser@5.5.5": {
         "licenses": "MIT",
         "repository": "https://github.com/NaturalIntelligence/fast-xml-parser",
         "publisher": "Amit Gupta",
@@ -6096,7 +6096,7 @@
         "path": "node_modules/lru-cache",
         "licenseFile": "node_modules/lru-cache/LICENSE"
     },
-    "lru-cache@11.2.6": {
+    "lru-cache@11.2.7": {
         "licenses": "BlueOak-1.0.0",
         "repository": "https://github.com/isaacs/node-lru-cache",
         "publisher": "Isaac Z. Schlueter",
@@ -8364,7 +8364,7 @@
         "path": "node_modules/stop-iteration-iterator",
         "licenseFile": "node_modules/stop-iteration-iterator/LICENSE"
     },
-    "storybook@10.2.17": {
+    "storybook@10.2.19": {
         "licenses": "MIT",
         "repository": "https://github.com/storybookjs/storybook",
         "path": "node_modules/storybook",
@@ -8675,7 +8675,7 @@
         "path": "node_modules/tinycolor2",
         "licenseFile": "node_modules/tinycolor2/LICENSE"
     },
-    "tinyexec@1.0.2": {
+    "tinyexec@1.0.4": {
         "licenses": "MIT",
         "repository": "https://github.com/tinylibs/tinyexec",
         "publisher": "James Garbutt",
