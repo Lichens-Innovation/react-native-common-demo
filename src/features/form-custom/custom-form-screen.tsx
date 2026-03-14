@@ -5,7 +5,8 @@ import type { FunctionComponent } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
-import { CloudDropdownPicker } from '~/components/rjsf/cloud-dropdown-picker/cloud-dropdown-picker';
+import { CloudDropdownPickerField } from '~/components/rjsf/fields/cloud-dropdown-picker-field/cloud-dropdown-picker-field';
+import { VoiceInputField } from '~/components/rjsf/fields/voice-input-field/voice-input-field';
 import { RjsfPaperRendererDebug } from '~/components/rjsf/rjsf-paper-renderer-debug';
 import schemaCustom from './schema-custom.json';
 
@@ -31,7 +32,10 @@ export const CustomFormScreen: FunctionComponent = () => {
           i18n={i18n}
           schema={schema}
           uiSchema={uiSchema}
-          fields={{ CloudDropdownPicker }}
+          fields={{
+            CloudDropdownPickerField,
+            VoiceInputField,
+          }}
           onSubmit={handleSubmit}
           onError={handleError}
         />

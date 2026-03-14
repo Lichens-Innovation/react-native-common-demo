@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 import { logger } from '@lichens-innovation/react-native-common';
 
-import { fetchCloudDropdownOptions } from './cloud-dropdown-picker.utils';
+import { fetchCloudDropdownOptions } from './cloud-dropdown-picker-field.utils';
 
 export const useCloudDropdownOptions = () => {
   const { data, isLoading, isError, error } = useQuery({

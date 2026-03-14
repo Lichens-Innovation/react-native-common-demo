@@ -10,13 +10,16 @@ interface SwapiPeopleResponse {
   next: string | null;
 }
 
-export type CloudDropdownOption = { label: string; value: string };
+export interface CloudDropdownOption {
+  label: string;
+  value: string;
+}
 
-/** FormData for CloudDropdownPicker: value + computed updatedAt (ISO-8601) */
-export type CloudDropdownFormData = {
+/** FormData for CloudDropdownPickerField: value + computed updatedAt (ISO-8601) */
+export interface CloudDropdownFormData extends Record<string, unknown> {
   value?: string;
   updatedAt?: string;
-};
+}
 
 const fetchPage = async (url: string): Promise<SwapiPeopleResponse> => {
   const res = await fetch(url);

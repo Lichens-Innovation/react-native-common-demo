@@ -12,10 +12,10 @@ import {
   buildCloudDropdownFormData,
   getCloudDropdownUpdatedAt,
   getCloudDropdownValue,
-} from './cloud-dropdown-picker.utils';
+} from './cloud-dropdown-picker-field.utils';
 import { useCloudDropdownOptions } from './use-cloud-dropdown-options';
 
-export const CloudDropdownPicker: FunctionComponent<FieldProps<Record<string, unknown>, RJSFSchema>> = ({
+export const CloudDropdownPickerField: FunctionComponent<FieldProps<Record<string, unknown>, RJSFSchema>> = ({
   formData,
   onChange,
   onBlur,
@@ -43,7 +43,7 @@ export const CloudDropdownPicker: FunctionComponent<FieldProps<Record<string, un
 
   const placeholder = uiSchema?.['ui:placeholder'];
   const strValue = getCloudDropdownValue(formData);
-  const baseId = fieldPathId?.$id ?? id ?? 'cloudDropdownPicker';
+  const baseId = fieldPathId?.$id ?? id ?? 'cloudDropdownPickerField';
   const path = fieldPathId?.path ?? [];
 
   const selectOptions = options.map((o) => ({ label: o.label, value: o.value }));
@@ -84,7 +84,7 @@ const useStyles = () => {
       marginVertical: theme.spacing(0.5),
     },
     helpError: {
-      color: theme.colors?.error ?? '#b00020',
+      color: theme.colors?.error,
       marginTop: theme.spacing(0.5),
     },
   });
