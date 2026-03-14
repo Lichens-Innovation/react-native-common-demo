@@ -1,10 +1,11 @@
-import type { RecordingTextInputArgs } from '@lichens-innovation/react-native-common';
 import { isNullish } from '@lichens-innovation/ts-common';
+import uuid from 'react-native-uuid';
 
 export interface VoiceInputFormData extends Record<string, unknown> {
   value: string;
   recordingUri?: string;
   updatedAt?: string; // computed (ISO-8601)
+  uuid?: string; // computed (UUID v4)
 }
 
 const isVoiceInputFormData = (data: unknown): data is VoiceInputFormData =>
@@ -27,8 +28,9 @@ export const getVoiceInputUpdatedAt = (formData: unknown): string | undefined =>
   return typeof formData.updatedAt === 'string' ? formData.updatedAt : undefined;
 };
 
-export const buildVoiceInputFormData = (args: RecordingTextInputArgs): VoiceInputFormData => ({
+export const buildVoiceInputFormData = (args: VoiceInputFormData): VoiceInputFormData => ({
   value: args.value,
   recordingUri: args.recordingUri,
   updatedAt: new Date().toISOString(),
+  uuid: args.uuid ?? uuid.v4(),
 });

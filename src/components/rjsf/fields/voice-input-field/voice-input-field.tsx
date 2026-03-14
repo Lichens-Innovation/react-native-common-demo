@@ -48,7 +48,7 @@ export const VoiceInputField: FunctionComponent<FieldProps<Record<string, unknow
   const path = fieldPathId?.path ?? [];
 
   const handleValueChange = (args: RecordingTextInputArgs) => {
-    const nextFormData = buildVoiceInputFormData(args);
+    const nextFormData = buildVoiceInputFormData({ ...formData, ...args });
     onChange(nextFormData, path, undefined, baseId);
     onBlur(baseId, args.value);
   };
