@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx';
-import { makePersistable } from 'mobx-persist-store';
+import { isHydrated, makePersistable } from 'mobx-persist-store';
 import { mmkvStorageForMobxPersist } from '@lichens-innovation/react-native-common';
 
 export const APP_SKIN_IDS = {
@@ -22,6 +22,10 @@ class SettingsStore {
       properties: ['appSkinId'],
       storage: mmkvStorageForMobxPersist,
     });
+  }
+
+  get isHydrated() {
+    return isHydrated(this);
   }
 
   setAppSkinId(id: AppSkinId) {

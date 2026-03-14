@@ -8,8 +8,6 @@ import {
   SnackbarProvider,
   TanstackQueryProvider,
 } from '@lichens-innovation/react-native-common';
-import { getThemes } from '~/theme/app-themes';
-import { settingsStore } from '~/store/settings.store';
 import { ThemeProvider } from '@react-navigation/native';
 import * as Sentry from '@sentry/react-native';
 import 'expo-dev-client';
@@ -22,17 +20,24 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { KeyboardProvider } from 'react-native-keyboard-controller';
 import { PaperProvider } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { settingsStore } from '~/store/settings.store';
+import { getThemes } from '~/theme/app-themes';
 import { useAppInit } from '~/use-app-init';
 
 const RootLayout: FunctionComponent = observer(() => {
-  const { isDarkMode } = commonStore;
-  const themes = getThemes(settingsStore.appSkinId);
   useAppInit();
 
-  const navigationTheme = isDarkMode ? themes.navDark : themes.navLight;
-  const paperTheme = isDarkMode ? themes.paperDark : themes.paperLight;
+  const { isDarkMode } = commonStore;
+  const { navDark, navLight, paperDark, paperLight } = getThemes(settingsStore.appSkinId);
+
+  const navigationTheme = isDarkMode ? navDark : navLight;
+  const paperTheme = isDarkMode ? paperDark : paperLight;
   const statusBarStyle = isDarkMode ? 'light' : 'dark';
   const statusBarBackgroundColor = isDarkMode ? 'black' : 'white';
+
+  if (!settingsStore.isHydrated) {
+    return null;
+  }
 
   return (
     <SafeAreaProvider>
