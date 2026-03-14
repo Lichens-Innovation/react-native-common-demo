@@ -8,8 +8,14 @@ export interface VoiceInputFormData extends Record<string, unknown> {
   uuid?: string; // computed (UUID v4)
 }
 
-const isVoiceInputFormData = (data: unknown): data is VoiceInputFormData =>
-  typeof data === 'object' && !isNullish(data) && !Array.isArray(data) && 'value' in data;
+const isVoiceInputFormData = (data: unknown): data is VoiceInputFormData => {
+  if (isNullish(data)) return false;
+  if (typeof data !== 'object') return false;
+  if (Array.isArray(data)) return false;
+  if (!('value' in data)) return false;
+
+  return true;
+};
 
 export const getVoiceInputValue = (formData: unknown): string | undefined => {
   if (isNullish(formData)) return undefined;
@@ -28,9 +34,11 @@ export const getVoiceInputUpdatedAt = (formData: unknown): string | undefined =>
   return typeof formData.updatedAt === 'string' ? formData.updatedAt : undefined;
 };
 
-export const buildVoiceInputFormData = (args: VoiceInputFormData): VoiceInputFormData => ({
-  value: args.value,
-  recordingUri: args.recordingUri,
-  updatedAt: new Date().toISOString(),
-  uuid: args.uuid ?? uuid.v4(),
-});
+export const buildVoiceInputFormData = (args: VoiceInputFormData): VoiceInputFormData => {
+  return {
+    value: args.value,
+    recordingUri: args.recordingUri,
+    updatedAt: new Date().toISOString(),
+    uuid: args.uuid ?? uuid.v4(),
+  };
+};
