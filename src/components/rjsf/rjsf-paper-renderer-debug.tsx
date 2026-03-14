@@ -1,0 +1,58 @@
+import { SyntaxColoring, useAppTheme } from '@lichens-innovation/react-native-common';
+import { type RjsfPaperRendererProps, RjsfPaperRenderer } from '@lichens-innovation/react-native-common/rjsf';
+import type { FunctionComponent } from 'react';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { StyleSheet, View } from 'react-native';
+import { Text } from 'react-native-paper';
+
+type ChangeEvent = Parameters<NonNullable<RjsfPaperRendererProps['onChange']>>[0];
+
+export type RjsfPaperRendererDebugProps = RjsfPaperRendererProps;
+
+export const RjsfPaperRendererDebug: FunctionComponent<RjsfPaperRendererDebugProps> = ({
+  formData: initialFormData,
+  onChange,
+  ...rest
+}) => {
+  const { t } = useTranslation();
+  const styles = useStyles();
+  const [formData, setFormData] = useState<Record<string, unknown>>(initialFormData ?? {});
+
+  const handleChange = (event: ChangeEvent) => {
+    setFormData(event.formData ?? {});
+    onChange?.(event);
+  };
+
+  return (
+    <View style={styles.container}>
+      <RjsfPaperRenderer {...rest} formData={formData ?? initialFormData} onChange={handleChange} />
+
+      <View style={styles.debugSection}>
+        <Text>{t('app:formDemo.formDataLabel')}</Text>
+
+        <View style={styles.codeBlock}>
+          <SyntaxColoring code={JSON.stringify(formData, null, 2)} language="json" />
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const useStyles = () => {
+  const theme = useAppTheme();
+
+  return StyleSheet.create({
+    container: {
+      gap: theme.spacing(2),
+    },
+    debugSection: {
+      gap: theme.spacing(1),
+    },
+    codeBlock: {
+      borderWidth: StyleSheet.hairlineWidth,
+      borderColor: theme.colors?.outline,
+      borderRadius: theme.roundness,
+    },
+  });
+};

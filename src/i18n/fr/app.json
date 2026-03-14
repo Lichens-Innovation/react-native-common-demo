@@ -30,7 +30,8 @@
       "simple": "Simple",
       "complex": "Complexe",
       "custom": "Personnalisé"
-    }
+    },
+    "formDataLabel": "Données du formulaire"
   },
   "tools": {
     "title": "Outils",
