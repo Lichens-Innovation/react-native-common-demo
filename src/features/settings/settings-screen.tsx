@@ -8,6 +8,7 @@ import { commonStore, useAppTheme } from '@lichens-innovation/react-native-commo
 import { useTranslation } from 'react-i18next';
 import { useKeyboardState } from 'react-native-keyboard-controller';
 import { AppLanguageField } from './app-language-field';
+import { AppSkinField } from './app-skin-field';
 
 const SettingsScreen: FunctionComponent = observer(() => {
   const styles = useStyles();
@@ -24,6 +25,8 @@ const SettingsScreen: FunctionComponent = observer(() => {
       </Pressable>
 
       <AppLanguageField />
+
+      <AppSkinField />
 
       <View style={{ height: keyboardHeight }} />
     </ScrollView>

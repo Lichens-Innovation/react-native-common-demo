@@ -19,7 +19,11 @@
   "settings": {
     "title": "Settings",
     "menuLabel": "Settings",
-    "toggleDarkMode": "Toggle Dark Mode"
+    "toggleDarkMode": "Toggle Dark Mode",
+    "skin": "App skin",
+    "skinOption_lichens": "Lichens Innovation",
+    "skinOption_red": "Red",
+    "skinOption_spotd": "SpotD App Mobile"
   },
   "formDemo": {
     "tabs": {

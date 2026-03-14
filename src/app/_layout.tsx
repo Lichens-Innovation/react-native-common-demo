@@ -3,15 +3,13 @@ import '~/utils/env-vars'; // before anything else (since it is used by our comm
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import {
   commonStore,
-  DARK_THEME,
   HeaderBackButton,
   isDevelopment,
-  LIGHT_THEME,
-  NAVIGATION_DARK,
-  NAVIGATION_LIGHT,
   SnackbarProvider,
   TanstackQueryProvider,
 } from '@lichens-innovation/react-native-common';
+import { getThemes } from '~/theme/app-themes';
+import { settingsStore } from '~/store/settings.store';
 import { ThemeProvider } from '@react-navigation/native';
 import * as Sentry from '@sentry/react-native';
 import 'expo-dev-client';
@@ -28,10 +26,11 @@ import { useAppInit } from '~/use-app-init';
 
 const RootLayout: FunctionComponent = observer(() => {
   const { isDarkMode } = commonStore;
+  const themes = getThemes(settingsStore.appSkinId);
   useAppInit();
 
-  const navigationTheme = isDarkMode ? NAVIGATION_DARK : NAVIGATION_LIGHT;
-  const paperTheme = isDarkMode ? DARK_THEME : LIGHT_THEME;
+  const navigationTheme = isDarkMode ? themes.navDark : themes.navLight;
+  const paperTheme = isDarkMode ? themes.paperDark : themes.paperLight;
   const statusBarStyle = isDarkMode ? 'light' : 'dark';
   const statusBarBackgroundColor = isDarkMode ? 'black' : 'white';
 
