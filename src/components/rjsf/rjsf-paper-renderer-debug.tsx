@@ -1,12 +1,11 @@
 import { SyntaxColoring, useAppTheme } from '@lichens-innovation/react-native-common';
 import { type RjsfPaperRendererProps, RjsfPaperRenderer } from '@lichens-innovation/react-native-common/rjsf';
+import { IChangeEvent } from '@rjsf/core';
 import type { FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
-
-type ChangeEvent = Parameters<NonNullable<RjsfPaperRendererProps['onChange']>>[0];
 
 export type RjsfPaperRendererDebugProps = RjsfPaperRendererProps;
 
@@ -26,9 +25,9 @@ export const RjsfPaperRendererDebug: FunctionComponent<RjsfPaperRendererDebugPro
     setFormData(initialFormData ?? {});
   }, [initialFormDataJson]);
 
-  const handleChange = (event: ChangeEvent) => {
+  const handleChange = (event: IChangeEvent, id?: string) => {
     setFormData(event.formData ?? {});
-    onChange?.(event);
+    onChange?.(event, id);
   };
 
   return (
