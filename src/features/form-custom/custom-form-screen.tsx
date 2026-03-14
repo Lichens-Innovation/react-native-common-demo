@@ -1,12 +1,13 @@
 import { logger, useAppTheme } from '@lichens-innovation/react-native-common';
-import { RjsfPaperRenderer } from '@lichens-innovation/react-native-common/rjsf';
 import type { MetaFormSchema } from '@lichens-innovation/ts-common/rjsf';
 import { useLocalizedForm } from '@lichens-innovation/ts-common/rjsf';
 import type { FunctionComponent } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-
-import { CloudDropdownPicker } from '~/components/rjsf/cloud-dropdown-picker/cloud-dropdown-picker';
 import { useTranslation } from 'react-i18next';
+
+import { CloudDropdownPickerField } from '~/components/rjsf/fields/cloud-dropdown-picker-field/cloud-dropdown-picker-field';
+import { VoiceInputField } from '~/components/rjsf/fields/voice-input-field/voice-input-field';
+import { RjsfPaperRendererDebug } from '~/components/rjsf/rjsf-paper-renderer-debug';
 import schemaCustom from './schema-custom.json';
 
 const customMetaSchema = schemaCustom as unknown as MetaFormSchema;
@@ -27,11 +28,14 @@ export const CustomFormScreen: FunctionComponent = () => {
   return (
     <ScrollView style={styles.scroll} contentContainerStyle={styles.content}>
       <View style={styles.form}>
-        <RjsfPaperRenderer
+        <RjsfPaperRendererDebug
           i18n={i18n}
           schema={schema}
           uiSchema={uiSchema}
-          fields={{ CloudDropdownPicker }}
+          fields={{
+            CloudDropdownPickerField,
+            VoiceInputField,
+          }}
           onSubmit={handleSubmit}
           onError={handleError}
         />

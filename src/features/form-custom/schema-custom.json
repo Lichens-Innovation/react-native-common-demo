@@ -20,6 +20,19 @@
               }
             }
           },
+          "voiceNote": {
+            "type": "object",
+            "title": "Note vocale",
+            "properties": {
+              "value": { "type": "string", "title": "Texte" },
+              "recordingUri": { "type": "string", "title": "Enregistrement" },
+              "updatedAt": {
+                "type": "string",
+                "format": "date-time",
+                "title": "Date de mise à jour"
+              }
+            }
+          },
           "notes": {
             "type": "string",
             "title": "Notes",
@@ -30,8 +43,12 @@
       "uiSchema": {
         "ui:submitButtonOptions": { "submitText": "Enregistrer" },
         "cloudOption": {
-          "ui:field": "CloudDropdownPicker",
+          "ui:field": "CloudDropdownPickerField",
           "ui:placeholder": "Sélectionner une option"
+        },
+        "voiceNote": {
+          "ui:field": "VoiceInputField",
+          "ui:placeholder": "Parlez ou saisissez votre note…"
         },
         "notes": {
           "ui:placeholder": "Saisissez vos notes…"
@@ -56,6 +73,19 @@
               }
             }
           },
+          "voiceNote": {
+            "type": "object",
+            "title": "Voice note",
+            "properties": {
+              "value": { "type": "string", "title": "Text" },
+              "recordingUri": { "type": "string", "title": "Recording" },
+              "updatedAt": {
+                "type": "string",
+                "format": "date-time",
+                "title": "Last updated"
+              }
+            }
+          },
           "notes": {
             "type": "string",
             "title": "Notes",
@@ -66,8 +96,12 @@
       "uiSchema": {
         "ui:submitButtonOptions": { "submitText": "Save" },
         "cloudOption": {
-          "ui:field": "CloudDropdownPicker",
+          "ui:field": "CloudDropdownPickerField",
           "ui:placeholder": "Select an option"
+        },
+        "voiceNote": {
+          "ui:field": "VoiceInputField",
+          "ui:placeholder": "Speak or type your note…"
         },
         "notes": {
           "ui:placeholder": "Enter your notes…"

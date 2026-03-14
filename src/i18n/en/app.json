@@ -30,7 +30,8 @@
       "simple": "Simple",
       "complex": "Complex",
       "custom": "Custom"
-    }
+    },
+    "formDataLabel": "Form data"
   },
   "tools": {
     "title": "Tools",

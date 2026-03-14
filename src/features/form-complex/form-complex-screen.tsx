@@ -1,12 +1,11 @@
 import { logger, useAppTheme } from '@lichens-innovation/react-native-common';
 import type { FunctionComponent } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
-import { RjsfPaperRenderer } from '@lichens-innovation/react-native-common/rjsf';
+import { RjsfPaperRendererDebug } from '~/components/rjsf/rjsf-paper-renderer-debug';
 import type { MetaFormSchema } from '@lichens-innovation/ts-common/rjsf';
 import { useLocalizedForm } from '@lichens-innovation/ts-common/rjsf';
-
-import { useTranslation } from 'react-i18next';
 import schema02 from './schema-02.json';
 
 const complexMetaSchema = schema02 as unknown as MetaFormSchema;
@@ -27,7 +26,7 @@ export const FormComplexScreen: FunctionComponent = () => {
   return (
     <ScrollView style={styles.scroll} contentContainerStyle={styles.content}>
       <View style={styles.form}>
-        <RjsfPaperRenderer
+        <RjsfPaperRendererDebug
           i18n={i18n}
           schema={schema}
           uiSchema={uiSchema}
