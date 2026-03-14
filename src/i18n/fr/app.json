@@ -19,7 +19,11 @@
   "settings": {
     "title": "Préférences",
     "menuLabel": "Préférences",
-    "toggleDarkMode": "Mode sombre"
+    "toggleDarkMode": "Mode sombre",
+    "skin": "Thème de l'app",
+    "skinOption_lichens": "Lichens Innovation",
+    "skinOption_red": "Rouge",
+    "skinOption_spotd": "Spotd App Mobile"
   },
   "formDemo": {
     "tabs": {

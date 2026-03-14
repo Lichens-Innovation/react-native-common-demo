@@ -3,12 +3,8 @@ import '~/utils/env-vars'; // before anything else (since it is used by our comm
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import {
   commonStore,
-  DARK_THEME,
   HeaderBackButton,
   isDevelopment,
-  LIGHT_THEME,
-  NAVIGATION_DARK,
-  NAVIGATION_LIGHT,
   SnackbarProvider,
   TanstackQueryProvider,
 } from '@lichens-innovation/react-native-common';
@@ -24,16 +20,24 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { KeyboardProvider } from 'react-native-keyboard-controller';
 import { PaperProvider } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { settingsStore } from '~/store/settings.store';
+import { getThemes } from '~/theme/app-themes';
 import { useAppInit } from '~/use-app-init';
 
 const RootLayout: FunctionComponent = observer(() => {
-  const { isDarkMode } = commonStore;
   useAppInit();
 
-  const navigationTheme = isDarkMode ? NAVIGATION_DARK : NAVIGATION_LIGHT;
-  const paperTheme = isDarkMode ? DARK_THEME : LIGHT_THEME;
+  const { isDarkMode } = commonStore;
+  const { navDark, navLight, paperDark, paperLight } = getThemes(settingsStore.appSkinId);
+
+  const navigationTheme = isDarkMode ? navDark : navLight;
+  const paperTheme = isDarkMode ? paperDark : paperLight;
   const statusBarStyle = isDarkMode ? 'light' : 'dark';
   const statusBarBackgroundColor = isDarkMode ? 'black' : 'white';
+
+  if (!settingsStore.isHydrated) {
+    return null;
+  }
 
   return (
     <SafeAreaProvider>

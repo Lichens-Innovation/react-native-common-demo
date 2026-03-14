@@ -22,7 +22,7 @@ export const LicensesScreen: FunctionComponent = () => {
 
       <LegendList
         data={data}
-        keyExtractor={(item) => item.title}
+        keyExtractor={(item) => `${item.title}@${item.version}`}
         style={styles.list}
         renderItem={({ item }: { item: LicenceDetail }) => (
           <List.Item
