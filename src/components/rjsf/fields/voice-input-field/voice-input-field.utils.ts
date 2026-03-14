@@ -7,11 +7,11 @@ export interface VoiceInputFormData extends Record<string, unknown> {
   updatedAt?: string; // computed (ISO-8601)
 }
 
-const isVoiceInputFormData = (x: unknown): x is VoiceInputFormData =>
-  typeof x === 'object' && !isNullish(x) && !Array.isArray(x);
+const isVoiceInputFormData = (data: unknown): data is VoiceInputFormData =>
+  typeof data === 'object' && !isNullish(data) && !Array.isArray(data) && 'value' in data;
 
 export const getVoiceInputValue = (formData: unknown): string | undefined => {
-  if (formData === null) return undefined;
+  if (isNullish(formData)) return undefined;
   if (isVoiceInputFormData(formData)) return formData.value;
   if (typeof formData === 'string') return formData;
   return undefined;

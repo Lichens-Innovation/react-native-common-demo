@@ -1,7 +1,7 @@
 import { SyntaxColoring, useAppTheme } from '@lichens-innovation/react-native-common';
 import { type RjsfPaperRendererProps, RjsfPaperRenderer } from '@lichens-innovation/react-native-common/rjsf';
 import type { FunctionComponent } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
@@ -18,6 +18,13 @@ export const RjsfPaperRendererDebug: FunctionComponent<RjsfPaperRendererDebugPro
   const { t } = useTranslation();
   const styles = useStyles();
   const [formData, setFormData] = useState<Record<string, unknown>>(initialFormData ?? {});
+
+  const initialFormDataJson = JSON.stringify(initialFormData ?? {});
+
+  // Reset local form state when initial form data (by value) changes, e.g. when parent resets the form.
+  useEffect(() => {
+    setFormData(initialFormData ?? {});
+  }, [initialFormDataJson]);
 
   const handleChange = (event: ChangeEvent) => {
     setFormData(event.formData ?? {});
