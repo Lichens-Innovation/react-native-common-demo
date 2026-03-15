@@ -29,7 +29,8 @@
     "tabs": {
       "simple": "Simple",
       "complex": "Complexe",
-      "custom": "Personnalisé"
+      "custom": "Personnalisé",
+      "grid": "Grille"
     },
     "formDataLabel": "Données du formulaire"
   },

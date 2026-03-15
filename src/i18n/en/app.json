@@ -29,7 +29,8 @@
     "tabs": {
       "simple": "Simple",
       "complex": "Complex",
-      "custom": "Custom"
+      "custom": "Custom",
+      "grid": "Grid"
     },
     "formDataLabel": "Form data"
   },
