@@ -1,11 +1,10 @@
 import { logger, useAppTheme } from '@lichens-innovation/react-native-common';
-import type { FunctionComponent } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
-import { useTranslation } from 'react-i18next';
-
-import { RjsfPaperRendererDebug } from '~/components/rjsf/rjsf-paper-renderer-debug';
+import { RjsfPaperRendererDebug } from '@lichens-innovation/react-native-common/rjsf';
 import type { MetaFormSchema } from '@lichens-innovation/ts-common/rjsf';
 import { useLocalizedForm } from '@lichens-innovation/ts-common/rjsf';
+import type { FunctionComponent } from 'react';
+import { useTranslation } from 'react-i18next';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import schema02 from './schema-02.json';
 
 const complexMetaSchema = schema02 as unknown as MetaFormSchema;

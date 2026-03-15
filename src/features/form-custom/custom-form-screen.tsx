@@ -1,13 +1,14 @@
 import { logger, useAppTheme } from '@lichens-innovation/react-native-common';
+import { RjsfPaperRendererDebug } from '@lichens-innovation/react-native-common/rjsf';
 import type { MetaFormSchema } from '@lichens-innovation/ts-common/rjsf';
 import { useLocalizedForm } from '@lichens-innovation/ts-common/rjsf';
 import type { FunctionComponent } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 import { CloudDropdownPickerField } from '~/components/rjsf/fields/cloud-dropdown-picker-field/cloud-dropdown-picker-field';
 import { VoiceInputField } from '~/components/rjsf/fields/voice-input-field/voice-input-field';
-import { RjsfPaperRendererDebug } from '~/components/rjsf/rjsf-paper-renderer-debug';
+
 import schemaCustom from './schema-custom.json';
 
 const customMetaSchema = schemaCustom as unknown as MetaFormSchema;
