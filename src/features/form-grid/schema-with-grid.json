@@ -23,7 +23,7 @@
           },
           "done": {
             "type": "boolean",
-            "title": "Terminé ?",
+            "title": "Tâche terminée ?",
             "default": false
           }
         }
@@ -50,9 +50,15 @@
                     {
                       "ui:row": [
                         {
-                          "ui:columns": {
-                            "flex": 12,
-                            "children": ["done", "priority"]
+                          "ui:col": {
+                            "flex": 16,
+                            "children": ["done"]
+                          }
+                        },
+                        {
+                          "ui:col": {
+                            "flex": 8,
+                            "children": ["priority"]
                           }
                         }
                       ]
@@ -89,7 +95,7 @@
           },
           "done": {
             "type": "boolean",
-            "title": "Done?",
+            "title": "Task completed?",
             "default": false
           }
         }
@@ -116,9 +122,15 @@
                     {
                       "ui:row": [
                         {
-                          "ui:columns": {
-                            "flex": 12,
-                            "children": ["done", "priority"]
+                          "ui:col": {
+                            "flex": 16,
+                            "children": ["done"]
+                          }
+                        },
+                        {
+                          "ui:col": {
+                            "flex": 8,
+                            "children": ["priority"]
                           }
                         }
                       ]
