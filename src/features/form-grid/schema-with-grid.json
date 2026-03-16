@@ -1,0 +1,156 @@
+{
+  "id": "schema-with-grid",
+  "version": "1.0.0",
+  "i18n": {
+    "fr": {
+      "schema": {
+        "type": "object",
+        "required": ["notes"],
+        "properties": {
+          "notes": {
+            "type": "string",
+            "title": "Notes",
+            "minLength": 1
+          },
+          "priority": {
+            "type": "string",
+            "title": "Priorité",
+            "anyOf": [
+              { "const": "low", "title": "Faible" },
+              { "const": "high", "title": "Élevé" }
+            ],
+            "default": "low"
+          },
+          "done": {
+            "type": "boolean",
+            "title": "Tâche terminée ?",
+            "default": false
+          }
+        }
+      },
+      "uiSchema": {
+        "ui:field": "LayoutGridField",
+        "ui:layoutGrid": {
+          "ui:row": {
+            "children": [
+              {
+                "ui:col": {
+                  "flex": 24,
+                  "children": [
+                    {
+                      "ui:row": [
+                        {
+                          "ui:columns": {
+                            "flex": 24,
+                            "children": ["notes"]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "ui:row": {
+                        "gap": 24,
+                        "children": [
+                          {
+                            "ui:col": {
+                              "flex": 8,
+                              "children": ["priority"]
+                            }
+                          },
+                          {
+                            "ui:col": {
+                              "flex": 16,
+                              "children": ["done"]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "notes": {
+          "ui:placeholder": "Saisissez vos notes…"
+        }
+      }
+    },
+    "en": {
+      "schema": {
+        "type": "object",
+        "required": ["notes"],
+        "properties": {
+          "notes": {
+            "type": "string",
+            "title": "Notes",
+            "minLength": 1
+          },
+          "priority": {
+            "type": "string",
+            "title": "Priority",
+            "anyOf": [
+              { "const": "low", "title": "Low" },
+              { "const": "high", "title": "High" }
+            ],
+            "default": "low"
+          },
+          "done": {
+            "type": "boolean",
+            "title": "Task completed?",
+            "default": false
+          }
+        }
+      },
+      "uiSchema": {
+        "ui:field": "LayoutGridField",
+        "ui:layoutGrid": {
+          "ui:row": {
+            "children": [
+              {
+                "ui:col": {
+                  "flex": 24,
+                  "children": [
+                    {
+                      "ui:row": [
+                        {
+                          "ui:columns": {
+                            "flex": 24,
+                            "children": ["notes"]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "ui:row": {
+                        "gap": 24,
+                        "children": [
+                          {
+                            "ui:col": {
+                              "flex": 8,
+                              "children": ["priority"]
+                            }
+                          },
+                          {
+                            "ui:col": {
+                              "flex": 16,
+                              "children": ["done"]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "notes": {
+          "ui:placeholder": "Enter your notes…"
+        }
+      }
+    }
+  }
+}

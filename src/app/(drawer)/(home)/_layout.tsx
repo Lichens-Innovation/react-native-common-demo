@@ -25,6 +25,12 @@ const TabLayout: FunctionComponent = () => {
       icon: 'pencil-box-outline',
     },
     {
+      name: 'form-with-grid',
+      href: '/(drawer)/(home)/form-with-grid',
+      title: t('app:formDemo.tabs.grid'),
+      icon: 'view-grid-outline',
+    },
+    {
       name: 'about',
       href: '/(drawer)/(home)/about',
       title: t('app:about.title'),
