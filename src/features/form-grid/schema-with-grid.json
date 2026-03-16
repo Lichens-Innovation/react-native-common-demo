@@ -48,20 +48,23 @@
                       ]
                     },
                     {
-                      "ui:row": [
-                        {
-                          "ui:col": {
-                            "flex": 16,
-                            "children": ["done"]
+                      "ui:row": {
+                        "gap": 24,
+                        "children": [
+                          {
+                            "ui:col": {
+                              "flex": 8,
+                              "children": ["priority"]
+                            }
+                          },
+                          {
+                            "ui:col": {
+                              "flex": 16,
+                              "children": ["done"]
+                            }
                           }
-                        },
-                        {
-                          "ui:col": {
-                            "flex": 8,
-                            "children": ["priority"]
-                          }
-                        }
-                      ]
+                        ]
+                      }
                     }
                   ]
                 }
@@ -120,20 +123,23 @@
                       ]
                     },
                     {
-                      "ui:row": [
-                        {
-                          "ui:col": {
-                            "flex": 16,
-                            "children": ["done"]
+                      "ui:row": {
+                        "gap": 24,
+                        "children": [
+                          {
+                            "ui:col": {
+                              "flex": 8,
+                              "children": ["priority"]
+                            }
+                          },
+                          {
+                            "ui:col": {
+                              "flex": 16,
+                              "children": ["done"]
+                            }
                           }
-                        },
-                        {
-                          "ui:col": {
-                            "flex": 8,
-                            "children": ["priority"]
-                          }
-                        }
-                      ]
+                        ]
+                      }
                     }
                   ]
                 }
