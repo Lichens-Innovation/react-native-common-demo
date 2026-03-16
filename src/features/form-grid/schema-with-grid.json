@@ -14,7 +14,7 @@
           },
           "priority": {
             "type": "string",
-            "title": "Priorité (booléen en select)",
+            "title": "Priorité",
             "anyOf": [
               { "const": "low", "title": "Faible" },
               { "const": "high", "title": "Élevé" }
@@ -29,6 +29,40 @@
         }
       },
       "uiSchema": {
+        "ui:field": "LayoutGridField",
+        "ui:layoutGrid": {
+          "ui:row": {
+            "children": [
+              {
+                "ui:col": {
+                  "flex": 24,
+                  "children": [
+                    {
+                      "ui:row": [
+                        {
+                          "ui:columns": {
+                            "flex": 24,
+                            "children": ["notes"]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "ui:row": [
+                        {
+                          "ui:columns": {
+                            "flex": 12,
+                            "children": ["done", "priority"]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
         "notes": {
           "ui:placeholder": "Saisissez vos notes…"
         }
@@ -46,7 +80,7 @@
           },
           "priority": {
             "type": "string",
-            "title": "Priority (boolean as select)",
+            "title": "Priority",
             "anyOf": [
               { "const": "low", "title": "Low" },
               { "const": "high", "title": "High" }
@@ -61,6 +95,40 @@
         }
       },
       "uiSchema": {
+        "ui:field": "LayoutGridField",
+        "ui:layoutGrid": {
+          "ui:row": {
+            "children": [
+              {
+                "ui:col": {
+                  "flex": 24,
+                  "children": [
+                    {
+                      "ui:row": [
+                        {
+                          "ui:columns": {
+                            "flex": 24,
+                            "children": ["notes"]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "ui:row": [
+                        {
+                          "ui:columns": {
+                            "flex": 12,
+                            "children": ["done", "priority"]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
         "notes": {
           "ui:placeholder": "Enter your notes…"
         }
