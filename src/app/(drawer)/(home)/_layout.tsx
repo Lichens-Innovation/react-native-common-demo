@@ -30,12 +30,6 @@ const TabLayout: FunctionComponent = () => {
       title: t('app:formDemo.tabs.grid'),
       icon: 'view-grid-outline',
     },
-    {
-      name: 'about',
-      href: '/(drawer)/(home)/about',
-      title: t('app:about.title'),
-      icon: 'information-outline',
-    },
   ];
 
   return <OrientationAwareTabsLayout tabs={tabs} />;
