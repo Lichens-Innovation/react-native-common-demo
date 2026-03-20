@@ -5,10 +5,10 @@ import type { FunctionComponent } from 'react';
 import { CloudDropdownPickerField } from '~/components/rjsf/fields/cloud-dropdown-picker-field/cloud-dropdown-picker-field';
 import { VoiceInputField } from '~/components/rjsf/fields/voice-input-field/voice-input-field';
 
-import schema01 from './schemas/schema-01.json';
-import schema02 from './schemas/schema-02.json';
-import schemaCustom from './schemas/schema-custom.json';
-import schemaWithGrid from './schemas/schema-with-grid.json';
+import demoComplex from './schemas/demo-complex.json';
+import demoCustomField from './schemas/demo-custom-field.json';
+import demoGrid from './schemas/demo-grid.json';
+import demoSimple from './schemas/demo-simple.json';
 
 type RjsfDemoField = FunctionComponent<FieldProps<Record<string, unknown>, RJSFSchema>>;
 
@@ -21,19 +21,19 @@ export type FormDemoRegistryEntry = {
 
 export const formDemoRegistry: Record<FormDemoVariant, FormDemoRegistryEntry> = {
   simple: {
-    metaSchema: schema01 as unknown as MetaFormSchema,
+    metaSchema: demoSimple as unknown as MetaFormSchema,
   },
   complex: {
-    metaSchema: schema02 as unknown as MetaFormSchema,
+    metaSchema: demoComplex as unknown as MetaFormSchema,
   },
   custom: {
-    metaSchema: schemaCustom as unknown as MetaFormSchema,
+    metaSchema: demoCustomField as unknown as MetaFormSchema,
     fields: {
       CloudDropdownPickerField,
       VoiceInputField,
     },
   },
   'with-grid': {
-    metaSchema: schemaWithGrid as unknown as MetaFormSchema,
+    metaSchema: demoGrid as unknown as MetaFormSchema,
   },
 };
