@@ -1,8 +1,9 @@
 import { FunctionComponent } from 'react';
-import { SimpleFormScreen } from '~/features/form-simple/simple-form-screen';
+
+import { RjsfFormDemoScreen } from '~/features/form-demo/rjsf-form-demo-screen';
 
 const Home: FunctionComponent = () => {
-  return <SimpleFormScreen />;
+  return <RjsfFormDemoScreen variant="simple" />;
 };
 
 export default Home;

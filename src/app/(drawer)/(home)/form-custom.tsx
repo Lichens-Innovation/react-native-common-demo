@@ -1,8 +1,7 @@
-import { FunctionComponent } from 'react';
-import { CustomFormScreen } from '~/features/form-custom/custom-form-screen';
+import type { FunctionComponent } from 'react';
 
-const FormCustom: FunctionComponent = () => {
-  return <CustomFormScreen />;
-};
+import { RjsfFormDemoScreen } from '~/features/form-demo/rjsf-form-demo-screen';
 
-export default FormCustom;
+const FormCustomScreen: FunctionComponent = () => <RjsfFormDemoScreen variant="custom" />;
+
+export default FormCustomScreen;

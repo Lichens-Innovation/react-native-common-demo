@@ -1,8 +1,7 @@
-import { FunctionComponent } from 'react';
-import { FormWithGridScreen } from '~/features/form-grid/form-whith-grid-screen';
+import type { FunctionComponent } from 'react';
 
-const FormWithGrid: FunctionComponent = () => {
-  return <FormWithGridScreen />;
-};
+import { RjsfFormDemoScreen } from '~/features/form-demo/rjsf-form-demo-screen';
 
-export default FormWithGrid;
+const FormWithGridScreen: FunctionComponent = () => <RjsfFormDemoScreen variant="with-grid" />;
+
+export default FormWithGridScreen;

@@ -1,25 +1,29 @@
 import { logger, useAppTheme } from '@lichens-innovation/react-native-common';
 import { RjsfPaperRendererDebug } from '@lichens-innovation/react-native-common/rjsf';
-import type { MetaFormSchema } from '@lichens-innovation/ts-common/rjsf';
 import { useLocalizedForm } from '@lichens-innovation/ts-common/rjsf';
 import type { FunctionComponent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import schema02 from './schema-02.json';
 
-const complexMetaSchema = schema02 as unknown as MetaFormSchema;
+import type { FormDemoVariant } from './form-demo.utils';
+import { formDemoRegistry } from './form-demo.utils';
 
-export const FormComplexScreen: FunctionComponent = () => {
+export type RjsfFormDemoScreenProps = {
+  variant: FormDemoVariant;
+};
+
+export const RjsfFormDemoScreen: FunctionComponent<RjsfFormDemoScreenProps> = ({ variant }) => {
+  const { metaSchema, fields } = formDemoRegistry[variant];
   const { i18n } = useTranslation();
-  const { schema, uiSchema } = useLocalizedForm(complexMetaSchema);
+  const { schema, uiSchema } = useLocalizedForm(metaSchema);
   const styles = useStyles();
 
   const handleSubmit = (data: { formData?: Record<string, unknown> }) => {
-    logger.info('Complex form submitted', { formData: data.formData });
+    logger.info('Form demo submitted', { variant, formData: data.formData });
   };
 
   const handleError = (errors: unknown) => {
-    logger.warn('Complex form errors', { errors });
+    logger.warn('Form demo validation errors', { variant, errors });
   };
 
   return (
@@ -29,6 +33,7 @@ export const FormComplexScreen: FunctionComponent = () => {
           i18n={i18n}
           schema={schema}
           uiSchema={uiSchema}
+          {...(fields ? { fields } : {})}
           onSubmit={handleSubmit}
           onError={handleError}
         />
