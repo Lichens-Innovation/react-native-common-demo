@@ -86,6 +86,18 @@ const config: ExpoConfig = {
         enableBackgroundRecording: true,
       },
     ],
+    [
+      'expo-media-library',
+      {
+        photosPermission:
+          "$(PRODUCT_NAME) a besoin d'accéder à votre galerie photo pour sélectionner des images lors des inspections. \\ This app needs access to your photo library to select images during inspections.",
+        savePhotosPermission:
+          "$(PRODUCT_NAME) a besoin d'enregistrer des photos et vidéos dans votre galerie lors des inspections. \\ This app needs to save photos and videos to your photo library during inspections.",
+        isAccessMediaLocationEnabled: true,
+        granularPermissions: ['photo', 'video'],
+      },
+    ],
+    'expo-video',
   ],
   orientation: 'default',
   icon: './assets/images/icon.png',
